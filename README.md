@@ -86,6 +86,36 @@ npm run build      # outputs static files to ./dist
 npm run preview    # serve ./dist locally to verify
 ```
 
+## 🐳 Local development with Docker
+
+A multi-stage `Dockerfile` and `docker-compose.yml` are included so you can run the site without
+installing Node/Bun locally.
+
+**Hot-reloading dev server** (source is bind-mounted for live reload):
+
+```sh
+docker compose up dev
+# open http://localhost:4321  (Spanish at /es/)
+```
+
+**Preview the production build** (runs `astro build` then serves `dist/`):
+
+```sh
+docker compose --profile preview up preview --build
+# open http://localhost:4321
+```
+
+Stop with `Ctrl+C`, or `docker compose down` to remove the containers.
+
+You can also use the Dockerfile directly:
+
+```sh
+docker build --target dev -t portfolio-dev .
+docker run --rm -p 4321:4321 -v "$PWD":/app -v /app/node_modules portfolio-dev
+```
+
+The image is based on `oven/bun` to match the project's `bun.lockb` lockfile.
+
 ## ▲ Deploy to Vercel
 
 This is a **static** Astro site, so no adapter is needed.
