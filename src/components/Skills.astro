@@ -1,0 +1,50 @@
+---
+import type { PortfolioContent } from '../data/types';
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+  content: PortfolioContent;
+}
+
+const { content } = Astro.props;
+const skills = content.copy.skills;
+const { skillGroups } = content;
+
+// Per-group accent icon (simple inline glyphs)
+const groupIcons: Record<string, string> = {
+  frontend: 'M3 5h18M3 5v14h18V5M8 9l-2 2 2 2m8-4 2 2-2 2',
+  backend: 'M4 7h16M4 12h16M4 17h10M7 7v10',
+  databases: 'M12 3c4.97 0 9 1.34 9 3s-4.03 3-9 3-9-1.34-9-3 4.03-3 9-3Zm9 3v12c0 1.66-4.03 3-9 3s-9-1.34-9-3V6',
+  cloud: 'M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.5A3.5 3.5 0 0 1 18 18H7Z',
+  testing: 'M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3',
+  tools: 'M14.7 6.3a4 4 0 0 1-5.4 5.4l-5 5a2 2 0 1 0 2.8 2.8l5-5a4 4 0 0 1 5.4-5.4l-2.5 2.5 1.4 1.4 2.5-2.5Z',
+};
+---
+
+<section id="skills" class="section bg-bg-soft/40">
+  <div class="container-content">
+    <SectionHeading eyebrow={skills.eyebrow} heading={skills.heading} intro={skills.intro} />
+
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        skillGroups.map((group, i) => (
+          <div class="card card-hover reveal p-6" style={`--reveal-delay: ${i * 60}ms`}>
+            <div class="mb-4 flex items-center gap-3">
+              <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-500/10 text-accent-300 ring-1 ring-accent-500/20">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={groupIcons[group.id]} />
+                </svg>
+              </span>
+              <h3 class="text-lg font-semibold text-white">{group.title}</h3>
+            </div>
+            <ul class="flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <li class="chip">{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

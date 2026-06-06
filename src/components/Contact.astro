@@ -1,0 +1,37 @@
+---
+import type { PortfolioContent } from '../data/types';
+import SocialLinks from './SocialLinks.astro';
+
+interface Props {
+  content: PortfolioContent;
+}
+
+const { content } = Astro.props;
+const { site } = content;
+const copy = content.copy.contact;
+---
+
+<section id="contact" class="section">
+  <div class="container-content">
+    <div class="card reveal relative overflow-hidden p-8 text-center sm:p-14">
+      <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+        <div class="absolute left-1/2 top-0 h-48 w-48 -translate-x-1/2 rounded-full bg-accent-500/20 blur-3xl"></div>
+      </div>
+
+      <span class="eyebrow">{copy.eyebrow}</span>
+      <h2 class="heading-2">{copy.heading}</h2>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-ink-muted">{copy.intro}</p>
+
+      <div class="mt-8 flex flex-col items-center gap-5">
+        <a href={`mailto:${site.email}`} class="btn btn-primary text-base">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2Z" />
+          </svg>
+          {copy.emailCta}
+        </a>
+        <a href={`mailto:${site.email}`} class="text-sm text-ink-muted hover:text-accent-300">{site.email}</a>
+        <SocialLinks links={site.socials} class="justify-center" />
+      </div>
+    </div>
+  </div>
+</section>

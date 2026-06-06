@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "title": "Juan Quintero — Ingeniero de Software Full-Stack Senior",
+    "description": "Ingeniero de Software Full-Stack Senior con más de 6 años creando aplicaciones web escalables y de alto rendimiento, APIs y sistemas en la nube con JavaScript/TypeScript y Python."
+  },
+  "langToggle": {
+    "en": "EN",
+    "es": "ES"
+  },
+  "nav": {
+    "about": "Perfil",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "downloadCv": "Descargar CV"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "role": "Ingeniero de Software Full-Stack Senior",
+    "tagline": "Construyo aplicaciones web escalables y de alto rendimiento, del frontend al backend.",
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Contáctame",
+    "ctaCv": "Descargar CV",
+    "stats": [
+      { "value": "6+", "label": "Años de experiencia" },
+      { "value": "8", "label": "Empresas y clientes" },
+      { "value": "10+", "label": "Industrias" },
+      { "value": "2", "label": "Países (USA y CO)" }
+    ]
+  },
+  "about": {
+    "eyebrow": "Perfil",
+    "heading": "Ingeniería full-stack, de punta a punta",
+    "paragraphs": [
+      "Soy Ingeniero de Software Full-Stack Senior con más de 6 años de experiencia comprobada en la industria de la tecnología. Me enfoco en el desarrollo web full-stack con JavaScript/TypeScript (React, Angular, Next.js, Node.js) en el frontend y Python (FastAPI, Flask, Django) y Node.js en el backend para APIs y aplicaciones web escalables.",
+      "He desarrollado software para clientes en USA y Colombia —desde microempresas, emprendedores y start-ups hasta compañías globales— en sectores como FinTech, IA, SaaS, bienes raíces, publicidad, EdTech, analítica, procesamiento de pagos y software empresarial.",
+      "Siempre estoy dispuesto a aprender nuevas tecnologías y asumir lo que un proyecto necesite para alcanzar la meta. Aporto fuertes habilidades de comunicación, resolución de problemas y colaboración, además de una mentalidad ágil en cada equipo."
+    ],
+    "focusHeading": "En qué me enfoco",
+    "focus": [
+      "Interfaces web responsivas y accesibles con React, Angular y Next.js",
+      "APIs y servicios robustos con Python y Node.js",
+      "Nube, Docker y CI/CD en AWS, GCP y Azure",
+      "Dashboards con datos, analítica e integraciones",
+      "Rendimiento, refactorización y mantenibilidad a largo plazo"
+    ],
+    "softSkills": ["Comunicación", "Resolución de problemas", "Colaboración", "Mentalidad ágil", "Pensamiento analítico"],
+    "languagesHeading": "Idiomas",
+    "languages": [
+      { "name": "Español", "level": "Nativo" },
+      { "name": "Inglés", "level": "C1 — Avanzado" }
+    ]
+  },
+  "skills": {
+    "eyebrow": "Habilidades",
+    "heading": "Herramientas y tecnologías",
+    "intro": "Un conjunto de herramientas full-stack pragmático, refinado en entornos de producto, empresariales y start-ups.",
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Bases de datos",
+      "cloud": "Nube y DevOps",
+      "testing": "Pruebas",
+      "tools": "Herramientas"
+    }
+  },
+  "experience": {
+    "eyebrow": "Experiencia",
+    "heading": "Dónde he trabajado",
+    "present": "Actualidad",
+    "roles": {
+      "billtrust": {
+        "title": "Ingeniero de Software",
+        "location": "Colombia (Remoto) · Tiempo completo",
+        "summary": "Construí un módulo de reportes analíticos que ofrece una visión robusta del rendimiento del procesamiento de pagos mediante dashboards interactivos y métricas clave como Volumen de Sobres y Pagos Procesados.",
+        "highlights": [
+          "Desarrollé y mejoré dashboards interactivos para métricas clave de procesamiento de pagos",
+          "Creé capacidades de drill-down para coincidencias de sobres e ítems en la UI",
+          "Integré bases de datos y almacenamiento con middleware para tareas asíncronas en segundo plano",
+          "Refactoricé y optimicé código de frontend y backend para mejorar rendimiento y mantenibilidad"
+        ]
+      },
+      "capitol-ai": {
+        "title": "Ingeniero de Software",
+        "location": "Colombia (Remoto) · Tiempo completo",
+        "summary": "Contribuí a Capitol.ai, una plataforma de creatividad impulsada por IA que ayuda a artistas, escritores y marketers a generar ideas, crear contenido y agilizar su flujo creativo.",
+        "highlights": [
+          "Desarrollé e integré la funcionalidad de impresión de historias/documentos en la UI y el backend de IA",
+          "Identifiqué y corregí errores en la UI y los servicios backend de IA",
+          "Refactoricé el código para mejorar el rendimiento y la mantenibilidad",
+          "Mejoré la responsividad y usabilidad de la UI en distintos dispositivos y navegadores"
+        ]
+      },
+      "olive-tree": {
+        "title": "Ingeniero de Software",
+        "location": "Colombia (Remoto) · Tiempo completo",
+        "summary": "Desarrollé y mantuve un portal/consola de bienes raíces para brokers multi-cliente, enfocado en la autogeneración de documentos legales, financieros y de marketing como memorandos de oferta y paquetes de negociación.",
+        "highlights": [
+          "Construí un módulo para recolectar datos de propiedades e incrustarlos en archivos autogenerados",
+          "Desarrollé y mantuve una librería de componentes compartida para las necesidades de la empresa",
+          "Optimicé la infraestructura y los procesos de CI/CD de la empresa",
+          "Implementé nuevas funcionalidades para agilizar las transacciones de brokers y patrocinadores"
+        ]
+      },
+      "epam": {
+        "title": "Ingeniero de Software",
+        "location": "Colombia (Remoto) · Tiempo completo",
+        "summary": "Lideré dos migraciones exitosas de aplicaciones empresariales internas para modernizar el stack tecnológico y la infraestructura del cliente, trabajando entre backend Node.js y frontends en React/Angular.",
+        "highlights": [
+          "Migré dos aplicaciones internas desde tecnologías legadas",
+          "Migré bases de datos y endpoints de API con Snowflake y SAP HANA",
+          "Mejoré la infraestructura y el stack tecnológico del cliente",
+          "Resolví numerosos errores y entregué mejoras en las aplicaciones"
+        ]
+      },
+      "perficient": {
+        "title": "Ingeniero de Software",
+        "location": "Colombia (Remoto) · Tiempo completo",
+        "summary": "Construí una consola de gestión de publicidad de sindicación para un cliente multinacional de IPG que permite gestionar audiencias, sindicar y generar reportes basados en datos.",
+        "highlights": [
+          "Lideré el módulo de sindicación para nuevas implementaciones y soporte",
+          "Traduje las necesidades del cliente en funcionalidades y asesoré al PO sobre UX",
+          "Migré los estilos a un nuevo look & feel con profundo conocimiento de CSS/SASS",
+          "Impulsé la visión técnica en las ceremonias ágiles para optimizar las necesidades del negocio"
+        ]
+      },
+      "sistecredito": {
+        "title": "Desarrollador de Software",
+        "location": "Medellín (Híbrido) · Tiempo completo",
+        "summary": "Trabajé en una pasarela de pagos frontend para clientes personas naturales y un sistema backend de recomendación de productos para una aplicación web de e-commerce.",
+        "highlights": [
+          "Construí y di soporte a una aplicación cliente de pasarela de pagos",
+          "Reduje costos integrando métodos de pago directamente, retirando una pasarela de terceros",
+          "Ayudé a crear el equipo backend de Python y servicios de recomendación de productos",
+          "Definí estándares y buenas prácticas de programación en Python"
+        ]
+      },
+      "educatic": {
+        "title": "Desarrollador de Software",
+        "location": "Medellín (Híbrido) · Contratista",
+        "summary": "Construí PLEYADES, una plataforma web que usa machine learning para predecir, identificar y analizar la deserción estudiantil en programas académicos, con visualización de datos y estadísticas.",
+        "highlights": [
+          "Implementé software para predecir la deserción estudiantil con modelos de ML",
+          "Desarrollé servicios de datos multi-base para procesar información académica",
+          "Desplegué, mantuve y di soporte a apps web y APIs en la infraestructura del cliente",
+          "Mejoré los procesos de despliegue de aplicaciones web en Python en distintos entornos"
+        ]
+      },
+      "freelance": {
+        "title": "Desarrollador de Software · Freelance",
+        "location": "Medellín (Híbrido) · Freelance",
+        "summary": "Entregué aplicaciones web y APIs para clientes del sector académico, construyendo módulos de gestión curricular e implementando arquitecturas MEVN/MERN.",
+        "highlights": [
+          "Desarrollé una app de gestión curricular: calendario académico, configuración y administración",
+          "Implementé arquitecturas MEVN y MERN para proyectos del departamento de informática",
+          "Mantuve modelos de bases de datos relacionales y lógicos en Oracle Data Modeler",
+          "Di soporte a múltiples aplicaciones para usuarios del ámbito académico"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Proyectos",
+    "heading": "Trabajo destacado",
+    "intro": "Casos de estudio seleccionados de trabajo en producción en FinTech, IA, bienes raíces, publicidad y analítica.",
+    "items": {
+      "payment-analytics": {
+        "title": "Dashboard de Analítica de Pagos",
+        "industries": ["FinTech", "Procesamiento de Pagos", "Analítica"],
+        "blurb": "Un módulo de reportes analíticos que muestra el rendimiento del procesamiento de pagos mediante dashboards interactivos y métricas clave, con drill-downs y exportación a PDF/CSV/XLS.",
+        "highlights": [
+          "Dashboards interactivos de Volumen de Sobres y Pagos Procesados",
+          "Drill-down en coincidencias de sobres e ítems",
+          "Tareas asíncronas en segundo plano con Snowflake y MongoDB"
+        ]
+      },
+      "ai-creativity": {
+        "title": "Plataforma de Creatividad con IA",
+        "industries": ["IA", "SaaS"],
+        "blurb": "Una plataforma impulsada por IA que ayuda a profesionales creativos a generar ideas, crear contenido y mejorar su productividad, con herramientas de documentos en tiempo real.",
+        "highlights": [
+          "Impresión de historias/documentos en la UI y el backend de IA",
+          "Funciones en tiempo real sobre WebSockets",
+          "Mejoras de rendimiento y responsividad"
+        ]
+      },
+      "real-estate": {
+        "title": "Plataforma de Automatización Inmobiliaria",
+        "industries": ["Bienes Raíces", "Software Empresarial"],
+        "blurb": "Una consola de brokers multi-cliente que autogenera documentos legales, financieros y de marketing —memorandos de oferta, paquetes de negociación y más.",
+        "highlights": [
+          "Recolección de datos de propiedades incrustada en archivos generados",
+          "Librería de componentes compartida para la plataforma",
+          "Infraestructura y CI/CD optimizados en GCP con Pulumi"
+        ]
+      },
+      "enterprise-migration": {
+        "title": "Migraciones de Apps Empresariales",
+        "industries": ["Software Empresarial", "Analítica"],
+        "blurb": "Dos migraciones exitosas de aplicaciones empresariales internas, modernizando el stack tecnológico entre servicios Node.js y frontends en React/Angular.",
+        "highlights": [
+          "Migración de bases de datos y APIs con Snowflake y SAP HANA",
+          "Modernización de apps legadas a NodeTS y Angular",
+          "Mejora de infraestructura y flujos de trabajo"
+        ]
+      },
+      "advertising-console": {
+        "title": "Consola de Gestión Publicitaria",
+        "industries": ["Publicidad", "Analítica"],
+        "blurb": "Una consola de publicidad de sindicación para un cliente multinacional que permite gestionar audiencias, sindicar y generar reportes basados en datos.",
+        "highlights": [
+          "Lideré el módulo de sindicación de punta a punta",
+          "Visualizaciones de datos con D3.js",
+          "Gestión de estado con NgRx y RxJS"
+        ]
+      },
+      "payment-gateway": {
+        "title": "Pasarela de Pagos y Recomendaciones",
+        "industries": ["FinTech", "E-commerce"],
+        "blurb": "Una pasarela de pagos frontend para clientes personas naturales más un sistema backend de recomendación de productos para una aplicación de e-commerce.",
+        "highlights": [
+          "Integración directa de métodos de pago, retirando una pasarela de terceros",
+          "Servicios de datos de recomendación de productos en Python",
+          "Definición de estándares backend para un nuevo equipo Python"
+        ]
+      },
+      "dropout-prediction": {
+        "title": "Predicción de Deserción Estudiantil (PLEYADES)",
+        "industries": ["EdTech", "IA", "Analítica"],
+        "blurb": "Una plataforma web que usa machine learning para predecir, identificar y analizar la deserción estudiantil en programas académicos, con rica visualización de datos.",
+        "highlights": [
+          "Modelos de predicción de deserción con Scikit-learn y Pandas",
+          "Servicios de datos multi-base para información académica",
+          "Estadísticas y visualizaciones interactivas con Plotly"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "heading": "Construyamos algo",
+    "intro": "Estoy abierto a roles senior full-stack y a colaboraciones interesantes. La forma más rápida de contactarme es por correo —o conéctate en cualquiera de las plataformas a continuación.",
+    "emailCta": "Envíame un correo"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "builtWith": "Hecho con Astro y Tailwind CSS."
+  }
+}
