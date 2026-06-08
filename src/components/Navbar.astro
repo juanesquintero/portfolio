@@ -1,0 +1,151 @@
+---
+import type { PortfolioContent } from '../data/types';
+
+interface Props {
+  content: PortfolioContent;
+}
+
+const { content } = Astro.props;
+const { copy, locale, site } = content;
+const nav = copy.nav;
+
+const links = [
+  { href: '#about', label: nav.about },
+  { href: '#skills', label: nav.skills },
+  { href: '#experience', label: nav.experience },
+  { href: '#projects', label: nav.projects },
+  { href: '#contact', label: nav.contact },
+];
+
+const enHref = '/';
+const esHref = '/es/';
+const homeHref = locale === 'es' ? esHref : enHref;
+---
+
+<header
+  id="navbar"
+  class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300"
+>
+  <nav class="container-content flex h-16 items-center justify-between gap-4" aria-label="Primary">
+    <a href={homeHref} class="group flex items-center gap-2 font-bold text-white" aria-label={site.name}>
+      <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-500/15 text-accent-300 ring-1 ring-accent-500/30 transition-colors group-hover:bg-accent-500/25">
+        JQ
+      </span>
+      <span class="hidden sm:inline">{site.name}</span>
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="hidden items-center gap-1 md:flex">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:text-white"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="flex items-center gap-2">
+      <!-- Language toggle -->
+      <div
+        class="flex items-center rounded-lg border border-surface-border bg-surface/60 p-0.5 text-xs font-semibold"
+        role="group"
+        aria-label="Language"
+      >
+        <a
+          href={enHref}
+          aria-current={locale === 'en' ? 'true' : undefined}
+          class:list={[
+            'rounded-md px-2.5 py-1 transition-colors',
+            locale === 'en' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-white',
+          ]}>{copy.langToggle.en}</a
+        >
+        <a
+          href={esHref}
+          aria-current={locale === 'es' ? 'true' : undefined}
+          class:list={[
+            'rounded-md px-2.5 py-1 transition-colors',
+            locale === 'es' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-white',
+          ]}>{copy.langToggle.es}</a
+        >
+      </div>
+
+      <a href={site.cvPath} download class="btn btn-primary hidden px-4 py-2 text-xs sm:inline-flex">
+        {nav.downloadCv}
+      </a>
+
+      <!-- Mobile menu button -->
+      <button
+        id="menu-toggle"
+        type="button"
+        class="flex h-10 w-10 items-center justify-center rounded-lg border border-surface-border bg-surface/60 text-ink md:hidden"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-surface-border bg-bg-soft/95 backdrop-blur md:hidden"
+  >
+    <ul class="container-content flex flex-col gap-1 py-4">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="block rounded-lg px-3 py-2.5 text-base font-medium text-ink-muted hover:bg-surface hover:text-white"
+              data-mobile-link
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a href={site.cvPath} download class="btn btn-primary mt-2 w-full">{nav.downloadCv}</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const nav = document.getElementById('navbar');
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  // Frosted background once scrolled
+  const onScroll = () => {
+    if (!nav) return;
+    if (window.scrollY > 12) {
+      nav.classList.add('border-surface-border', 'bg-bg-soft/80', 'backdrop-blur');
+    } else {
+      nav.classList.remove('border-surface-border', 'bg-bg-soft/80', 'backdrop-blur');
+    }
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Mobile menu open/close
+  const closeMenu = () => {
+    menu?.classList.add('hidden');
+    toggle?.setAttribute('aria-expanded', 'false');
+  };
+  toggle?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  document.querySelectorAll('[data-mobile-link]').forEach((l) => l.addEventListener('click', closeMenu));
+</script>

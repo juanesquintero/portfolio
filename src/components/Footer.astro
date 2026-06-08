@@ -1,0 +1,26 @@
+---
+import type { PortfolioContent } from '../data/types';
+import SocialLinks from './SocialLinks.astro';
+
+interface Props {
+  content: PortfolioContent;
+}
+
+const { content } = Astro.props;
+const { site } = content;
+const copy = content.copy.footer;
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-surface-border py-10">
+  <div class="container-content flex flex-col items-center justify-between gap-6 sm:flex-row">
+    <div class="text-center sm:text-left">
+      <p class="font-semibold text-white">{site.name}</p>
+      <p class="mt-1 text-sm text-ink-faint">
+        © {year} {site.name}. {copy.rights}
+      </p>
+      <p class="mt-1 text-xs text-ink-faint">{copy.builtWith}</p>
+    </div>
+    <SocialLinks links={site.socials} />
+  </div>
+</footer>

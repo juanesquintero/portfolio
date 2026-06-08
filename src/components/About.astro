@@ -1,0 +1,63 @@
+---
+import type { PortfolioContent } from '../data/types';
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+  content: PortfolioContent;
+}
+
+const { content } = Astro.props;
+const about = content.copy.about;
+---
+
+<section id="about" class="section">
+  <div class="container-content">
+    <SectionHeading eyebrow={about.eyebrow} heading={about.heading} />
+
+    <div class="grid gap-10 lg:grid-cols-5">
+      <div class="reveal space-y-5 text-base leading-relaxed text-ink-muted lg:col-span-3">
+        {about.paragraphs.map((p) => <p>{p}</p>)}
+
+        <div class="flex flex-wrap gap-2 pt-2">
+          {about.softSkills.map((skill) => <span class="chip chip-accent">{skill}</span>)}
+        </div>
+      </div>
+
+      <div class="reveal space-y-6 lg:col-span-2" style="--reveal-delay: 120ms">
+        <div class="card p-6">
+          <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-accent-300">
+            {about.focusHeading}
+          </h3>
+          <ul class="space-y-3">
+            {
+              about.focus.map((item) => (
+                <li class="flex gap-3 text-sm text-ink-muted">
+                  <svg class="mt-0.5 h-4 w-4 flex-none text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-accent-300">
+            {about.languagesHeading}
+          </h3>
+          <ul class="space-y-3">
+            {
+              about.languages.map((lang) => (
+                <li class="flex items-center justify-between text-sm">
+                  <span class="font-medium text-white">{lang.name}</span>
+                  <span class="text-ink-muted">{lang.level}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
