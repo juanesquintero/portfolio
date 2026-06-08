@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Juan Quintero — Ingeniero de Software Full-Stack Senior",
-    "description": "Ingeniero de Software Full-Stack Senior con más de 6 años creando aplicaciones web escalables y de alto rendimiento, APIs y sistemas en la nube con JavaScript/TypeScript y Python."
+    "description": "Ingeniero de Software Full-Stack Senior con más de {{years}} años creando aplicaciones web escalables y de alto rendimiento, APIs y sistemas en la nube con JavaScript/TypeScript y Python."
   },
   "langToggle": {
     "en": "EN",
@@ -23,7 +23,7 @@
     "ctaContact": "Contáctame",
     "ctaCv": "Descargar CV",
     "stats": [
-      { "value": "6+", "label": "Años de experiencia" },
+      { "value": "{{years}}+", "label": "Años de experiencia" },
       { "value": "8", "label": "Empresas y clientes" },
       { "value": "10+", "label": "Industrias" },
       { "value": "2", "label": "Países (USA y CO)" }
@@ -33,7 +33,7 @@
     "eyebrow": "Perfil",
     "heading": "Ingeniería full-stack, de punta a punta",
     "paragraphs": [
-      "Soy Ingeniero de Software Full-Stack Senior con más de 6 años de experiencia comprobada en la industria de la tecnología. Me enfoco en el desarrollo web full-stack con JavaScript/TypeScript (React, Angular, Next.js, Node.js) en el frontend y Python (FastAPI, Flask, Django) y Node.js en el backend para APIs y aplicaciones web escalables.",
+      "Soy Ingeniero de Software Full-Stack Senior con más de {{years}} años de experiencia comprobada en la industria de la tecnología. Me enfoco en el desarrollo web full-stack con JavaScript/TypeScript (React, Angular, Next.js, Node.js) en el frontend y Python (FastAPI, Flask, Django) y Node.js en el backend para APIs y aplicaciones web escalables.",
       "He desarrollado software para clientes en USA y Colombia —desde microempresas, emprendedores y start-ups hasta compañías globales— en sectores como FinTech, IA, SaaS, bienes raíces, publicidad, EdTech, analítica, procesamiento de pagos y software empresarial.",
       "Siempre estoy dispuesto a aprender nuevas tecnologías y asumir lo que un proyecto necesite para alcanzar la meta. Aporto fuertes habilidades de comunicación, resolución de problemas y colaboración, además de una mentalidad ágil en cada equipo."
     ],

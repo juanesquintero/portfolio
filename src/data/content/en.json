@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Juan Quintero — Senior Full-Stack Software Engineer",
-    "description": "Senior Full-Stack Software Engineer with 6+ years building scalable, high-performance web applications, APIs and cloud systems with JavaScript/TypeScript and Python."
+    "description": "Senior Full-Stack Software Engineer with {{years}}+ years building scalable, high-performance web applications, APIs and cloud systems with JavaScript/TypeScript and Python."
   },
   "langToggle": {
     "en": "EN",
@@ -23,7 +23,7 @@
     "ctaContact": "Contact Me",
     "ctaCv": "Download CV",
     "stats": [
-      { "value": "6+", "label": "Years of experience" },
+      { "value": "{{years}}+", "label": "Years of experience" },
       { "value": "8", "label": "Companies & clients" },
       { "value": "10+", "label": "Industries shipped" },
       { "value": "2", "label": "Countries (USA & CO)" }
@@ -33,7 +33,7 @@
     "eyebrow": "About",
     "heading": "Full-stack engineering, end to end",
     "paragraphs": [
-      "I'm a Senior Full-Stack Software Engineer with 6+ years of time-served experience across the technology industry. I focus on web full-stack development with JavaScript/TypeScript (React, Angular, Next.js, Node.js) on the frontend and Python (FastAPI, Flask, Django) and Node.js on the backend for APIs and scalable web applications.",
+      "I'm a Senior Full-Stack Software Engineer with {{years}}+ years of time-served experience across the technology industry. I focus on web full-stack development with JavaScript/TypeScript (React, Angular, Next.js, Node.js) on the frontend and Python (FastAPI, Flask, Django) and Node.js on the backend for APIs and scalable web applications.",
       "I've delivered software for clients in the USA and Colombia — from micro-businesses, entrepreneurs and start-ups to global companies — across FinTech, AI, SaaS, Real Estate, Advertising, EdTech, Analytics, Payment Processing and Enterprise Software.",
       "I'm always eager to learn new technologies and take on whatever a project needs to reach the goal. I bring strong communication, problem-solving and collaboration skills, and an agile mindset to every team I join."
     ],

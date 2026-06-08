@@ -10,9 +10,28 @@ import { site } from './site';
 import en from './content/en.json';
 import es from './content/es.json';
 
-const dictionaries: Record<Locale, Content> = {
+const rawDictionaries: Record<Locale, Content> = {
   en: en as Content,
   es: es as Content,
+};
+
+function getYearsOfExperience(): number {
+  const earliest = site.experience
+    .map((e) => e.start)
+    .sort()[0]; // e.g. "2018-08"
+  const startYear = Number(earliest.split('-')[0]);
+  return new Date().getFullYear() - startYear;
+}
+
+function injectYears(content: Content): Content {
+  const years = String(getYearsOfExperience());
+  const json = JSON.stringify(content).replaceAll('{{years}}', years);
+  return JSON.parse(json) as Content;
+}
+
+const dictionaries: Record<Locale, Content> = {
+  en: injectYears(rawDictionaries.en),
+  es: injectYears(rawDictionaries.es),
 };
 
 export const locales: Locale[] = ['en', 'es'];
