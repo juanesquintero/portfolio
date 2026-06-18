@@ -1,6 +1,7 @@
 ---
 import type { PortfolioContent } from '../data/types';
 import SocialLinks from './SocialLinks.astro';
+import ToptalBadge from './ToptalBadge.astro';
 
 interface Props {
   content: PortfolioContent;
@@ -29,6 +30,7 @@ const hero = copy.hero;
   </div>
 
   <div class="container-content">
+    <div class="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
     <div class="max-w-3xl">
       <p class="reveal mb-4 inline-flex items-center gap-2 rounded-full border border-surface-border bg-surface/60 px-4 py-1.5 text-sm text-ink-muted">
         <span class="relative flex h-2 w-2">
@@ -65,6 +67,9 @@ const hero = copy.hero;
       <div class="reveal mt-8" style="--reveal-delay: 300ms">
         <SocialLinks links={site.socials} />
       </div>
+    </div>
+
+      <ToptalBadge class="reveal mx-auto shrink-0 lg:mx-0 lg:mt-2" />
     </div>
 
     <!-- Stats -->
