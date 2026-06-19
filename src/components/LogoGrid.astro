@@ -1,0 +1,53 @@
+---
+import type { TechItem } from '../data/types';
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+  id: string;
+  eyebrow: string;
+  heading: string;
+  intro?: string;
+  items: TechItem[];
+  /** asset folder for the logos, e.g. "/tech" or "/tools" */
+  basePath: string;
+  /** extra classes for section spacing (used to make sections flow continuously) */
+  class?: string;
+}
+
+const { id, eyebrow, heading, intro, items, basePath, class: className } = Astro.props;
+---
+
+<section id={id} class:list={['section', className]}>
+  <div class="container-content">
+    <SectionHeading eyebrow={eyebrow} heading={heading} intro={intro} />
+
+    <ul
+      class="grid grid-cols-3 gap-3 sm:grid-cols-4 sm:gap-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7"
+      role="list"
+    >
+      {
+        items.map((item, i) => (
+          <li class="reveal" style={`--reveal-delay: ${Math.min(i, 12) * 40}ms`}>
+            <div
+              class="group flex h-full flex-col items-center justify-center gap-3 rounded-xl border border-surface-border bg-bg-elevated p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent-500/40 hover:shadow-glow dark:border-white/10 dark:bg-white/[0.05] dark:hover:bg-white/[0.08]"
+              title={item.name}
+            >
+              <img
+                src={`${basePath}/${item.slug}.svg`}
+                alt={`${item.name} logo`}
+                width="40"
+                height="40"
+                loading="lazy"
+                decoding="async"
+                class="h-10 w-10 transition-transform duration-300 group-hover:scale-110"
+              />
+              <span class="text-center text-xs font-medium text-ink-muted transition-colors group-hover:text-ink-strong sm:text-sm">
+                {item.name}
+              </span>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

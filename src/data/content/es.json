@@ -68,7 +68,12 @@
   "techStack": {
     "eyebrow": "Stack Tecnológico",
     "heading": "Tecnologías con las que trabajo",
-    "intro": "Los lenguajes, frameworks y herramientas que utilizo para diseñar, construir y lanzar productos de principio a fin."
+    "intro": "Los lenguajes, frameworks y bases de datos que utilizo, ordenados por profundidad de experiencia."
+  },
+  "tools": {
+    "eyebrow": "Herramientas",
+    "heading": "Herramientas y plataformas",
+    "intro": "El día a día — control de versiones, nube, CI/CD, pruebas y editores — detrás de construir y operar el trabajo."
   },
   "experience": {
     "eyebrow": "Experiencia",

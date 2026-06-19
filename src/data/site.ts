@@ -48,30 +48,54 @@ export const site: SiteData = {
   ],
 
   /**
-   * Core tech stack rendered as a logo grid in the Tech Stack section.
-   * `slug` maps to `/public/tech/<slug>.svg` (logos sourced from Devicon, MIT).
+   * Core technologies, ordered by depth of experience. Rendered as a logo
+   * grid in the Tech Stack section. `slug` maps to `/public/tech/<slug>.svg`
+   * (logos sourced from Devicon, MIT).
    */
   techStack: [
     { name: 'JavaScript', slug: 'javascript' },
     { name: 'TypeScript', slug: 'typescript' },
-    { name: 'HTML5', slug: 'html5' },
-    { name: 'CSS3', slug: 'css3' },
-    { name: 'React', slug: 'react' },
-    { name: 'Angular', slug: 'angular' },
-    { name: 'Next.js', slug: 'nextjs' },
-    { name: 'Vue.js', slug: 'vuejs' },
-    { name: 'Astro', slug: 'astro' },
-    { name: 'Tailwind CSS', slug: 'tailwindcss' },
-    { name: 'Node.js', slug: 'nodejs' },
     { name: 'Python', slug: 'python' },
     { name: 'FastAPI', slug: 'fastapi' },
+    { name: 'React', slug: 'react' },
+    { name: 'Angular', slug: 'angular' },
+    { name: 'Node.js', slug: 'nodejs' },
+    { name: 'Next.js', slug: 'nextjs' },
+    { name: 'Nest.js', slug: 'nestjs' },
+    { name: 'Vue.js', slug: 'vuejs' },
     { name: 'Django', slug: 'django' },
     { name: 'GraphQL', slug: 'graphql' },
-    { name: 'Nest.js', slug: 'nestjs' },
+    { name: 'Tailwind CSS', slug: 'tailwindcss' },
+    { name: 'HTML5', slug: 'html5' },
+    { name: 'CSS3', slug: 'css3' },
+    { name: 'Astro', slug: 'astro' },
     { name: 'PostgreSQL', slug: 'postgresql' },
     { name: 'MongoDB', slug: 'mongodb' },
-    { name: 'Docker', slug: 'docker' },
+    { name: 'MySQL', slug: 'mysql' },
+  ],
+
+  /**
+   * Day-to-day tooling (version control, cloud, CI/CD, testing, editors).
+   * Rendered as a logo grid in the Tools section. `slug` maps to
+   * `/public/tools/<slug>.svg` (logos sourced from Devicon, MIT).
+   */
+  tools: [
     { name: 'Git', slug: 'git' },
+    { name: 'GitLab', slug: 'gitlab' },
+    { name: 'Docker', slug: 'docker' },
+    { name: 'Google Cloud', slug: 'gcp' },
+    { name: 'Azure', slug: 'azure' },
+    { name: 'Jenkins', slug: 'jenkins' },
+    { name: 'Cloudflare', slug: 'cloudflare' },
+    { name: 'NGINX', slug: 'nginx' },
+    { name: 'Jest', slug: 'jest' },
+    { name: 'Cypress', slug: 'cypress' },
+    { name: 'Pytest', slug: 'pytest' },
+    { name: 'Postman', slug: 'postman' },
+    { name: 'Jira', slug: 'jira' },
+    { name: 'Storybook', slug: 'storybook' },
+    { name: 'VS Code', slug: 'vscode' },
+    { name: 'PyCharm', slug: 'pycharm' },
   ],
 
   experience: [
