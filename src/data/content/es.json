@@ -75,6 +75,26 @@
     "heading": "Herramientas y plataformas",
     "intro": "El día a día — control de versiones, nube, CI/CD, pruebas y editores — detrás de construir y operar el trabajo."
   },
+  "companies": {
+    "eyebrow": "Empresas",
+    "heading": "Empresas con las que he trabajado",
+    "intro": "Empleadores, clientes y socios para quienes he desarrollado software. Haz clic en un logo para ver más.",
+    "visit": "Visitar sitio web",
+    "items": {
+      "billtrust": { "description": "Billtrust es una fintech B2B de Estados Unidos que automatiza el ciclo order-to-cash. Su plataforma en la nube agiliza la facturación, los pagos, la aplicación de efectivo y las cobranzas, ayudando a los equipos financieros a cobrar más rápido y reducir el trabajo manual." },
+      "capitol-ai": { "description": "Capitol AI es una plataforma impulsada por IA para la creación de contenido y la creatividad. Ayuda a escritores, marketers y analistas a generar, estructurar y producir documentos, informes e historias extensos con modelos de lenguaje." },
+      "olive-tree": { "description": "Olive Tree Holdings es una firma de inversión en bienes raíces enfocada en propiedad multifamiliar y comercial. Adquiere, administra y mejora comunidades, combinando operaciones con tecnología para brokers, patrocinadores y residentes." },
+      "epam": { "description": "EPAM Systems es una consultora global de ingeniería de software y producto digital. Diseña y construye productos, plataformas y sistemas en la nube a gran escala para empresas de múltiples industrias, combinando ingeniería, diseño y consultoría." },
+      "perficient": { "description": "Perficient es una consultora digital global que ayuda a las empresas a modernizarse. Entrega experiencias digitales, plataformas de datos y nube e ingeniería de producto para clientes de finanzas, salud, retail y más." },
+      "sistecredito": { "description": "SisteCrédito es una fintech colombiana de crédito en punto de venta (compra ahora, paga después). Permite a los compradores financiar compras directamente en los comercios, ampliando el acceso al crédito en el retail de Latinoamérica." },
+      "educatic": { "description": "Educatic es una empresa EdTech que construye herramientas de datos y analítica para instituciones académicas. Sus plataformas aplican machine learning a retos como predecir y reducir la deserción estudiantil, con visualizaciones y estadísticas." },
+      "kinesso": { "description": "Kinesso es la compañía de tecnología de marketing y datos de IPG, que conecta medios, datos y tecnología en la red de agencias. Matterkind, del mismo grupo, se enfoca en la activación de medios direccionables." },
+      "marathon-oil": { "description": "Marathon Oil fue una compañía estadounidense independiente de exploración y producción de petróleo y gas. En 2024 fue adquirida por ConocoPhillips. (Marathon Petroleum es la compañía de refinación y comercialización que cotiza por separado.)" },
+      "taxalign": { "description": "TaxAlign es un proveedor de servicios fiscales y contables del Reino Unido, que ayuda a personas y empresas con declaraciones, cumplimiento y reportes financieros." },
+      "cielo-travel": { "description": "Cielo Travel es una compañía de viajes que construye experiencias de reserva y gestión de viajes, ayudando a los viajeros a planificar, reservar y gestionar sus itinerarios de principio a fin." },
+      "evidenza": { "description": "Evidenza es una compañía de datos e IA que construye productos inteligentes basados en datos." }
+    }
+  },
   "experience": {
     "eyebrow": "Experiencia",
     "heading": "Dónde he trabajado",

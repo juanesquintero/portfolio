@@ -54,6 +54,26 @@ export interface TechItem {
   slug: string;
 }
 
+/** A related link shown in the company dialog. */
+export interface CompanyLink {
+  /** optional label; falls back to the localized "Visit website" */
+  label?: string;
+  url: string;
+}
+
+/** A company / client / provider for the logo wall. */
+export interface CompanyItem {
+  name: string;
+  /** maps to `/public/companies/<slug>.svg` (hosted logo / runtime fallback) */
+  slug: string;
+  /** domain used by the runtime logo service, e.g. "epam.com" */
+  domain?: string;
+  /** explicit logo image URLs, tried first (in order) in runtime mode */
+  logoUrls?: string[];
+  /** one or more related links shown in the company dialog */
+  links?: CompanyLink[];
+}
+
 export interface SiteData {
   name: string;
   email: string;
@@ -64,6 +84,7 @@ export interface SiteData {
   skillGroups: SkillGroupMeta[];
   techStack: TechItem[];
   tools: TechItem[];
+  companies: CompanyItem[];
   experience: ExperienceMeta[];
   projects: ProjectMeta[];
 }
@@ -122,6 +143,20 @@ export interface ToolsContent {
   intro: string;
 }
 
+export interface CompanyCopy {
+  description: string;
+}
+
+export interface CompaniesContent {
+  heading: string;
+  eyebrow: string;
+  intro: string;
+  /** "Visit website" link label shown in the company dialog */
+  visit: string;
+  /** copy keyed by CompanyItem.slug */
+  items: Record<string, CompanyCopy>;
+}
+
 export interface ExperienceCopy {
   title: string;
   location: string;
@@ -172,6 +207,7 @@ export interface Content {
   skills: SkillsContent;
   techStack: TechStackContent;
   tools: ToolsContent;
+  companies: CompaniesContent;
   experience: ExperienceContent;
   projects: ProjectsContent;
   contact: ContactContent;
