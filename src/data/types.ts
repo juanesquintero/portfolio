@@ -46,6 +46,14 @@ export interface SkillGroupMeta {
   items: string[];
 }
 
+/** One technology in the Tech Stack logo grid. */
+export interface TechItem {
+  /** display name, e.g. "Next.js" */
+  name: string;
+  /** maps to `/public/tech/<slug>.svg` */
+  slug: string;
+}
+
 export interface SiteData {
   name: string;
   email: string;
@@ -54,6 +62,7 @@ export interface SiteData {
   cvPath: string;
   socials: SocialLink[];
   skillGroups: SkillGroupMeta[];
+  techStack: TechItem[];
   experience: ExperienceMeta[];
   projects: ProjectMeta[];
 }
@@ -98,6 +107,12 @@ export interface SkillsContent {
   intro: string;
   /** group title keyed by SkillGroupMeta.id */
   groups: Record<string, string>;
+}
+
+export interface TechStackContent {
+  heading: string;
+  eyebrow: string;
+  intro: string;
 }
 
 export interface ExperienceCopy {
@@ -148,6 +163,7 @@ export interface Content {
   hero: HeroContent;
   about: AboutContent;
   skills: SkillsContent;
+  techStack: TechStackContent;
   experience: ExperienceContent;
   projects: ProjectsContent;
   contact: ContactContent;
