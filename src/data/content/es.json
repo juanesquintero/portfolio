@@ -65,6 +65,11 @@
       "tools": "Herramientas"
     }
   },
+  "techStack": {
+    "eyebrow": "Stack Tecnológico",
+    "heading": "Tecnologías con las que trabajo",
+    "intro": "Los lenguajes, frameworks y herramientas que utilizo para diseñar, construir y lanzar productos de principio a fin."
+  },
   "experience": {
     "eyebrow": "Experiencia",
     "heading": "Dónde he trabajado",

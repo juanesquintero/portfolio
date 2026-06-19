@@ -47,6 +47,33 @@ export const site: SiteData = {
     },
   ],
 
+  /**
+   * Core tech stack rendered as a logo grid in the Tech Stack section.
+   * `slug` maps to `/public/tech/<slug>.svg` (logos sourced from Devicon, MIT).
+   */
+  techStack: [
+    { name: 'JavaScript', slug: 'javascript' },
+    { name: 'TypeScript', slug: 'typescript' },
+    { name: 'HTML5', slug: 'html5' },
+    { name: 'CSS3', slug: 'css3' },
+    { name: 'React', slug: 'react' },
+    { name: 'Angular', slug: 'angular' },
+    { name: 'Next.js', slug: 'nextjs' },
+    { name: 'Vue.js', slug: 'vuejs' },
+    { name: 'Astro', slug: 'astro' },
+    { name: 'Tailwind CSS', slug: 'tailwindcss' },
+    { name: 'Node.js', slug: 'nodejs' },
+    { name: 'Python', slug: 'python' },
+    { name: 'FastAPI', slug: 'fastapi' },
+    { name: 'Django', slug: 'django' },
+    { name: 'GraphQL', slug: 'graphql' },
+    { name: 'Nest.js', slug: 'nestjs' },
+    { name: 'PostgreSQL', slug: 'postgresql' },
+    { name: 'MongoDB', slug: 'mongodb' },
+    { name: 'Docker', slug: 'docker' },
+    { name: 'Git', slug: 'git' },
+  ],
+
   experience: [
     {
       id: 'billtrust',
