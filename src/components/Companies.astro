@@ -27,7 +27,7 @@ function logoSrcs(company: CompanyItem): string[] {
   if (source !== 'runtime') return [hosted];
 
   const srcs: string[] = [];
-  if (company.logoUrl) srcs.push(company.logoUrl);
+  if (company.logoUrls) srcs.push(...company.logoUrls);
   if (company.domain) {
     srcs.push(`https://logo.clearbit.com/${company.domain}?size=128`);
     srcs.push(`https://www.google.com/s2/favicons?domain=${company.domain}&sz=128`);

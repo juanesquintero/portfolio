@@ -108,7 +108,16 @@ export const site: SiteData = {
   companies: [
     { name: 'Billtrust', slug: 'billtrust', domain: 'billtrust.com', links: [{ url: 'https://www.billtrust.com' }] },
     { name: 'Capitol AI', slug: 'capitol-ai', domain: 'capitol.ai', links: [{ url: 'https://capitol.ai' }] },
-    { name: 'Olive Tree Holdings', slug: 'olive-tree', domain: 'olivetreeholdings.com' },
+    {
+      name: 'Olive Tree Holdings',
+      slug: 'olive-tree',
+      domain: 'olivetreeholdings.com',
+      logoUrls: [
+        'https://media.licdn.com/dms/image/v2/D560BAQGyOKR766mjZg/company-logo_200_200/company-logo_200_200/0/1699477252825/olive_tree_holdings_logo?e=2147483647&v=beta&t=WiuzSoqiyAw-LiwmZJW_tUu1Gj9AA9-hJkAwwZvKjio',
+        'https://media.glassdoor.com/sqll/1829490/olive-tree-holdings-squareLogo-1658357391465.png',
+      ],
+      links: [{ url: 'https://www.olivetreeholdings.com/' }],
+    },
     { name: 'EPAM Systems', slug: 'epam', domain: 'epam.com', links: [{ url: 'https://www.epam.com/' }] },
     { name: 'Perficient', slug: 'perficient', domain: 'perficient.com', links: [{ url: 'https://www.perficient.com/' }] },
     { name: 'SisteCrédito', slug: 'sistecredito', domain: 'sistecredito.com', links: [{ url: 'https://www.sistecredito.com/' }] },
@@ -116,7 +125,7 @@ export const site: SiteData = {
       name: 'Educatic',
       slug: 'educatic',
       domain: 'educatic.com.co',
-      logoUrl: 'https://aprende.educatic.com.co/cas/images/logos/aprende/logoLogin.png',
+      logoUrls: ['https://aprende.educatic.com.co/cas/images/logos/aprende/logoLogin.png'],
       links: [{ url: 'https://educatic.com.co' }],
     },
     {
@@ -132,7 +141,7 @@ export const site: SiteData = {
       name: 'Marathon Oil',
       slug: 'marathon-oil',
       domain: 'marathonoil.com',
-      logoUrl: 'https://www.marathonpetroleum.com/images/marathonpetroleum/logo.svg',
+      logoUrls: ['https://www.marathonpetroleum.com/images/marathonpetroleum/logo.svg'],
       links: [
         { label: 'ConocoPhillips', url: 'https://www.conocophillips.com/' },
         { label: 'Marathon Petroleum', url: 'https://www.marathonpetroleum.com/' },
