@@ -68,6 +68,8 @@ export interface CompanyItem {
   slug: string;
   /** domain used by the runtime logo service, e.g. "epam.com" */
   domain?: string;
+  /** explicit logo image URL (tried first in runtime mode) */
+  logoUrl?: string;
   /** one or more related links shown in the company dialog */
   links?: CompanyLink[];
 }

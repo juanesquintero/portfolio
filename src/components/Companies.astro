@@ -24,14 +24,16 @@ const source = import.meta.env.PUBLIC_COMPANY_LOGO_SOURCE === 'hosted' ? 'hosted
 /** Ordered list of logo URLs to try (first that loads wins). */
 function logoSrcs(company: CompanyItem): string[] {
   const hosted = `/companies/${company.slug}.svg`;
-  if (source === 'runtime' && company.domain) {
-    return [
-      `https://logo.clearbit.com/${company.domain}?size=128`,
-      `https://www.google.com/s2/favicons?domain=${company.domain}&sz=128`,
-      hosted,
-    ];
+  if (source !== 'runtime') return [hosted];
+
+  const srcs: string[] = [];
+  if (company.logoUrl) srcs.push(company.logoUrl);
+  if (company.domain) {
+    srcs.push(`https://logo.clearbit.com/${company.domain}?size=128`);
+    srcs.push(`https://www.google.com/s2/favicons?domain=${company.domain}&sz=128`);
   }
-  return [hosted];
+  srcs.push(hosted);
+  return srcs;
 }
 ---
 

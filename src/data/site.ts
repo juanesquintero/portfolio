@@ -116,6 +116,7 @@ export const site: SiteData = {
       name: 'Educatic',
       slug: 'educatic',
       domain: 'educatic.com.co',
+      logoUrl: 'https://aprende.educatic.com.co/cas/images/logos/aprende/logoLogin.png',
       links: [{ url: 'https://educatic.com.co' }],
     },
     {
@@ -131,6 +132,7 @@ export const site: SiteData = {
       name: 'Marathon Oil',
       slug: 'marathon-oil',
       domain: 'marathonoil.com',
+      logoUrl: 'https://www.marathonpetroleum.com/images/marathonpetroleum/logo.svg',
       links: [
         { label: 'ConocoPhillips', url: 'https://www.conocophillips.com/' },
         { label: 'Marathon Petroleum', url: 'https://www.marathonpetroleum.com/' },
