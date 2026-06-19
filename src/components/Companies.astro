@@ -15,12 +15,12 @@ const { companies } = content.site;
 /**
  * Logo source flag:
  *   PUBLIC_COMPANY_LOGO_SOURCE=runtime -> load each logo from a logo service
- *                                         (by company domain) at view time
+ *                                         (by company domain) at view time (default)
  *   PUBLIC_COMPANY_LOGO_SOURCE=hosted  -> self-hosted /public/companies/<slug>.svg
- * Default is "hosted". In runtime mode the hosted SVG is the onerror fallback,
- * so companies without a domain (or missing from the service) still render.
+ * In runtime mode the hosted SVG is the onerror fallback, so companies without
+ * a domain (or missing from the service) still render the monogram.
  */
-const source = import.meta.env.PUBLIC_COMPANY_LOGO_SOURCE === 'runtime' ? 'runtime' : 'hosted';
+const source = import.meta.env.PUBLIC_COMPANY_LOGO_SOURCE === 'hosted' ? 'hosted' : 'runtime';
 
 function logoFor(company: CompanyItem): { src: string; fallback: string | null } {
   const hosted = `/companies/${company.slug}.svg`;
