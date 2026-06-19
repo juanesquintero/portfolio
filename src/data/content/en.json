@@ -65,6 +65,11 @@
       "tools": "Tools"
     }
   },
+  "techStack": {
+    "eyebrow": "Tech Stack",
+    "heading": "Technologies I work with",
+    "intro": "The languages, frameworks and tools I reach for to design, build and ship products end to end."
+  },
   "experience": {
     "eyebrow": "Experience",
     "heading": "Where I've worked",
