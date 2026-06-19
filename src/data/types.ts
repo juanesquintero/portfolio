@@ -134,10 +134,18 @@ export interface ToolsContent {
   intro: string;
 }
 
+export interface CompanyCopy {
+  description: string;
+}
+
 export interface CompaniesContent {
   heading: string;
   eyebrow: string;
   intro: string;
+  /** "Visit website" link label shown in the company dialog */
+  visit: string;
+  /** copy keyed by CompanyItem.slug */
+  items: Record<string, CompanyCopy>;
 }
 
 export interface ExperienceCopy {

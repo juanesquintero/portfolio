@@ -78,7 +78,22 @@
   "companies": {
     "eyebrow": "Companies",
     "heading": "Companies I've worked with",
-    "intro": "Employers, clients and partners I've delivered software for."
+    "intro": "Employers, clients and partners I've delivered software for. Click any logo for more.",
+    "visit": "Visit website",
+    "items": {
+      "billtrust": { "description": "B2B order-to-cash software automating billing, invoicing and payments for finance teams." },
+      "capitol-ai": { "description": "AI-powered content and creativity platform for generating and producing long-form work." },
+      "olive-tree": { "description": "Real-estate investment and holdings firm managing multifamily and commercial property." },
+      "epam": { "description": "Global software engineering and digital product consultancy." },
+      "perficient": { "description": "Global digital consultancy delivering enterprise platforms and experiences." },
+      "sistecredito": { "description": "Colombian fintech offering point-of-sale installment credit (buy now, pay later)." },
+      "educatic": { "description": "EdTech building analytics and machine-learning tools for academic institutions." },
+      "kinesso": { "description": "IPG's marketing-technology and data agency connecting media, data and technology." },
+      "marathon-oil": { "description": "US independent oil and gas exploration and production company." },
+      "taxalign": { "description": "UK tax and accounting services firm." },
+      "cielo-travel": { "description": "Travel company delivering booking and trip-management experiences." },
+      "evidenza": { "description": "Data and AI company." }
+    }
   },
   "experience": {
     "eyebrow": "Experience",

@@ -78,7 +78,22 @@
   "companies": {
     "eyebrow": "Empresas",
     "heading": "Empresas con las que he trabajado",
-    "intro": "Empleadores, clientes y socios para quienes he desarrollado software."
+    "intro": "Empleadores, clientes y socios para quienes he desarrollado software. Haz clic en un logo para ver más.",
+    "visit": "Visitar sitio web",
+    "items": {
+      "billtrust": { "description": "Software B2B de order-to-cash que automatiza facturación, cobros y pagos para equipos financieros." },
+      "capitol-ai": { "description": "Plataforma de contenido y creatividad impulsada por IA para generar y producir trabajos extensos." },
+      "olive-tree": { "description": "Firma de inversión y holdings en bienes raíces, con propiedad multifamiliar y comercial." },
+      "epam": { "description": "Consultora global de ingeniería de software y producto digital." },
+      "perficient": { "description": "Consultora digital global que entrega plataformas y experiencias empresariales." },
+      "sistecredito": { "description": "Fintech colombiana de crédito en punto de venta (compra ahora, paga después)." },
+      "educatic": { "description": "EdTech que construye analítica y herramientas de machine learning para instituciones académicas." },
+      "kinesso": { "description": "Agencia de tecnología de marketing y datos de IPG que conecta medios, datos y tecnología." },
+      "marathon-oil": { "description": "Compañía estadounidense independiente de exploración y producción de petróleo y gas." },
+      "taxalign": { "description": "Firma de servicios fiscales y contables del Reino Unido." },
+      "cielo-travel": { "description": "Compañía de viajes que ofrece experiencias de reservas y gestión de viajes." },
+      "evidenza": { "description": "Compañía de datos e IA." }
+    }
   },
   "experience": {
     "eyebrow": "Experiencia",

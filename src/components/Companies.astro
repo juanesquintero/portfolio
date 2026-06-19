@@ -14,20 +14,24 @@ const { companies } = content.site;
 
 /**
  * Logo source flag:
- *   PUBLIC_COMPANY_LOGO_SOURCE=runtime -> load each logo from a logo service
- *                                         (by company domain) at view time (default)
- *   PUBLIC_COMPANY_LOGO_SOURCE=hosted  -> self-hosted /public/companies/<slug>.svg
- * In runtime mode the hosted SVG is the onerror fallback, so companies without
- * a domain (or missing from the service) still render the monogram.
+ *   PUBLIC_COMPANY_LOGO_SOURCE=runtime -> fetch real logos at view time (default)
+ *   PUBLIC_COMPANY_LOGO_SOURCE=hosted  -> always use self-hosted SVG monograms
+ * In runtime mode each <img> walks a fallback chain on error:
+ *   logo service -> the company's own site favicon -> self-hosted monogram.
  */
 const source = import.meta.env.PUBLIC_COMPANY_LOGO_SOURCE === 'hosted' ? 'hosted' : 'runtime';
 
-function logoFor(company: CompanyItem): { src: string; fallback: string | null } {
+/** Ordered list of logo URLs to try (first that loads wins). */
+function logoSrcs(company: CompanyItem): string[] {
   const hosted = `/companies/${company.slug}.svg`;
   if (source === 'runtime' && company.domain) {
-    return { src: `https://logo.clearbit.com/${company.domain}?size=128`, fallback: hosted };
+    return [
+      `https://logo.clearbit.com/${company.domain}?size=128`,
+      `https://www.google.com/s2/favicons?domain=${company.domain}&sz=128`,
+      hosted,
+    ];
   }
-  return { src: hosted, fallback: null };
+  return [hosted];
 }
 ---
 
@@ -38,31 +42,116 @@ function logoFor(company: CompanyItem): { src: string; fallback: string | null }
     <ul class="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-7" role="list">
       {
         companies.map((company, i) => {
-          const logo = logoFor(company);
+          const srcs = logoSrcs(company);
+          const description = copy.items[company.slug]?.description ?? '';
           return (
             <li class="reveal" style={`--reveal-delay: ${Math.min(i, 12) * 40}ms`}>
-              <div
-                class="group flex h-full flex-col items-center justify-center gap-3 rounded-xl border border-surface-border bg-bg-elevated p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent-500/40 hover:shadow-glow dark:border-white/10 dark:bg-white/[0.05] dark:hover:bg-white/[0.08]"
+              <button
+                type="button"
+                data-company
+                data-name={company.name}
+                data-desc={description}
+                data-url={company.url}
+                class="group flex h-full w-full flex-col items-center justify-center gap-3 rounded-xl border border-surface-border bg-bg-elevated p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent-500/40 hover:shadow-glow dark:border-white/10 dark:bg-white/[0.05] dark:hover:bg-white/[0.08]"
                 title={company.name}
+                aria-haspopup="dialog"
               >
                 <img
-                  src={logo.src}
+                  src={srcs[0]}
+                  data-fallbacks={JSON.stringify(srcs.slice(1))}
                   alt={`${company.name} logo`}
                   width="40"
                   height="40"
                   loading="lazy"
                   decoding="async"
                   class="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110"
-                  onerror={logo.fallback ? `this.onerror=null;this.src='${logo.fallback}'` : undefined}
                 />
                 <span class="text-center text-xs font-medium text-ink-muted transition-colors group-hover:text-ink-strong sm:text-sm">
                   {company.name}
                 </span>
-              </div>
+              </button>
             </li>
           );
         })
       }
     </ul>
   </div>
+
+  <!-- Company detail dialog (populated on click) -->
+  <dialog
+    id="company-modal"
+    class="m-auto w-[min(92vw,30rem)] rounded-2xl border border-surface-border bg-bg-elevated p-0 text-ink shadow-card backdrop:bg-black/60 backdrop:backdrop-blur-sm"
+  >
+    <div class="relative p-6 sm:p-8">
+      <button
+        type="button"
+        data-close
+        aria-label="Close"
+        class="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-lg text-ink-muted transition-colors hover:bg-surface-hover hover:text-ink-strong"
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+
+      <div class="flex items-center gap-4 pr-8">
+        <img id="company-modal-logo" src="" alt="" width="56" height="56" class="h-14 w-14 flex-none object-contain" />
+        <h3 id="company-modal-name" class="text-xl font-bold text-ink-strong"></h3>
+      </div>
+
+      <p id="company-modal-desc" class="mt-4 text-ink-muted"></p>
+
+      <a id="company-modal-link" href="#" target="_blank" rel="noopener" class="btn btn-primary mt-6 text-sm">
+        {copy.visit}
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 17 17 7M9 7h8v8" />
+        </svg>
+      </a>
+    </div>
+  </dialog>
 </section>
+
+<script>
+  // Logo fallback chain: try each candidate src in order until one loads.
+  document.querySelectorAll<HTMLImageElement>('img[data-fallbacks]').forEach((img) => {
+    img.addEventListener('error', () => {
+      const list = JSON.parse(img.dataset.fallbacks || '[]') as string[];
+      if (!list.length) return;
+      const next = list.shift() as string;
+      img.dataset.fallbacks = JSON.stringify(list);
+      img.src = next;
+    });
+  });
+
+  // Company detail dialog.
+  const dialog = document.getElementById('company-modal') as HTMLDialogElement | null;
+  const logoEl = document.getElementById('company-modal-logo') as HTMLImageElement | null;
+  const nameEl = document.getElementById('company-modal-name');
+  const descEl = document.getElementById('company-modal-desc');
+  const linkEl = document.getElementById('company-modal-link') as HTMLAnchorElement | null;
+
+  document.querySelectorAll<HTMLButtonElement>('[data-company]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (!dialog) return;
+      const img = btn.querySelector('img');
+      if (logoEl) logoEl.src = img?.currentSrc || img?.src || '';
+      if (nameEl) nameEl.textContent = btn.dataset.name ?? '';
+      if (descEl) descEl.textContent = btn.dataset.desc ?? '';
+      if (linkEl) {
+        if (btn.dataset.url) {
+          linkEl.href = btn.dataset.url;
+          linkEl.hidden = false;
+        } else {
+          linkEl.hidden = true;
+        }
+      }
+      dialog.showModal();
+    });
+  });
+
+  dialog?.querySelector('[data-close]')?.addEventListener('click', () => dialog.close());
+  // Click on the backdrop (outside the inner panel) closes the dialog.
+  dialog?.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+</script>
