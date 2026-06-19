@@ -3,10 +3,9 @@ import type { PortfolioContent } from '../data/types';
 import Navbar from './Navbar.astro';
 import Hero from './Hero.astro';
 import About from './About.astro';
-import Skills from './Skills.astro';
 import Experience from './Experience.astro';
 import Projects from './Projects.astro';
-import TechStack from './TechStack.astro';
+import LogoGrid from './LogoGrid.astro';
 import Contact from './Contact.astro';
 import Footer from './Footer.astro';
 
@@ -15,16 +14,36 @@ interface Props {
 }
 
 const { content } = Astro.props;
+const { copy, site } = content;
 ---
 
 <Navbar content={content} />
 <main id="main">
   <Hero content={content} />
   <About content={content} />
-  <Skills content={content} />
   <Experience content={content} />
   <Projects content={content} />
-  <TechStack content={content} />
+
+  <!-- Tech Stack and Tools flow continuously, one after the other. -->
+  <LogoGrid
+    id="tech-stack"
+    eyebrow={copy.techStack.eyebrow}
+    heading={copy.techStack.heading}
+    intro={copy.techStack.intro}
+    items={site.techStack}
+    basePath="/tech"
+    class="pb-8 sm:pb-10"
+  />
+  <LogoGrid
+    id="tools"
+    eyebrow={copy.tools.eyebrow}
+    heading={copy.tools.heading}
+    intro={copy.tools.intro}
+    items={site.tools}
+    basePath="/tools"
+    class="pt-8 sm:pt-10"
+  />
+
   <Contact content={content} />
 </main>
 <Footer content={content} />
