@@ -1,0 +1,68 @@
+---
+import type { CompanyItem, PortfolioContent } from '../data/types';
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+  content: PortfolioContent;
+  /** extra section spacing classes */
+  class?: string;
+}
+
+const { content, class: className } = Astro.props;
+const copy = content.copy.companies;
+const { companies } = content.site;
+
+/**
+ * Logo source flag:
+ *   PUBLIC_COMPANY_LOGO_SOURCE=runtime -> load each logo from a logo service
+ *                                         (by company domain) at view time
+ *   PUBLIC_COMPANY_LOGO_SOURCE=hosted  -> self-hosted /public/companies/<slug>.svg
+ * Default is "hosted". In runtime mode the hosted SVG is the onerror fallback,
+ * so companies without a domain (or missing from the service) still render.
+ */
+const source = import.meta.env.PUBLIC_COMPANY_LOGO_SOURCE === 'runtime' ? 'runtime' : 'hosted';
+
+function logoFor(company: CompanyItem): { src: string; fallback: string | null } {
+  const hosted = `/companies/${company.slug}.svg`;
+  if (source === 'runtime' && company.domain) {
+    return { src: `https://logo.clearbit.com/${company.domain}?size=128`, fallback: hosted };
+  }
+  return { src: hosted, fallback: null };
+}
+---
+
+<section id="companies" class:list={['section', className]}>
+  <div class="container-content">
+    <SectionHeading eyebrow={copy.eyebrow} heading={copy.heading} intro={copy.intro} />
+
+    <ul class="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-7" role="list">
+      {
+        companies.map((company, i) => {
+          const logo = logoFor(company);
+          return (
+            <li class="reveal" style={`--reveal-delay: ${Math.min(i, 12) * 40}ms`}>
+              <div
+                class="group flex h-full flex-col items-center justify-center gap-3 rounded-xl border border-surface-border bg-bg-elevated p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent-500/40 hover:shadow-glow dark:border-white/10 dark:bg-white/[0.05] dark:hover:bg-white/[0.08]"
+                title={company.name}
+              >
+                <img
+                  src={logo.src}
+                  alt={`${company.name} logo`}
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110"
+                  onerror={logo.fallback ? `this.onerror=null;this.src='${logo.fallback}'` : undefined}
+                />
+                <span class="text-center text-xs font-medium text-ink-muted transition-colors group-hover:text-ink-strong sm:text-sm">
+                  {company.name}
+                </span>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</section>

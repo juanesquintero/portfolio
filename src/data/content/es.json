@@ -75,6 +75,11 @@
     "heading": "Herramientas y plataformas",
     "intro": "El día a día — control de versiones, nube, CI/CD, pruebas y editores — detrás de construir y operar el trabajo."
   },
+  "companies": {
+    "eyebrow": "Empresas",
+    "heading": "Empresas con las que he trabajado",
+    "intro": "Empleadores, clientes y socios para quienes he desarrollado software."
+  },
   "experience": {
     "eyebrow": "Experiencia",
     "heading": "Dónde he trabajado",

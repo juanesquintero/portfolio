@@ -98,6 +98,23 @@ export const site: SiteData = {
     { name: 'PyCharm', slug: 'pycharm' },
   ],
 
+  /**
+   * Companies, clients and providers worked with. Logos resolve in one of
+   * two modes (see Companies.astro / PUBLIC_COMPANY_LOGO_SOURCE):
+   *   - "hosted":  self-hosted SVG at /public/companies/<slug>.svg
+   *   - "runtime": fetched from a logo service using `domain`
+   * `domain` is also used as the hosted-logo fallback target.
+   */
+  companies: [
+    { name: 'Billtrust', slug: 'billtrust', domain: 'billtrust.com', url: 'https://www.billtrust.com' },
+    { name: 'Capitol AI', slug: 'capitol-ai', domain: 'capitol.ai', url: 'https://capitol.ai' },
+    { name: 'Olive Tree Holdings', slug: 'olive-tree', domain: 'olivetreeholdings.com' },
+    { name: 'EPAM Systems', slug: 'epam', domain: 'epam.com', url: 'https://www.epam.com' },
+    { name: 'Perficient', slug: 'perficient', domain: 'perficient.com', url: 'https://www.perficient.com' },
+    { name: 'SisteCrédito', slug: 'sistecredito', domain: 'sistecredito.com', url: 'https://www.sistecredito.com' },
+    { name: 'Educatic', slug: 'educatic' },
+  ],
+
   experience: [
     {
       id: 'billtrust',

@@ -75,6 +75,11 @@
     "heading": "Tools & platforms",
     "intro": "The day-to-day tooling — version control, cloud, CI/CD, testing and editors — behind shipping and running the work."
   },
+  "companies": {
+    "eyebrow": "Companies",
+    "heading": "Companies I've worked with",
+    "intro": "Employers, clients and partners I've delivered software for."
+  },
   "experience": {
     "eyebrow": "Experience",
     "heading": "Where I've worked",

@@ -54,6 +54,17 @@ export interface TechItem {
   slug: string;
 }
 
+/** A company / client / provider for the logo wall. */
+export interface CompanyItem {
+  name: string;
+  /** maps to `/public/companies/<slug>.svg` (hosted logo / runtime fallback) */
+  slug: string;
+  /** domain used by the runtime logo service, e.g. "epam.com" */
+  domain?: string;
+  /** optional company website */
+  url?: string;
+}
+
 export interface SiteData {
   name: string;
   email: string;
@@ -64,6 +75,7 @@ export interface SiteData {
   skillGroups: SkillGroupMeta[];
   techStack: TechItem[];
   tools: TechItem[];
+  companies: CompanyItem[];
   experience: ExperienceMeta[];
   projects: ProjectMeta[];
 }
@@ -122,6 +134,12 @@ export interface ToolsContent {
   intro: string;
 }
 
+export interface CompaniesContent {
+  heading: string;
+  eyebrow: string;
+  intro: string;
+}
+
 export interface ExperienceCopy {
   title: string;
   location: string;
@@ -172,6 +190,7 @@ export interface Content {
   skills: SkillsContent;
   techStack: TechStackContent;
   tools: ToolsContent;
+  companies: CompaniesContent;
   experience: ExperienceContent;
   projects: ProjectsContent;
   contact: ContactContent;
