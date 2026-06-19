@@ -3,9 +3,47 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light theme (default). Color tokens are RGB triplets consumed by
+     Tailwind via rgb(var(--token) / <alpha-value>). */
   :root {
-    --bg: #0a0f1c;
+    --c-bg: 247 249 252;
+    --c-bg-soft: 238 242 248;
+    --c-bg-elevated: 255 255 255;
+    --c-surface: 255 255 255;
+    --c-surface-border: 214 223 237;
+    --c-surface-hover: 237 243 251;
+    --c-ink: 31 42 61;
+    --c-ink-muted: 81 96 122;
+    --c-ink-faint: 126 138 163;
+    --c-ink-strong: 11 20 36;
+    --c-accent-fg: 37 99 235;
+
+    /* text-gradient stops */
+    --grad-from: 37 99 235;
+    --grad-via: 59 130 246;
+    --grad-to: 29 78 216;
+
     --accent: #3b82f6;
+    color-scheme: light;
+  }
+
+  .dark {
+    --c-bg: 10 15 28;
+    --c-bg-soft: 14 22 38;
+    --c-bg-elevated: 18 27 46;
+    --c-surface: 17 26 44;
+    --c-surface-border: 30 42 68;
+    --c-surface-hover: 23 34 56;
+    --c-ink: 230 237 247;
+    --c-ink-muted: 159 176 201;
+    --c-ink-faint: 107 124 153;
+    --c-ink-strong: 255 255 255;
+    --c-accent-fg: 96 165 250;
+
+    --grad-from: 147 197 253;
+    --grad-via: 96 165 250;
+    --grad-to: 191 219 254;
+
     color-scheme: dark;
   }
 
@@ -19,9 +57,30 @@
   body {
     @apply bg-bg text-ink font-sans antialiased;
     background-image:
+      radial-gradient(40rem 40rem at 85% -10%, rgba(37, 99, 235, 0.07), transparent 60%),
+      radial-gradient(30rem 30rem at 0% 20%, rgba(59, 130, 246, 0.05), transparent 60%);
+    background-attachment: fixed;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .dark body {
+    background-image:
       radial-gradient(40rem 40rem at 85% -10%, rgba(37, 99, 235, 0.12), transparent 60%),
       radial-gradient(30rem 30rem at 0% 20%, rgba(59, 130, 246, 0.08), transparent 60%);
-    background-attachment: fixed;
+  }
+
+  /* Theme-toggle: show only the icon for the active mode. */
+  .theme-icon-auto,
+  .theme-icon-light,
+  .theme-icon-dark {
+    display: none;
+  }
+  html[data-theme='auto'] .theme-icon-auto,
+  html[data-theme='light'] .theme-icon-light,
+  html[data-theme='dark'] .theme-icon-dark {
+    display: block;
   }
 
   ::selection {
@@ -47,7 +106,7 @@
   }
 
   .eyebrow {
-    @apply mb-3 inline-block text-sm font-semibold uppercase tracking-[0.2em] text-accent-400;
+    @apply mb-3 inline-block text-sm font-semibold uppercase tracking-[0.2em] text-accent-fg;
   }
 
   .heading-2 {
@@ -67,7 +126,7 @@
   }
 
   .chip-accent {
-    @apply border-accent-500/30 bg-accent-500/10 text-accent-300;
+    @apply border-accent-500/30 bg-accent-500/10 text-accent-fg;
   }
 
   .btn {
@@ -79,17 +138,23 @@
   }
 
   .btn-secondary {
-    @apply border border-surface-border bg-surface/60 text-ink hover:border-accent-500/50 hover:text-white;
+    @apply border border-surface-border bg-surface/60 text-ink hover:border-accent-500/50 hover:text-ink-strong;
   }
 
   .link-muted {
-    @apply text-ink-muted hover:text-accent-300;
+    @apply text-ink-muted hover:text-accent-fg;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-accent-300 via-accent-400 to-accent-200 bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      to right,
+      rgb(var(--grad-from)),
+      rgb(var(--grad-via)),
+      rgb(var(--grad-to))
+    );
+    @apply bg-clip-text text-transparent;
   }
 
   /* Reveal-on-scroll: hidden until .is-visible is added by IntersectionObserver */

@@ -1,5 +1,6 @@
 ---
 import type { PortfolioContent } from '../data/types';
+import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
   content: PortfolioContent;
@@ -27,8 +28,8 @@ const homeHref = locale === 'es' ? esHref : enHref;
   class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300"
 >
   <nav class="container-content flex h-16 items-center justify-between gap-4" aria-label="Primary">
-    <a href={homeHref} class="group flex items-center gap-2 font-bold text-white" aria-label={site.name}>
-      <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-500/15 text-accent-300 ring-1 ring-accent-500/30 transition-colors group-hover:bg-accent-500/25">
+    <a href={homeHref} class="group flex items-center gap-2 font-bold text-ink-strong" aria-label={site.name}>
+      <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-500/15 text-accent-fg ring-1 ring-accent-500/30 transition-colors group-hover:bg-accent-500/25">
         JQ
       </span>
       <span class="hidden sm:inline">{site.name}</span>
@@ -41,7 +42,7 @@ const homeHref = locale === 'es' ? esHref : enHref;
           <li>
             <a
               href={link.href}
-              class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:text-white"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:text-ink-strong"
             >
               {link.label}
             </a>
@@ -62,7 +63,7 @@ const homeHref = locale === 'es' ? esHref : enHref;
           aria-current={locale === 'en' ? 'true' : undefined}
           class:list={[
             'rounded-md px-2.5 py-1 transition-colors',
-            locale === 'en' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-white',
+            locale === 'en' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-ink-strong',
           ]}>{copy.langToggle.en}</a
         >
         <a
@@ -70,10 +71,13 @@ const homeHref = locale === 'es' ? esHref : enHref;
           aria-current={locale === 'es' ? 'true' : undefined}
           class:list={[
             'rounded-md px-2.5 py-1 transition-colors',
-            locale === 'es' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-white',
+            locale === 'es' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-ink-strong',
           ]}>{copy.langToggle.es}</a
         >
       </div>
+
+      <!-- Theme toggle -->
+      <ThemeToggle />
 
       <a href={site.cvPath} download class="btn btn-primary hidden px-4 py-2 text-xs sm:inline-flex">
         {nav.downloadCv}
@@ -106,7 +110,7 @@ const homeHref = locale === 'es' ? esHref : enHref;
           <li>
             <a
               href={link.href}
-              class="block rounded-lg px-3 py-2.5 text-base font-medium text-ink-muted hover:bg-surface hover:text-white"
+              class="block rounded-lg px-3 py-2.5 text-base font-medium text-ink-muted hover:bg-surface hover:text-ink-strong"
               data-mobile-link
             >
               {link.label}
