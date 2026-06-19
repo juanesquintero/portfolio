@@ -54,6 +54,13 @@ export interface TechItem {
   slug: string;
 }
 
+/** A related link shown in the company dialog. */
+export interface CompanyLink {
+  /** optional label; falls back to the localized "Visit website" */
+  label?: string;
+  url: string;
+}
+
 /** A company / client / provider for the logo wall. */
 export interface CompanyItem {
   name: string;
@@ -61,8 +68,8 @@ export interface CompanyItem {
   slug: string;
   /** domain used by the runtime logo service, e.g. "epam.com" */
   domain?: string;
-  /** optional company website */
-  url?: string;
+  /** one or more related links shown in the company dialog */
+  links?: CompanyLink[];
 }
 
 export interface SiteData {

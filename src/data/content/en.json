@@ -81,18 +81,18 @@
     "intro": "Employers, clients and partners I've delivered software for. Click any logo for more.",
     "visit": "Visit website",
     "items": {
-      "billtrust": { "description": "B2B order-to-cash software automating billing, invoicing and payments for finance teams." },
-      "capitol-ai": { "description": "AI-powered content and creativity platform for generating and producing long-form work." },
-      "olive-tree": { "description": "Real-estate investment and holdings firm managing multifamily and commercial property." },
-      "epam": { "description": "Global software engineering and digital product consultancy." },
-      "perficient": { "description": "Global digital consultancy delivering enterprise platforms and experiences." },
-      "sistecredito": { "description": "Colombian fintech offering point-of-sale installment credit (buy now, pay later)." },
-      "educatic": { "description": "EdTech building analytics and machine-learning tools for academic institutions." },
-      "kinesso": { "description": "IPG's marketing-technology and data agency connecting media, data and technology." },
-      "marathon-oil": { "description": "US independent oil and gas exploration and production company." },
-      "taxalign": { "description": "UK tax and accounting services firm." },
-      "cielo-travel": { "description": "Travel company delivering booking and trip-management experiences." },
-      "evidenza": { "description": "Data and AI company." }
+      "billtrust": { "description": "Billtrust is a US-based B2B fintech that automates the order-to-cash cycle. Its cloud platform streamlines invoicing, payments, cash application and collections, helping finance teams get paid faster and cut manual work." },
+      "capitol-ai": { "description": "Capitol AI is an AI-powered platform for content creation and creativity. It helps writers, marketers and analysts generate, structure and produce long-form documents, reports and stories with large language models." },
+      "olive-tree": { "description": "Olive Tree Holdings is a real-estate investment firm focused on multifamily and commercial property. It acquires, manages and improves communities, pairing operations with technology to support brokers, sponsors and residents." },
+      "epam": { "description": "EPAM Systems is a global software engineering and digital product consultancy. It designs and builds large-scale products, platforms and cloud systems for enterprises across many industries, blending engineering, design and consulting." },
+      "perficient": { "description": "Perficient is a global digital consultancy that helps enterprises modernize. It delivers digital experiences, data and cloud platforms and product engineering for clients across finance, healthcare, retail and more." },
+      "sistecredito": { "description": "SisteCrédito is a Colombian fintech offering point-of-sale installment credit (buy now, pay later). It lets shoppers finance purchases directly at merchants, widening access to credit across retail in Latin America." },
+      "educatic": { "description": "Educatic is an EdTech company building data and analytics tools for academic institutions. Its platforms apply machine learning to challenges like predicting and reducing student dropout, with rich visualizations and statistics." },
+      "kinesso": { "description": "Kinesso is IPG's marketing-technology and data company, connecting media, data and technology across the agency network. Matterkind, part of the same group, focuses on addressable media activation." },
+      "marathon-oil": { "description": "Marathon Oil was a US independent oil and gas exploration and production company. In 2024 it was acquired by ConocoPhillips. (Marathon Petroleum is the separately listed refining and marketing company.)" },
+      "taxalign": { "description": "TaxAlign is a UK-based tax and accounting services provider, helping individuals and businesses with filings, compliance and financial reporting." },
+      "cielo-travel": { "description": "Cielo Travel is a travel company building booking and trip-management experiences, helping travellers plan, reserve and manage their journeys end to end." },
+      "evidenza": { "description": "Evidenza is a data and AI company building intelligent, data-driven products." }
     }
   },
   "experience": {

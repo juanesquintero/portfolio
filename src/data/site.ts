@@ -106,17 +106,38 @@ export const site: SiteData = {
    * `domain` is also used as the hosted-logo fallback target.
    */
   companies: [
-    { name: 'Billtrust', slug: 'billtrust', domain: 'billtrust.com', url: 'https://www.billtrust.com' },
-    { name: 'Capitol AI', slug: 'capitol-ai', domain: 'capitol.ai', url: 'https://capitol.ai' },
+    { name: 'Billtrust', slug: 'billtrust', domain: 'billtrust.com', links: [{ url: 'https://www.billtrust.com' }] },
+    { name: 'Capitol AI', slug: 'capitol-ai', domain: 'capitol.ai', links: [{ url: 'https://capitol.ai' }] },
     { name: 'Olive Tree Holdings', slug: 'olive-tree', domain: 'olivetreeholdings.com' },
-    { name: 'EPAM Systems', slug: 'epam', domain: 'epam.com', url: 'https://www.epam.com' },
-    { name: 'Perficient', slug: 'perficient', domain: 'perficient.com', url: 'https://www.perficient.com' },
-    { name: 'SisteCrédito', slug: 'sistecredito', domain: 'sistecredito.com', url: 'https://www.sistecredito.com' },
-    { name: 'Educatic', slug: 'educatic' },
-    { name: 'Kinesso', slug: 'kinesso', domain: 'kinesso.com', url: 'https://jp.kinesso.com/' },
-    { name: 'Marathon Oil', slug: 'marathon-oil', domain: 'marathonoil.com', url: 'https://www.marathonoil.com' },
-    { name: 'TaxAlign', slug: 'taxalign', domain: 'taxalign.com', url: 'https://form.taxalign.com/' },
-    { name: 'Cielo Travel', slug: 'cielo-travel', domain: 'cielo.travel', url: 'https://cielo.travel' },
+    { name: 'EPAM Systems', slug: 'epam', domain: 'epam.com', links: [{ url: 'https://www.epam.com/' }] },
+    { name: 'Perficient', slug: 'perficient', domain: 'perficient.com', links: [{ url: 'https://www.perficient.com/' }] },
+    { name: 'SisteCrédito', slug: 'sistecredito', domain: 'sistecredito.com', links: [{ url: 'https://www.sistecredito.com/' }] },
+    {
+      name: 'Educatic',
+      slug: 'educatic',
+      domain: 'educatic.com.co',
+      links: [{ url: 'https://educatic.com.co' }],
+    },
+    {
+      name: 'Kinesso',
+      slug: 'kinesso',
+      domain: 'kinesso.com',
+      links: [
+        { label: 'Kinesso', url: 'https://jp.kinesso.com/' },
+        { label: 'Matterkind', url: 'https://www.matterkind.com/' },
+      ],
+    },
+    {
+      name: 'Marathon Oil',
+      slug: 'marathon-oil',
+      domain: 'marathonoil.com',
+      links: [
+        { label: 'ConocoPhillips', url: 'https://www.conocophillips.com/' },
+        { label: 'Marathon Petroleum', url: 'https://www.marathonpetroleum.com/' },
+      ],
+    },
+    { name: 'TaxAlign', slug: 'taxalign', domain: 'taxalign.com', links: [{ url: 'https://form.taxalign.com/' }] },
+    { name: 'Cielo Travel', slug: 'cielo-travel', domain: 'cielo.travel', links: [{ url: 'https://cielo.travel' }] },
     { name: 'Evidenza', slug: 'evidenza', domain: 'evidenza.ai' },
   ],
 
