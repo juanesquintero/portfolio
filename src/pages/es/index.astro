@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Portfolio from '../../components/Portfolio.astro';
+import { getContent } from '../../data/i18n';
+
+const content = getContent('es');
+const { meta } = content.copy;
+---
+
+<Layout lang="es" title={meta.title} description={meta.description}>
+  <Portfolio content={content} />
+</Layout>

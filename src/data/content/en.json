@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "title": "Juan Quintero — Senior Full-Stack Software Engineer",
+    "description": "Senior Full-Stack Software Engineer with {{years}}+ years building scalable, high-performance web applications, APIs and cloud systems with JavaScript/TypeScript and Python."
+  },
+  "langToggle": {
+    "en": "EN",
+    "es": "ES"
+  },
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "downloadCv": "Download CV"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Senior Full-Stack Software Engineer",
+    "tagline": "I build scalable, high-performance web applications from frontend to backend.",
+    "ctaProjects": "View Projects",
+    "ctaContact": "Contact Me",
+    "ctaCv": "Download CV",
+    "stats": [
+      { "value": "{{years}}+", "label": "Years of experience" },
+      { "value": "8", "label": "Companies & clients" },
+      { "value": "10+", "label": "Industries shipped" },
+      { "value": "2", "label": "Countries (USA & CO)" }
+    ]
+  },
+  "about": {
+    "eyebrow": "About",
+    "heading": "Full-stack engineering, end to end",
+    "paragraphs": [
+      "I'm a Senior Full-Stack Software Engineer with {{years}}+ years of time-served experience across the technology industry. I focus on web full-stack development with JavaScript/TypeScript (React, Angular, Next.js, Node.js) on the frontend and Python (FastAPI, Flask, Django) and Node.js on the backend for APIs and scalable web applications.",
+      "I've delivered software for clients in the USA and Colombia — from micro-businesses, entrepreneurs and start-ups to global companies — across FinTech, AI, SaaS, Real Estate, Advertising, EdTech, Analytics, Payment Processing and Enterprise Software.",
+      "I'm always eager to learn new technologies and take on whatever a project needs to reach the goal. I bring strong communication, problem-solving and collaboration skills, and an agile mindset to every team I join."
+    ],
+    "focusHeading": "What I focus on",
+    "focus": [
+      "Responsive, accessible web UIs with React, Angular & Next.js",
+      "Robust APIs & services with Python and Node.js",
+      "Cloud, Docker & CI/CD across AWS, GCP and Azure",
+      "Data-heavy dashboards, analytics and integrations",
+      "Performance, refactoring and long-term maintainability"
+    ],
+    "softSkills": ["Communication", "Problem-solving", "Collaboration", "Agile mindset", "Analytical thinking"],
+    "languagesHeading": "Languages",
+    "languages": [
+      { "name": "Spanish", "level": "Native" },
+      { "name": "English", "level": "C1 — Advanced" }
+    ]
+  },
+  "skills": {
+    "eyebrow": "Skills",
+    "heading": "Tools & technologies",
+    "intro": "A pragmatic, full-stack toolkit refined across product, enterprise and start-up environments.",
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Databases",
+      "cloud": "Cloud & DevOps",
+      "testing": "Testing",
+      "tools": "Tools"
+    }
+  },
+  "experience": {
+    "eyebrow": "Experience",
+    "heading": "Where I've worked",
+    "present": "Present",
+    "roles": {
+      "billtrust": {
+        "title": "Software Engineer",
+        "location": "Colombia (Remote) · Full-Time",
+        "summary": "Built an analytics reporting module giving a robust overview of payment-processing performance through interactive dashboards and key metrics like Envelope Volume and Payments Processed.",
+        "highlights": [
+          "Developed and enhanced interactive dashboards for key payment-processing metrics",
+          "Created detailed drill-down capabilities for envelope and line-item matches in the UI",
+          "Integrated databases and storage with middleware for async background jobs",
+          "Refactored and optimized frontend and backend code for performance and maintainability"
+        ]
+      },
+      "capitol-ai": {
+        "title": "Software Engineer",
+        "location": "Colombia (Remote) · Full-Time",
+        "summary": "Contributed to Capitol.ai, an AI-powered creativity platform that helps artists, writers and marketers generate ideas, create content and streamline their creative workflow.",
+        "highlights": [
+          "Developed and integrated the story/document printing functionality in the UI and AI backend",
+          "Identified and fixed bugs across the UI and AI backend services",
+          "Refactored the codebase for better performance and maintainability",
+          "Improved UI responsiveness and usability across devices and browsers"
+        ]
+      },
+      "olive-tree": {
+        "title": "Software Engineer",
+        "location": "Colombia (Remote) · Full-Time",
+        "summary": "Developed and maintained a real-estate portal/console for multi-client and tenancy brokers, focused on auto-generating legal, financial and marketing documents like offering memorandums and deal packages.",
+        "highlights": [
+          "Built a module to collect property data and embed it into auto-generated files",
+          "Developed and maintained a shared component library for the company's needs",
+          "Optimized the company's infrastructure and CI/CD processes",
+          "Implemented new features to make broker and sponsor transactions faster"
+        ]
+      },
+      "epam": {
+        "title": "Software Engineer",
+        "location": "Colombia (Remote) · Full-Time",
+        "summary": "Led two successful migrations of internal enterprise applications to modernize the client's tech stack and infrastructure, working across backend Node.js and React/Angular frontends.",
+        "highlights": [
+          "Migrated two internal applications from legacy technologies",
+          "Migrated databases and API endpoints with Snowflake and SAP HANA",
+          "Improved the client's infrastructure and tech stack",
+          "Resolved numerous bugs and shipped application improvements"
+        ]
+      },
+      "perficient": {
+        "title": "Software Engineer",
+        "location": "Colombia (Remote) · Full-Time",
+        "summary": "Built a syndication advertising management console for a multinational IPG client to manage audiences, syndicate and produce data-driven reports.",
+        "highlights": [
+          "Led the syndication module for new implementations and support",
+          "Translated client needs into software features and advised the PO on UX",
+          "Migrated styles to a new look and feel with deep CSS/SASS expertise",
+          "Drove technical vision in Agile ceremonies to optimize business needs"
+        ]
+      },
+      "sistecredito": {
+        "title": "Software Developer",
+        "location": "Medellín (Hybrid) · Full-Time",
+        "summary": "Worked on a frontend payment gateway for individual clients and a backend product-recommendation system for an e-commerce web application.",
+        "highlights": [
+          "Built and supported a payment-gateway client application",
+          "Reduced company costs by directly integrating payment methods, retiring a third-party gateway",
+          "Helped create the Python backend team and product-recommendation services",
+          "Defined Python programming standards and good practices"
+        ]
+      },
+      "educatic": {
+        "title": "Software Developer",
+        "location": "Medellín (Hybrid) · Contractor",
+        "summary": "Built PLEYADES, a web platform that uses machine learning to predict, identify and analyze student dropout across academic programs, with rich data visualization and statistics.",
+        "highlights": [
+          "Implemented software to predict student dropout using ML models",
+          "Developed multi-database data services to process academic data",
+          "Deployed, maintained and supported web apps and APIs in the client's infrastructure",
+          "Improved deployment processes for Python web applications across environments"
+        ]
+      },
+      "freelance": {
+        "title": "Software Developer · Freelance",
+        "location": "Medellín (Hybrid) · Freelance",
+        "summary": "Delivered web applications and APIs for clients in the academic sector, building curricular-management modules and implementing MEVN/MERN architectures.",
+        "highlights": [
+          "Developed a curricular-management app: academic calendar, configuration and administration",
+          "Implemented MEVN and MERN architectures for informatics-department projects",
+          "Maintained relational and logical database models in Oracle Data Modeler",
+          "Provided support across multiple applications for academic users"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "heading": "Featured work",
+    "intro": "Selected case studies drawn from production work across FinTech, AI, real estate, advertising and analytics.",
+    "items": {
+      "payment-analytics": {
+        "title": "Payment Analytics Dashboard",
+        "industries": ["FinTech", "Payment Processing", "Analytics"],
+        "blurb": "An analytics reporting module that surfaces payment-processing performance through interactive dashboards and key metrics, with drill-downs and PDF/CSV/XLS export.",
+        "highlights": [
+          "Interactive dashboards for Envelope Volume & Payments Processed",
+          "Drill-down into envelope and line-item matches",
+          "Async background jobs with Snowflake & MongoDB"
+        ]
+      },
+      "ai-creativity": {
+        "title": "AI Creativity Platform",
+        "industries": ["AI", "SaaS"],
+        "blurb": "An AI-powered platform that helps creative professionals generate ideas, create content and improve productivity, with real-time document tooling.",
+        "highlights": [
+          "Story/document printing across UI and AI backend",
+          "Real-time features over WebSockets",
+          "Performance and responsiveness improvements"
+        ]
+      },
+      "real-estate": {
+        "title": "Real Estate Automation Platform",
+        "industries": ["Real Estate", "Enterprise Software"],
+        "blurb": "A multi-client broker console that auto-generates legal, financial and marketing documents — offering memorandums, deal packages and more.",
+        "highlights": [
+          "Property-data collection embedded into generated files",
+          "Shared component library for the platform",
+          "Optimized infrastructure & CI/CD on GCP with Pulumi"
+        ]
+      },
+      "enterprise-migration": {
+        "title": "Enterprise App Migrations",
+        "industries": ["Enterprise Software", "Analytics"],
+        "blurb": "Two successful migrations of internal enterprise applications, modernizing the tech stack across Node.js services and React/Angular frontends.",
+        "highlights": [
+          "Database & API migration with Snowflake and SAP HANA",
+          "Modernized legacy apps to NodeTS and Angular",
+          "Improved infrastructure and developer workflows"
+        ]
+      },
+      "advertising-console": {
+        "title": "Advertising Management Console",
+        "industries": ["Advertising", "Analytics"],
+        "blurb": "A syndication advertising console for a multinational client to manage audiences, syndicate and produce data-driven reports.",
+        "highlights": [
+          "Led the syndication module end to end",
+          "Data visualizations with D3.js",
+          "State management with NgRx & RxJS"
+        ]
+      },
+      "payment-gateway": {
+        "title": "Payment Gateway & Recommendations",
+        "industries": ["FinTech", "E-commerce"],
+        "blurb": "A frontend payment gateway for individual clients plus a backend product-recommendation system for an e-commerce application.",
+        "highlights": [
+          "Direct payment-method integration, retiring a third-party gateway",
+          "Product-recommendation data services in Python",
+          "Defined backend standards for a new Python team"
+        ]
+      },
+      "dropout-prediction": {
+        "title": "Student Dropout Prediction (PLEYADES)",
+        "industries": ["EdTech", "AI", "Analytics"],
+        "blurb": "A web platform using machine learning to predict, identify and analyze student dropout across academic programs, with rich data visualization.",
+        "highlights": [
+          "ML dropout-prediction models with Scikit-learn & Pandas",
+          "Multi-database data services for academic data",
+          "Interactive statistics and visualizations with Plotly"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Let's build something",
+    "intro": "I'm open to senior full-stack roles and interesting collaborations. The fastest way to reach me is by email — or connect on any of the platforms below.",
+    "emailCta": "Send me an email"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Astro & Tailwind CSS."
+  }
+}
