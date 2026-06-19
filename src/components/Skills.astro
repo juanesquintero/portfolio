@@ -30,12 +30,12 @@ const groupIcons: Record<string, string> = {
         skillGroups.map((group, i) => (
           <div class="card card-hover reveal p-6" style={`--reveal-delay: ${i * 60}ms`}>
             <div class="mb-4 flex items-center gap-3">
-              <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-500/10 text-accent-300 ring-1 ring-accent-500/20">
+              <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-500/10 text-accent-fg ring-1 ring-accent-500/20">
                 <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d={groupIcons[group.id]} />
                 </svg>
               </span>
-              <h3 class="text-lg font-semibold text-white">{group.title}</h3>
+              <h3 class="text-lg font-semibold text-ink-strong">{group.title}</h3>
             </div>
             <ul class="flex flex-wrap gap-2">
               {group.items.map((item) => (

@@ -40,12 +40,12 @@ const hero = copy.hero;
         {site.location}
       </p>
 
-      <h1 class="reveal text-4xl font-extrabold tracking-tight text-white sm:text-6xl" style="--reveal-delay: 60ms">
+      <h1 class="reveal text-4xl font-extrabold tracking-tight text-ink-strong sm:text-6xl" style="--reveal-delay: 60ms">
         <span class="block text-lg font-medium text-ink-muted sm:text-xl">{hero.greeting}</span>
         <span class="text-gradient">{site.name}</span>
       </h1>
 
-      <p class="reveal mt-4 text-xl font-semibold text-accent-200 sm:text-2xl" style="--reveal-delay: 120ms">
+      <p class="reveal mt-4 text-xl font-semibold text-accent-fg sm:text-2xl" style="--reveal-delay: 120ms">
         {hero.role}
       </p>
 
@@ -77,7 +77,7 @@ const hero = copy.hero;
       {
         hero.stats.map((stat) => (
           <div class="card p-5">
-            <dt class="text-3xl font-bold text-white">{stat.value}</dt>
+            <dt class="text-3xl font-bold text-ink-strong">{stat.value}</dt>
             <dd class="mt-1 text-sm text-ink-muted">{stat.label}</dd>
           </div>
         ))

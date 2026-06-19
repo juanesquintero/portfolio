@@ -25,14 +25,14 @@ const copy = content.copy.experience;
 
             <div class="card card-hover p-6">
               <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h3 class="text-lg font-semibold text-white">
+                <h3 class="text-lg font-semibold text-ink-strong">
                   {role.title} ·{' '}
                   {role.url ? (
-                    <a href={role.url} target="_blank" rel="noopener noreferrer" class="text-accent-300 hover:text-accent-200">
+                    <a href={role.url} target="_blank" rel="noopener noreferrer" class="text-accent-fg hover:text-accent-fg">
                       {role.company}
                     </a>
                   ) : (
-                    <span class="text-accent-300">{role.company}</span>
+                    <span class="text-accent-fg">{role.company}</span>
                   )}
                 </h3>
                 <span class="chip chip-accent shrink-0">{role.period}</span>
@@ -44,7 +44,7 @@ const copy = content.copy.experience;
               <ul class="mt-4 space-y-2">
                 {role.highlights.map((h) => (
                   <li class="flex gap-2.5 text-sm text-ink-muted">
-                    <svg class="mt-1 h-3.5 w-3.5 flex-none text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <svg class="mt-1 h-3.5 w-3.5 flex-none text-accent-fg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                       <path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7" />
                     </svg>
                     <span>{h}</span>
