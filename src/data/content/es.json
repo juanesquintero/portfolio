@@ -246,8 +246,40 @@
   "projects": {
     "eyebrow": "Proyectos",
     "heading": "Trabajo destacado",
-    "intro": "Casos de estudio seleccionados de trabajo en producción en FinTech, IA, bienes raíces, publicidad y analítica.",
+    "intro": "Casos de estudio seleccionados de trabajo en producción en viajes, FinTech, IA, contabilidad, bienes raíces, publicidad y analítica.",
+    "via": "vía",
+    "visit": "Visitar",
     "items": {
+      "cielo-logistics": {
+        "title": "Plataforma de Automatización Logística",
+        "industries": ["Viajes", "Logística", "Herramientas internas"],
+        "blurb": "Una plataforma interna construida desde cero que reemplaza las operaciones de recogida y regreso al aeropuerto basadas en hojas de cálculo, para que las reservas, la programación y los pagos funcionen en un solo sistema.",
+        "highlights": [
+          "Arquitectura diseñada del MVP hacia la escala",
+          "Programación de recogidas y regresos",
+          "Pagos con Stripe"
+        ]
+      },
+      "evidenza-pptx": {
+        "title": "Generador de Encuestas a PowerPoint",
+        "industries": ["Marketing con IA", "Automatización"],
+        "blurb": "Un módulo independiente en TypeScript que convierte datos crudos de encuestas en presentaciones de PowerPoint fieles a la marca, entregado listo para integrarse en el código del cliente.",
+        "highlights": [
+          "Prueba de concepto para layouts complejos",
+          "Temas y plantillas de diapositivas reutilizables",
+          "Secciones de presentación componibles"
+        ]
+      },
+      "taxalign-onboarding": {
+        "title": "Onboarding y Checkout de Clientes",
+        "industries": ["Contabilidad", "FinTech", "Reino Unido"],
+        "blurb": "Un flujo de onboarding pagado y de autoservicio para una firma contable online del Reino Unido, con búsqueda automática de empresas, sincronización con el CRM, PDFs generados y pago en línea.",
+        "highlights": [
+          "Búsqueda en la API de Companies House del Reino Unido",
+          "Sincronización con HubSpot CRM y generación de PDFs",
+          "Checkout con Stripe"
+        ]
+      },
       "payment-analytics": {
         "title": "Dashboard de Analítica de Pagos",
         "industries": ["FinTech", "Procesamiento de Pagos", "Analítica"],
@@ -291,7 +323,7 @@
       "advertising-console": {
         "title": "Consola de Gestión Publicitaria",
         "industries": ["Publicidad", "Analítica"],
-        "blurb": "Una consola de publicidad de sindicación para un cliente multinacional que permite gestionar audiencias, sindicar y generar reportes basados en datos.",
+        "blurb": "Una consola de publicidad de sindicación que ayuda a los clientes de Interpublic Group (IPG) a gestionar audiencias, sindicar contenido y reportar resultados.",
         "highlights": [
           "Lideré el módulo de sindicación de punta a punta",
           "Visualizaciones de datos con D3.js",

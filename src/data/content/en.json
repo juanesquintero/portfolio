@@ -246,8 +246,40 @@
   "projects": {
     "eyebrow": "Projects",
     "heading": "Featured work",
-    "intro": "Selected case studies drawn from production work across FinTech, AI, real estate, advertising and analytics.",
+    "intro": "Selected case studies drawn from production work across travel, FinTech, AI, accounting, real estate, advertising and analytics.",
+    "via": "via",
+    "visit": "Visit",
     "items": {
+      "cielo-logistics": {
+        "title": "Logistics Automation Platform",
+        "industries": ["Travel", "Logistics", "Internal tools"],
+        "blurb": "An internal platform built from scratch that replaces spreadsheet-based airport pickup and return operations, so bookings, scheduling and payments run in one system.",
+        "highlights": [
+          "Architecture designed from MVP toward scale",
+          "Scheduling for pickups and returns",
+          "Stripe payments"
+        ]
+      },
+      "evidenza-pptx": {
+        "title": "Survey-to-PowerPoint Generator",
+        "industries": ["AI marketing", "Automation"],
+        "blurb": "A standalone TypeScript module that turns raw survey data into on-brand PowerPoint presentations, delivered ready to integrate into the client's codebase.",
+        "highlights": [
+          "Proof of concept for complex layouts",
+          "Theming and reusable slide templates",
+          "Composable presentation sections"
+        ]
+      },
+      "taxalign-onboarding": {
+        "title": "Client Onboarding & Checkout",
+        "industries": ["Accounting", "FinTech", "UK"],
+        "blurb": "A self-service, paid onboarding flow for a UK online accounting firm, with automatic company lookup, CRM sync, generated PDFs and online payment.",
+        "highlights": [
+          "UK Companies House API lookup",
+          "HubSpot CRM sync and PDF generation",
+          "Stripe checkout"
+        ]
+      },
       "payment-analytics": {
         "title": "Payment Analytics Dashboard",
         "industries": ["FinTech", "Payment Processing", "Analytics"],
@@ -291,7 +323,7 @@
       "advertising-console": {
         "title": "Advertising Management Console",
         "industries": ["Advertising", "Analytics"],
-        "blurb": "A syndication advertising console for a multinational client to manage audiences, syndicate and produce data-driven reports.",
+        "blurb": "A syndication advertising console that helps Interpublic Group (IPG) clients manage audiences, syndicate content and report on performance.",
         "highlights": [
           "Led the syndication module end to end",
           "Data visualizations with D3.js",

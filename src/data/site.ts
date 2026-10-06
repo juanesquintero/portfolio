@@ -306,18 +306,40 @@ export const site: SiteData = {
 
   projects: [
     {
+      id: 'cielo-logistics',
+      company: 'Cielo Travel',
+      tech: ['Python', 'FastAPI', 'PostgreSQL', 'Next.js', 'React', 'Stripe'],
+    },
+    {
+      id: 'evidenza-pptx',
+      company: 'Evidenza Inc.',
+      via: 'Toptal',
+      url: 'https://www.evidenza.ai/',
+      tech: ['TypeScript', 'Node.js', 'PptxGenJS'],
+    },
+    {
+      id: 'taxalign-onboarding',
+      company: 'Taxalign Limited',
+      via: 'Toptal',
+      url: 'https://form.taxalign.com/',
+      tech: ['Next.js', 'React', 'Node.js', 'Stripe', 'HubSpot CRM'],
+    },
+    {
       id: 'payment-analytics',
       company: 'Billtrust',
+      url: 'https://app.billtrust.com/',
       tech: ['Angular', 'FastAPI', 'GraphQL', 'Snowflake', 'HighCharts', 'AWS'],
     },
     {
       id: 'ai-creativity',
       company: 'Capitol AI',
+      url: 'https://www.capitol.ai/',
       tech: ['React', 'Next.js', 'FastAPI', 'WebSockets', 'PostgreSQL', 'Vercel'],
     },
     {
       id: 'real-estate',
       company: 'Olive Tree Holdings',
+      subtitle: 'Mako (Project M)',
       tech: ['Next.js', 'Django', 'GCP', 'Pulumi', 'Docker'],
     },
     {
@@ -328,11 +350,13 @@ export const site: SiteData = {
     {
       id: 'advertising-console',
       company: 'Perficient',
+      url: 'https://kinesso.com/',
       tech: ['React', 'Angular', 'Flask', 'NgRx', 'D3.js', 'MySQL'],
     },
     {
       id: 'payment-gateway',
-      company: 'SisteCrédito',
+      company: 'SC Computing (SisteCrédito)',
+      url: 'https://www.sistecredito.com/',
       tech: ['Angular', 'Flask', 'SQLAlchemy', 'Python', 'MySQL'],
     },
     {

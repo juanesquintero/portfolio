@@ -59,6 +59,12 @@ export interface ProjectMeta {
   id: string;
   company: string;
   tech: string[];
+  /** public link for the project, when available */
+  url?: string;
+  /** product name shown under the title, e.g. "Mako (Project M)" */
+  subtitle?: string;
+  /** provider the work was delivered through, e.g. "Toptal" */
+  via?: string;
 }
 
 export interface SkillGroupMeta {
@@ -234,6 +240,10 @@ export interface ProjectsContent {
   heading: string;
   eyebrow: string;
   intro: string;
+  /** "via" in "Evidenza Inc. (via Toptal)" */
+  via: string;
+  /** project link label */
+  visit: string;
   /** copy keyed by ProjectMeta.id */
   items: Record<string, ProjectCopy>;
 }
