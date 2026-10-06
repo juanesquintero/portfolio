@@ -50,8 +50,10 @@ export interface SkillGroupMeta {
 export interface TechItem {
   /** display name, e.g. "Next.js" */
   name: string;
-  /** maps to `/public/<tech|tools>/<slug>.svg` */
-  slug: string;
+  /** maps to `/public/<tech|tools>/<slug>.svg`; omit to render a text badge */
+  slug?: string;
+  /** dark mark that needs inverting on the dark theme */
+  invert?: boolean;
 }
 
 /** A related link shown in the company dialog. */

@@ -69,12 +69,12 @@
   "techStack": {
     "eyebrow": "Stack Tecnológico",
     "heading": "Tecnologías con las que trabajo",
-    "intro": "Los lenguajes, frameworks y bases de datos que utilizo, ordenados por profundidad de experiencia."
+    "intro": "Los lenguajes, frameworks, bases de datos, plataformas en la nube y herramientas de IA que utilizo, ordenados por profundidad de experiencia."
   },
   "tools": {
     "eyebrow": "Herramientas",
     "heading": "Herramientas y plataformas",
-    "intro": "El día a día — control de versiones, nube, CI/CD, pruebas y editores — detrás de construir y operar el trabajo."
+    "intro": "El día a día — control de versiones, CI/CD, infraestructura, pruebas y pagos — detrás de construir y operar el trabajo."
   },
   "companies": {
     "eyebrow": "Empresas",

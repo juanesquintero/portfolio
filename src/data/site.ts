@@ -35,7 +35,7 @@ export const site: SiteData = {
     },
     {
       id: 'cloud',
-      items: ['AWS', 'GCP', 'Azure', 'Docker', 'GitHub', 'GitLab', 'Azure DevOps', 'Jenkins', 'Vercel', 'Cloudflare', 'NGINX', 'Pulumi'],
+      items: ['AWS', 'GCP', 'Azure', 'Docker', 'GitHub', 'GitLab', 'Azure DevOps', 'Jenkins', 'Vercel', 'Cloudflare', 'NGINX', 'Pulumi', 'Stripe'],
     },
     {
       id: 'testing',
@@ -43,59 +43,68 @@ export const site: SiteData = {
     },
     {
       id: 'tools',
-      items: ['Git', 'VS Code', 'PyCharm', 'Jira', 'Postman', 'Storybook', 'DataDog', 'Agile / Scrum', 'HighCharts', 'D3.js'],
+      items: ['Git', 'Claude Code', 'GitHub Copilot', 'Jira', 'Postman', 'Storybook', 'DataDog', 'Agile / Scrum', 'HighCharts', 'D3.js'],
     },
   ],
 
   /**
    * Core technologies, ordered by depth of experience. Rendered as a logo
    * grid in the Tech Stack section. `slug` maps to `/public/tech/<slug>.svg`
-   * (logos sourced from Devicon, MIT).
+   * (logos sourced from Devicon, MIT, and Simple Icons, CC0). Items without
+   * a `slug` render as a text badge.
    */
   techStack: [
     { name: 'JavaScript', slug: 'javascript' },
     { name: 'TypeScript', slug: 'typescript' },
     { name: 'Python', slug: 'python' },
-    { name: 'FastAPI', slug: 'fastapi' },
     { name: 'React', slug: 'react' },
-    { name: 'Angular', slug: 'angular' },
-    { name: 'Node.js', slug: 'nodejs' },
     { name: 'Next.js', slug: 'nextjs' },
-    { name: 'Nest.js', slug: 'nestjs' },
+    { name: 'Node.js', slug: 'nodejs' },
+    { name: 'FastAPI', slug: 'fastapi' },
+    { name: 'PostgreSQL', slug: 'postgresql' },
+    { name: 'Docker', slug: 'docker' },
+    { name: 'Claude Code', slug: 'claude-code' },
+    { name: 'GitHub Copilot', slug: 'github-copilot', invert: true },
+    { name: 'Angular', slug: 'angular' },
+    { name: 'Flask', slug: 'flask', invert: true },
+    { name: 'NestJS', slug: 'nestjs' },
+    { name: 'Express.js', slug: 'express', invert: true },
+    { name: 'GraphQL', slug: 'graphql' },
+    { name: 'REST APIs' },
+    { name: 'MySQL', slug: 'mysql' },
+    { name: 'Snowflake', slug: 'snowflake' },
+    { name: 'AWS', slug: 'aws', invert: true },
+    { name: 'GCP', slug: 'gcp' },
+    { name: 'Vercel', slug: 'vercel', invert: true },
     { name: 'Vue.js', slug: 'vuejs' },
     { name: 'Django', slug: 'django' },
-    { name: 'GraphQL', slug: 'graphql' },
+    { name: 'MongoDB', slug: 'mongodb' },
     { name: 'Tailwind CSS', slug: 'tailwindcss' },
     { name: 'HTML5', slug: 'html5' },
     { name: 'CSS3', slug: 'css3' },
     { name: 'Astro', slug: 'astro' },
-    { name: 'PostgreSQL', slug: 'postgresql' },
-    { name: 'MongoDB', slug: 'mongodb' },
-    { name: 'MySQL', slug: 'mysql' },
   ],
 
   /**
-   * Day-to-day tooling (version control, cloud, CI/CD, testing, editors).
+   * Day-to-day tooling (version control, cloud, CI/CD, testing, platforms).
    * Rendered as a logo grid in the Tools section. `slug` maps to
-   * `/public/tools/<slug>.svg` (logos sourced from Devicon, MIT).
+   * `/public/tools/<slug>.svg` (logos sourced from Devicon, MIT, and
+   * Simple Icons, CC0).
    */
   tools: [
     { name: 'Git', slug: 'git' },
     { name: 'GitLab', slug: 'gitlab' },
-    { name: 'Docker', slug: 'docker' },
-    { name: 'Google Cloud', slug: 'gcp' },
     { name: 'Azure', slug: 'azure' },
     { name: 'Jenkins', slug: 'jenkins' },
     { name: 'Cloudflare', slug: 'cloudflare' },
     { name: 'NGINX', slug: 'nginx' },
+    { name: 'Stripe', slug: 'stripe' },
     { name: 'Jest', slug: 'jest' },
     { name: 'Cypress', slug: 'cypress' },
     { name: 'Pytest', slug: 'pytest' },
     { name: 'Postman', slug: 'postman' },
     { name: 'Jira', slug: 'jira' },
     { name: 'Storybook', slug: 'storybook' },
-    { name: 'VS Code', slug: 'vscode' },
-    { name: 'PyCharm', slug: 'pycharm' },
   ],
 
   /**

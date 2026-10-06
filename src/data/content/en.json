@@ -69,12 +69,12 @@
   "techStack": {
     "eyebrow": "Tech Stack",
     "heading": "Technologies I work with",
-    "intro": "The languages, frameworks and databases I reach for, ordered by depth of experience."
+    "intro": "The languages, frameworks, databases, cloud platforms and AI tools I reach for, ordered by depth of experience."
   },
   "tools": {
     "eyebrow": "Tools",
     "heading": "Tools & platforms",
-    "intro": "The day-to-day tooling — version control, cloud, CI/CD, testing and editors — behind shipping and running the work."
+    "intro": "The day-to-day tooling — version control, CI/CD, infrastructure, testing and payments — behind shipping and running the work."
   },
   "companies": {
     "eyebrow": "Companies",
