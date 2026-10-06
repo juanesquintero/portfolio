@@ -1,6 +1,7 @@
 ---
 import type { PortfolioContent } from '../data/types';
 import ThemeToggle from './ThemeToggle.astro';
+import Flag from './Flag.astro';
 
 interface Props {
   content: PortfolioContent;
@@ -63,17 +64,19 @@ const homeHref = locale === 'es' ? esHref : enHref;
           href={enHref}
           aria-current={locale === 'en' ? 'true' : undefined}
           class:list={[
-            'rounded-md px-2.5 py-1 transition-colors',
+            'inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 transition-colors',
             locale === 'en' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-ink-strong',
-          ]}>{copy.langToggle.en}</a
+          ]}
+          ><Flag country="us" class="h-2.5 w-[15px]" />{copy.langToggle.en}</a
         >
         <a
           href={esHref}
           aria-current={locale === 'es' ? 'true' : undefined}
           class:list={[
-            'rounded-md px-2.5 py-1 transition-colors',
+            'inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 transition-colors',
             locale === 'es' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-ink-strong',
-          ]}>{copy.langToggle.es}</a
+          ]}
+          ><Flag country="co" class="h-2.5 w-[15px]" />{copy.langToggle.es}</a
         >
       </div>
 
