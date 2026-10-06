@@ -11,13 +11,14 @@ const { content } = Astro.props;
 const { copy, locale, site } = content;
 const nav = copy.nav;
 
+// `spy` lists the section ids that highlight each link while in view.
 const links = [
-  { href: '#about', label: nav.about },
-  { href: '#tech-stack', label: nav.skills },
-  { href: '#experience', label: nav.experience },
-  { href: '#companies', label: nav.companies },
-  { href: '#projects', label: nav.projects },
-  { href: '#contact', label: nav.contact },
+  { href: '#about', label: nav.about, spy: 'about' },
+  { href: '#tech-stack', label: nav.skills, spy: 'tech-stack tools' },
+  { href: '#experience', label: nav.experience, spy: 'experience education' },
+  { href: '#companies', label: nav.companies, spy: 'companies' },
+  { href: '#projects', label: nav.projects, spy: 'projects' },
+  { href: '#contact', label: nav.contact, spy: 'contact' },
 ];
 
 const enHref = '/';
@@ -44,6 +45,7 @@ const homeHref = locale === 'es' ? esHref : enHref;
           <li>
             <a
               href={link.href}
+              data-spy={link.spy}
               class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:text-ink-strong"
             >
               {link.label}
@@ -115,6 +117,7 @@ const homeHref = locale === 'es' ? esHref : enHref;
             <a
               href={link.href}
               class="block rounded-lg px-3 py-2.5 text-base font-medium text-ink-muted hover:bg-surface hover:text-ink-strong"
+              data-spy={link.spy}
               data-mobile-link
             >
               {link.label}
@@ -156,4 +159,46 @@ const homeHref = locale === 'es' ? esHref : enHref;
     toggle.setAttribute('aria-expanded', String(open));
   });
   document.querySelectorAll('[data-mobile-link]').forEach((l) => l.addEventListener('click', closeMenu));
+
+  // Scroll spy: highlight the nav link for the section currently in view.
+  const spyLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[data-spy]'));
+  const spySections = Array.from(document.querySelectorAll<HTMLElement>('main > section[id]'));
+  const ACTIVE = ['bg-accent-500/10', '!text-accent-fg'];
+
+  const updateSpy = () => {
+    // The section crossing a line a third of the way down the viewport is "current";
+    // at the very bottom the last section wins even if it is short.
+    // Never above where a section lands after a jump (navbar + scroll offsets ≈ 160px).
+    const line = Math.max(window.innerHeight / 3, 170);
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    let current = '';
+    for (const section of spySections) {
+      if (section.getBoundingClientRect().top <= line) current = section.id;
+    }
+    if (atBottom && spySections.length) current = spySections[spySections.length - 1].id;
+
+    spyLinks.forEach((link) => {
+      const active = !!current && (link.dataset.spy ?? '').split(' ').includes(current);
+      link.classList.toggle(ACTIVE[0], active);
+      link.classList.toggle(ACTIVE[1], active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  let spyTicking = false;
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (spyTicking) return;
+      spyTicking = true;
+      requestAnimationFrame(() => {
+        updateSpy();
+        spyTicking = false;
+      });
+    },
+    { passive: true }
+  );
+  window.addEventListener('resize', updateSpy);
+  updateSpy();
 </script>
