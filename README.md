@@ -21,6 +21,7 @@ Astro 5 · TypeScript · Tailwind CSS · `@astrojs/sitemap` · Inter (variable f
 /
 ├── public/
 │   ├── cv/Juan-Quintero-CV.pdf   # CV served by the "Download CV" button
+│   ├── companies/<slug>.svg      # self-hosted company logos (monograms by default)
 │   ├── favicon.svg
 │   ├── og-image.svg              # social share image
 │   └── robots.txt
@@ -56,6 +57,19 @@ never drift on the facts. The TypeScript types in `src/data/types.ts` keep both 
 `npm run check` flags any structural mismatch.
 
 To replace the CV, drop your file at `public/cv/Juan-Quintero-CV.pdf`.
+
+### Company logos
+
+The "Companies I've worked with" section is driven by `companies` in `src/data/site.ts`
+(copy in the `companies` block of each JSON file). Logo sourcing is switched with an env flag
+(see `.env.example`):
+
+```bash
+PUBLIC_COMPANY_LOGO_SOURCE=runtime   # default: logo service → favicon → self-hosted SVG fallback
+PUBLIC_COMPANY_LOGO_SOURCE=hosted    # always use /public/companies/<slug>.svg
+```
+
+Drop official logos into `public/companies/<slug>.svg` to replace the monogram placeholders.
 
 ## 🧞 Commands
 

@@ -97,6 +97,7 @@ export interface NavContent {
   about: string;
   skills: string;
   experience: string;
+  companies: string;
   projects: string;
   contact: string;
   downloadCv: string;
