@@ -279,7 +279,12 @@ export interface FooterContent {
 }
 
 export interface Content {
-  meta: { title: string; description: string };
+  meta: {
+    title: string;
+    description: string;
+    /** JSON-LD Person.jobTitle */
+    jobTitle: string;
+  };
   nav: NavContent;
   hero: HeroContent;
   about: AboutContent;

@@ -1,7 +1,8 @@
 {
   "meta": {
-    "title": "Juan Quintero — Ingeniero de Software Full-Stack Senior",
-    "description": "Ingeniero de Software Full-Stack Senior con más de {{years}} años creando aplicaciones web escalables y de alto rendimiento, APIs y sistemas en la nube con JavaScript/TypeScript y Python."
+    "title": "Juan Quintero — Arquitecto de Soluciones de Software y Desarrollador Full-Stack Senior",
+    "description": "Arquitecto de Soluciones de Software, Forward Deployed Engineer y Desarrollador Web Full-Stack Senior con más de {{years}} años de experiencia, verificado como talento top 3% de Toptal. Software listo para producción para clientes en USA, el Reino Unido y Colombia, de la arquitectura al lanzamiento.",
+    "jobTitle": "Arquitecto de Soluciones de Software · Forward Deployed Engineer · Desarrollador Web Full-Stack Senior"
   },
   "langToggle": {
     "en": "EN",

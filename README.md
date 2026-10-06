@@ -20,7 +20,7 @@ Astro 5 · TypeScript · Tailwind CSS · `@astrojs/sitemap` · Inter (variable f
 ```text
 /
 ├── public/
-│   ├── cv/Juan-Quintero-CV.pdf   # CV served by the "Download CV" button
+│   ├── cv/                       # CV PDFs (main, full and one-page versions)
 │   ├── companies/<slug>.svg      # self-hosted company logos (monograms by default)
 │   ├── favicon.svg
 │   ├── og-image.svg              # social share image
@@ -56,7 +56,8 @@ Language-neutral facts (dates, tech stacks, social URLs, email, CV path) live on
 never drift on the facts. The TypeScript types in `src/data/types.ts` keep both languages in sync;
 `npm run check` flags any structural mismatch.
 
-To replace the CV, drop your file at `public/cv/Juan-Quintero-CV.pdf`.
+To replace the CV, drop your file at `public/cv/Juan-Quintero-CV.pdf` (main download). The full and
+one-page variants live next to it as `Juan-Quintero-CV-Full.pdf` and `Juan-Quintero-CV-OnePage.pdf`.
 
 ### Company logos
 

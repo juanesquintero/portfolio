@@ -7,6 +7,6 @@ const content = getContent('en');
 const { meta } = content.copy;
 ---
 
-<Layout lang="en" title={meta.title} description={meta.description}>
+<Layout lang="en" title={meta.title} description={meta.description} jobTitle={meta.jobTitle}>
   <Portfolio content={content} />
 </Layout>
