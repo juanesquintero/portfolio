@@ -1,0 +1,76 @@
+---
+import type { PortfolioContent } from '../data/types';
+
+interface Props {
+  content: PortfolioContent;
+}
+
+const { nav } = Astro.props.content.copy;
+---
+
+<!-- Floating "next section" button: jumps to the next section below the
+     navbar; on the last section it turns into "back to top". -->
+<button
+  id="section-nav"
+  type="button"
+  data-next-label={nav.nextSection}
+  data-top-label={nav.backToTop}
+  aria-label={nav.nextSection}
+  class="btn btn-primary fixed bottom-5 right-5 z-40 h-12 w-12 rounded-full p-0 shadow-card sm:h-auto sm:w-auto sm:px-4 sm:py-2.5"
+>
+  <span data-label class="hidden max-w-[12rem] truncate text-xs sm:inline">{nav.nextSection}</span>
+  <svg data-icon class="h-5 w-5 flex-none transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
+  </svg>
+</button>
+
+<script>
+  const btn = document.getElementById('section-nav') as HTMLButtonElement | null;
+  const sections = Array.from(document.querySelectorAll<HTMLElement>('main > section[id]'));
+
+  if (btn && sections.length) {
+    const label = btn.querySelector<HTMLElement>('[data-label]')!;
+    const icon = btn.querySelector<SVGElement>('[data-icon]')!;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let target: HTMLElement | null = null;
+
+    const update = () => {
+      // Same "current section" line as the navbar scroll spy: a third of the
+      // way down the viewport. The next section is the first one below it.
+      // Never above where a section lands after a jump (navbar + scroll offsets ≈ 160px).
+      const line = Math.max(window.innerHeight / 3, 170);
+      target = sections.find((s) => s.getBoundingClientRect().top > line) ?? null;
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+      if (atBottom) target = null;
+
+      const name = target?.querySelector('.eyebrow')?.textContent?.trim();
+      const text = target ? (name ? `${btn.dataset.nextLabel}: ${name}` : btn.dataset.nextLabel!) : btn.dataset.topLabel!;
+      label.textContent = text;
+      btn.setAttribute('aria-label', text);
+      icon.style.transform = target ? '' : 'rotate(180deg)';
+    };
+
+    let ticking = false;
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          update();
+          ticking = false;
+        });
+      },
+      { passive: true }
+    );
+    window.addEventListener('resize', update);
+
+    btn.addEventListener('click', () => {
+      const behavior = reduce ? 'auto' : 'smooth';
+      if (target) target.scrollIntoView({ behavior, block: 'start' });
+      else window.scrollTo({ top: 0, behavior });
+    });
+
+    update();
+  }
+</script>
