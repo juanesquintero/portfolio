@@ -20,17 +20,38 @@ export interface SocialLink {
   icon: 'email' | 'linkedin' | 'github' | 'gitlab';
 }
 
+/** A client project nested inside a job (e.g. Toptal engagements). */
+export interface ClientProjectMeta {
+  id: string;
+  client: string;
+  /** human-readable date range, identical across languages */
+  period: string;
+  tech: string[];
+  /** client website */
+  url?: string;
+  /** link to the delivered product, when public */
+  productUrl?: string;
+  /** logo path under /public */
+  logo?: string;
+}
+
 /** Stable, language-neutral facts about one job. Joined to copy by `id`. */
 export interface ExperienceMeta {
   id: string;
   company: string;
-  /** human-readable date range, identical across languages */
+  /** human-readable date range, identical across languages ("Present" is localized) */
   period: string;
   /** sortable start date, ISO-ish, newest first */
   start: string;
   tech: string[];
   /** optional company website */
   url?: string;
+  /** logo path under /public */
+  logo?: string;
+  /** link to the product worked on, when public */
+  productUrl?: string;
+  /** client projects delivered under this job */
+  clientProjects?: ClientProjectMeta[];
 }
 
 /** Stable facts about one featured project. Joined to copy by `id`. */
@@ -38,6 +59,12 @@ export interface ProjectMeta {
   id: string;
   company: string;
   tech: string[];
+  /** public link for the project, when available */
+  url?: string;
+  /** product name shown under the title, e.g. "Mako (Project M)" */
+  subtitle?: string;
+  /** provider the work was delivered through, e.g. "Toptal" */
+  via?: string;
 }
 
 export interface SkillGroupMeta {
@@ -50,8 +77,10 @@ export interface SkillGroupMeta {
 export interface TechItem {
   /** display name, e.g. "Next.js" */
   name: string;
-  /** maps to `/public/<tech|tools>/<slug>.svg` */
-  slug: string;
+  /** maps to `/public/<tech|tools>/<slug>.svg`; omit to render a text badge */
+  slug?: string;
+  /** dark mark that needs inverting on the dark theme */
+  invert?: boolean;
 }
 
 /** A related link shown in the company dialog. */
@@ -68,10 +97,20 @@ export interface CompanyItem {
   slug: string;
   /** domain used by the runtime logo service, e.g. "epam.com" */
   domain?: string;
+  /** self-hosted logo path; when set it is used in both modes */
+  logo?: string;
   /** explicit logo image URLs, tried first (in order) in runtime mode */
   logoUrls?: string[];
   /** one or more related links shown in the company dialog */
   links?: CompanyLink[];
+}
+
+/** Language-neutral facts about the degree. */
+export interface EducationMeta {
+  url: string;
+  /** logo path under /public */
+  logo: string;
+  period: string;
 }
 
 export interface SiteData {
@@ -80,11 +119,14 @@ export interface SiteData {
   phone: string;
   location: string;
   cvPath: string;
+  /** alternative CV downloads shown as secondary links */
+  cvVariants: { full: string; onePage: string };
   socials: SocialLink[];
   skillGroups: SkillGroupMeta[];
   techStack: TechItem[];
   tools: TechItem[];
   companies: CompanyItem[];
+  education: EducationMeta;
   experience: ExperienceMeta[];
   projects: ProjectMeta[];
 }
@@ -110,6 +152,9 @@ export interface HeroContent {
   ctaProjects: string;
   ctaContact: string;
   ctaCv: string;
+  /** labels for the secondary CV downloads */
+  cvFull: string;
+  cvOnePage: string;
   stats: { value: string; label: string }[];
 }
 
@@ -158,17 +203,37 @@ export interface CompaniesContent {
   items: Record<string, CompanyCopy>;
 }
 
-export interface ExperienceCopy {
-  title: string;
-  location: string;
+export interface ClientProjectCopy {
+  role: string;
   summary: string;
   highlights: string[];
+}
+
+export interface ExperienceCopy {
+  title: string;
+  /** overrides the language-neutral company name (e.g. "Independent clients") */
+  company?: string;
+  location: string;
+  /** roles held within the position */
+  roles?: string[];
+  /** product worked on */
+  product?: string;
+  summary: string;
+  highlights: string[];
+  /** copy keyed by ClientProjectMeta.id */
+  clientProjects?: Record<string, ClientProjectCopy>;
 }
 
 export interface ExperienceContent {
   heading: string;
   eyebrow: string;
   present: string;
+  /** "Roles" label */
+  rolesLabel: string;
+  /** "Product" label */
+  productLabel: string;
+  /** heading above nested client projects */
+  clientProjectsLabel: string;
   /** copy keyed by ExperienceMeta.id */
   roles: Record<string, ExperienceCopy>;
 }
@@ -184,6 +249,10 @@ export interface ProjectsContent {
   heading: string;
   eyebrow: string;
   intro: string;
+  /** "via" in "Evidenza Inc. (via Toptal)" */
+  via: string;
+  /** project link label */
+  visit: string;
   /** copy keyed by ProjectMeta.id */
   items: Record<string, ProjectCopy>;
 }
@@ -195,13 +264,27 @@ export interface ContactContent {
   emailCta: string;
 }
 
+export interface EducationContent {
+  heading: string;
+  eyebrow: string;
+  degree: string;
+  school: string;
+  certificationsHeading: string;
+  certifications: string[];
+}
+
 export interface FooterContent {
   rights: string;
   builtWith: string;
 }
 
 export interface Content {
-  meta: { title: string; description: string };
+  meta: {
+    title: string;
+    description: string;
+    /** JSON-LD Person.jobTitle */
+    jobTitle: string;
+  };
   nav: NavContent;
   hero: HeroContent;
   about: AboutContent;
@@ -210,6 +293,7 @@ export interface Content {
   tools: ToolsContent;
   companies: CompaniesContent;
   experience: ExperienceContent;
+  education: EducationContent;
   projects: ProjectsContent;
   contact: ContactContent;
   footer: FooterContent;
@@ -220,7 +304,12 @@ export interface Content {
 /* Merged view consumed by components                                 */
 /* ------------------------------------------------------------------ */
 
-export interface ResolvedExperience extends ExperienceMeta, ExperienceCopy {}
+export interface ResolvedClientProject extends ClientProjectMeta, ClientProjectCopy {}
+export interface ResolvedExperience
+  extends Omit<ExperienceMeta, 'clientProjects'>,
+    Omit<ExperienceCopy, 'clientProjects' | 'company'> {
+  clientProjects: ResolvedClientProject[];
+}
 export interface ResolvedProject extends ProjectMeta, ProjectCopy {}
 export interface ResolvedSkillGroup extends SkillGroupMeta {
   title: string;

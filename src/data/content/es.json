@@ -1,7 +1,8 @@
 {
   "meta": {
-    "title": "Juan Quintero — Ingeniero de Software Full-Stack Senior",
-    "description": "Ingeniero de Software Full-Stack Senior con más de {{years}} años creando aplicaciones web escalables y de alto rendimiento, APIs y sistemas en la nube con JavaScript/TypeScript y Python."
+    "title": "Juan Quintero — Arquitecto de Soluciones de Software y Desarrollador Full-Stack Senior",
+    "description": "Arquitecto de Soluciones de Software, Forward Deployed Engineer y Desarrollador Web Full-Stack Senior con más de {{years}} años de experiencia, verificado como talento top 3% de Toptal. Software listo para producción para clientes en USA, el Reino Unido y Colombia, de la arquitectura al lanzamiento.",
+    "jobTitle": "Arquitecto de Soluciones de Software · Forward Deployed Engineer · Desarrollador Web Full-Stack Senior"
   },
   "langToggle": {
     "en": "EN",
@@ -18,39 +19,43 @@
   },
   "hero": {
     "greeting": "Hola, soy",
-    "role": "Ingeniero de Software Full-Stack Senior",
-    "tagline": "Construyo aplicaciones web escalables y de alto rendimiento, del frontend al backend.",
+    "role": "Arquitecto de Soluciones de Software · Forward Deployed Engineer · Desarrollador Web Full-Stack Senior",
+    "tagline": "Diseño y construyo software listo para producción, desde la arquitectura y el descubrimiento con el cliente hasta el lanzamiento.",
     "ctaProjects": "Ver proyectos",
     "ctaContact": "Contáctame",
     "ctaCv": "Descargar CV",
+    "cvFull": "Versión completa",
+    "cvOnePage": "Una página",
     "stats": [
       { "value": "{{years}}+", "label": "Años de experiencia" },
-      { "value": "8", "label": "Empresas y clientes" },
+      { "value": "10+", "label": "Empresas y clientes" },
       { "value": "10+", "label": "Industrias" },
-      { "value": "2", "label": "Países (USA y CO)" }
+      { "value": "3", "label": "Países de clientes (USA, UK y CO)" },
+      { "value": "6", "label": "Años trabajando en inglés con clientes de USA" }
     ]
   },
   "about": {
     "eyebrow": "Perfil",
-    "heading": "Ingeniería full-stack, de punta a punta",
+    "heading": "Ingeniería de software, de punta a punta",
     "paragraphs": [
-      "Soy Ingeniero de Software Full-Stack Senior con más de {{years}} años de experiencia comprobada en la industria de la tecnología. Me enfoco en el desarrollo web full-stack con JavaScript/TypeScript (React, Angular, Next.js, Node.js) en el frontend y Python (FastAPI, Flask, Django) y Node.js en el backend para APIs y aplicaciones web escalables.",
-      "He desarrollado software para clientes en USA y Colombia —desde microempresas, emprendedores y start-ups hasta compañías globales— en sectores como FinTech, IA, SaaS, bienes raíces, publicidad, EdTech, analítica, procesamiento de pagos y software empresarial.",
-      "Siempre estoy dispuesto a aprender nuevas tecnologías y asumir lo que un proyecto necesite para alcanzar la meta. Aporto fuertes habilidades de comunicación, resolución de problemas y colaboración, además de una mentalidad ágil en cada equipo."
+      "Ingeniero de Software con más de {{years}} años de experiencia construyendo aplicaciones, soluciones y plataformas de software para clientes en USA, el Reino Unido y Colombia, desde start-ups hasta compañías globales como EPAM Systems, Perficient y Billtrust. Actualmente soy Arquitecto de Soluciones de Software y Forward Deployed Engineer: diseño la arquitectura de los sistemas, trabajo directamente con los clientes para entender cómo funcionan sus operaciones y convierto eso en software listo para producción, desde el primer MVP hasta el lanzamiento.",
+      "Especializado en desarrollo web full-stack con enfoque en el back-end en Python y JavaScript/TypeScript. Uso desarrollo asistido por IA con Claude Code (skills, hooks, agentes, subagentes y orquestación personalizados) y GitHub Copilot para entregar más rápido sin sacrificar calidad.",
+      "He entregado productos en viajes, fintech, IA, bienes raíces, publicidad, contabilidad, educación y e-commerce, y he colaborado en equipos distribuidos con ingenieros de China, Ucrania, Rusia, India, México, Argentina y Brasil."
     ],
     "focusHeading": "En qué me enfoco",
     "focus": [
-      "Interfaces web responsivas y accesibles con React, Angular y Next.js",
-      "APIs y servicios robustos con Python y Node.js",
-      "Nube, Docker y CI/CD en AWS, GCP y Azure",
-      "Dashboards con datos, analítica e integraciones",
-      "Rendimiento, refactorización y mantenibilidad a largo plazo"
+      "Arquitectura de soluciones y diseño de sistemas, del MVP a un producto escalable",
+      "Trabajo directo con clientes para convertir operaciones manuales en software",
+      "APIs y servicios robustos con Python (FastAPI) y Node.js",
+      "Aplicaciones web con React, Next.js y Angular en TypeScript",
+      "Desarrollo asistido por IA con Claude Code y GitHub Copilot",
+      "Nube, Docker y CI/CD en AWS, GCP, Azure y Vercel"
     ],
-    "softSkills": ["Comunicación", "Resolución de problemas", "Colaboración", "Mentalidad ágil", "Pensamiento analítico"],
+    "softSkills": ["Comunicación", "Resolución de problemas", "Colaboración", "Trabajo de cara al cliente", "Pensamiento analítico"],
     "languagesHeading": "Idiomas",
     "languages": [
       { "name": "Español", "level": "Nativo" },
-      { "name": "Inglés", "level": "C1 — Avanzado" }
+      { "name": "Inglés", "level": "C1 — Avanzado (EF SET 65/100)" }
     ]
   },
   "skills": {
@@ -69,12 +74,12 @@
   "techStack": {
     "eyebrow": "Stack Tecnológico",
     "heading": "Tecnologías con las que trabajo",
-    "intro": "Los lenguajes, frameworks y bases de datos que utilizo, ordenados por profundidad de experiencia."
+    "intro": "Los lenguajes, frameworks, bases de datos, plataformas en la nube y herramientas de IA que utilizo, ordenados por profundidad de experiencia."
   },
   "tools": {
     "eyebrow": "Herramientas",
     "heading": "Herramientas y plataformas",
-    "intro": "El día a día — control de versiones, nube, CI/CD, pruebas y editores — detrás de construir y operar el trabajo."
+    "intro": "El día a día — control de versiones, CI/CD, infraestructura, pruebas y pagos — detrás de construir y operar el trabajo."
   },
   "companies": {
     "eyebrow": "Empresas",
@@ -82,12 +87,13 @@
     "intro": "Empleadores, clientes y socios para quienes he desarrollado software. Haz clic en un logo para ver más.",
     "visit": "Visitar sitio web",
     "items": {
+      "toptal": { "description": "Toptal es una red global y exclusiva de desarrolladores de software, diseñadores y expertos financieros freelance que conecta al top 3% del talento con empresas para proyectos remotos." },
       "billtrust": { "description": "Billtrust es una fintech B2B de Estados Unidos que automatiza el ciclo order-to-cash. Su plataforma en la nube agiliza la facturación, los pagos, la aplicación de efectivo y las cobranzas, ayudando a los equipos financieros a cobrar más rápido y reducir el trabajo manual." },
       "capitol-ai": { "description": "Capitol AI es una plataforma impulsada por IA para la creación de contenido y la creatividad. Ayuda a escritores, marketers y analistas a generar, estructurar y producir documentos, informes e historias extensos con modelos de lenguaje." },
       "olive-tree": { "description": "Olive Tree Holdings es una firma de inversión en bienes raíces enfocada en propiedad multifamiliar y comercial. Adquiere, administra y mejora comunidades, combinando operaciones con tecnología para brokers, patrocinadores y residentes." },
       "epam": { "description": "EPAM Systems es una consultora global de ingeniería de software y producto digital. Diseña y construye productos, plataformas y sistemas en la nube a gran escala para empresas de múltiples industrias, combinando ingeniería, diseño y consultoría." },
       "perficient": { "description": "Perficient es una consultora digital global que ayuda a las empresas a modernizarse. Entrega experiencias digitales, plataformas de datos y nube e ingeniería de producto para clientes de finanzas, salud, retail y más." },
-      "sistecredito": { "description": "SisteCrédito es una fintech colombiana de crédito en punto de venta (compra ahora, paga después). Permite a los compradores financiar compras directamente en los comercios, ampliando el acceso al crédito en el retail de Latinoamérica." },
+      "sistecredito": { "description": "SC Computing es la compañía de desarrollo de software de SisteCrédito, una fintech colombiana de crédito en punto de venta (compra ahora, paga después) que permite financiar compras directamente en los comercios." },
       "educatic": { "description": "Educatic es una empresa EdTech que construye herramientas de datos y analítica para instituciones académicas. Sus plataformas aplican machine learning a retos como predecir y reducir la deserción estudiantil, con visualizaciones y estadísticas." },
       "kinesso": { "description": "Kinesso es la compañía de tecnología de marketing y datos de IPG, que conecta medios, datos y tecnología en la red de agencias. Matterkind, del mismo grupo, se enfoca en la activación de medios direccionables." },
       "marathon-oil": { "description": "Marathon Oil fue una compañía estadounidense independiente de exploración y producción de petróleo y gas. En 2024 fue adquirida por ConocoPhillips. (Marathon Petroleum es la compañía de refinación y comercialización que cotiza por separado.)" },
@@ -100,102 +106,195 @@
     "eyebrow": "Experiencia",
     "heading": "Dónde he trabajado",
     "present": "Actualidad",
+    "rolesLabel": "Roles",
+    "productLabel": "Producto",
+    "clientProjectsLabel": "Proyectos con clientes",
     "roles": {
-      "billtrust": {
-        "title": "Ingeniero de Software",
-        "location": "Colombia (Remoto) · Tiempo completo",
-        "summary": "Construí un módulo de reportes analíticos que ofrece una visión robusta del rendimiento del procesamiento de pagos mediante dashboards interactivos y métricas clave como Volumen de Sobres y Pagos Procesados.",
+      "cielo-travel": {
+        "title": "Arquitecto de Soluciones de Software",
+        "location": "Remoto · Tiempo completo",
+        "roles": [
+          "Arquitecto de Soluciones Forward Deployed",
+          "Arquitecto de Soluciones de Software",
+          "Líder de Back-end"
+        ],
+        "summary": "Construyendo desde cero una plataforma logística interna para automatizar las recogidas y regresos al aeropuerto de una empresa de viajes, que antes se gestionaban en hojas de cálculo.",
         "highlights": [
-          "Desarrollé y mejoré dashboards interactivos para métricas clave de procesamiento de pagos",
-          "Creé capacidades de drill-down para coincidencias de sobres e ítems en la UI",
-          "Integré bases de datos y almacenamiento con middleware para tareas asíncronas en segundo plano",
-          "Refactoricé y optimicé código de frontend y backend para mejorar rendimiento y mantenibilidad"
+          "Diseñé la arquitectura de la plataforma y ahora lidero su desarrollo back-end, del MVP hacia un producto escalable.",
+          "Reemplacé operaciones manuales basadas en hojas de cálculo por flujos automatizados, consolidando hojas de cálculo y bases de datos dispersas en una única fuente de verdad.",
+          "Construí la programación de recogidas y regresos al aeropuerto e integré Stripe, para que las reservas y los pagos funcionen en un solo sistema.",
+          "Trabajo directamente con el equipo de operaciones como arquitecto de soluciones forward deployed, convirtiendo sus procesos diarios en funcionalidades del producto."
+        ]
+      },
+      "toptal": {
+        "title": "FDE Senior Freelance",
+        "location": "Remoto · Freelance",
+        "roles": [
+          "Forward Deployed Engineer Senior",
+          "Desarrollador Web Full-Stack Senior"
+        ],
+        "summary": "Miembro de la red top 3% de Toptal desde septiembre de 2024, realizando contratos freelance de corta duración para clientes de Toptal.",
+        "highlights": [],
+        "clientProjects": {
+          "evidenza": {
+            "role": "Desarrollador TypeScript",
+            "summary": "Construí un módulo independiente en TypeScript que genera presentaciones de PowerPoint a partir de datos crudos de encuestas.",
+            "highlights": [
+              "Validé la viabilidad desde el inicio con una prueba de concepto que reprodujo los layouts de diapositivas más complejos en PptxGenJS y documentó los límites de la librería.",
+              "Construí un sistema de temas y probé los elementos clave de las diapositivas, convirtiendo cada layout diseñado en una plantilla reutilizable y fiel a la marca.",
+              "Compuse las plantillas en secciones completas de presentación y entregué un módulo con todas las funcionalidades, listo para integrarse en el código del cliente."
+            ]
+          },
+          "taxalign": {
+            "role": "Desarrollador Full-Stack",
+            "summary": "Agregué un flujo de onboarding y checkout de clientes al sitio web en Framer de una firma contable online del Reino Unido.",
+            "highlights": [
+              "Construí un formulario de onboarding personalizado de varios pasos dentro del sitio en Framer que captura los datos del cliente y la aceptación de términos y condiciones.",
+              "Automaticé la búsqueda de empresas con la API de Companies House del Reino Unido, para que los clientes ya no escriban a mano los datos de su empresa.",
+              "Conecté los envíos con HubSpot CRM, generé PDFs automáticamente y agregué checkout con Stripe, convirtiendo el formulario en un flujo de onboarding pagado de punta a punta."
+            ]
+          }
+        }
+      },
+      "billtrust": {
+        "title": "Ingeniero de Software Senior",
+        "location": "Remoto · Tiempo completo",
+        "product": "Billtrust Payment Analytics Dashboard",
+        "summary": "Módulo de reportes analíticos sobre el rendimiento del procesamiento de pagos, con dashboards interactivos, drill-downs y exportación a PDF, CSV y XLS.",
+        "highlights": [
+          "Construí dashboards interactivos que dan a los clientes una visión clara del rendimiento del procesamiento de pagos mediante métricas como Envelope Volume y Payments Processed.",
+          "Agregué drill-downs desde las métricas resumen hasta las coincidencias individuales de sobres e ítems, para que los usuarios puedan rastrear cualquier cifra hasta sus registros.",
+          "Moví el procesamiento pesado de datos a tareas asíncronas en segundo plano mediante middleware, manteniendo la UI ágil sobre grandes conjuntos de datos en Snowflake y MongoDB.",
+          "Encontré y corregí bugs y cuellos de botella de rendimiento, y refactoricé código de front-end y back-end para mejorar la velocidad y la mantenibilidad a largo plazo."
         ]
       },
       "capitol-ai": {
         "title": "Ingeniero de Software",
-        "location": "Colombia (Remoto) · Tiempo completo",
-        "summary": "Contribuí a Capitol.ai, una plataforma de creatividad impulsada por IA que ayuda a artistas, escritores y marketers a generar ideas, crear contenido y agilizar su flujo creativo.",
+        "location": "Remoto · Tiempo completo",
+        "product": "Plataforma de creatividad de Capitol AI",
+        "summary": "Plataforma de creatividad impulsada por IA que ayuda a escritores, artistas y marketers a generar ideas y crear contenido.",
         "highlights": [
-          "Desarrollé e integré la funcionalidad de impresión de historias/documentos en la UI y el backend de IA",
-          "Identifiqué y corregí errores en la UI y los servicios backend de IA",
-          "Refactoricé el código para mejorar el rendimiento y la mantenibilidad",
-          "Mejoré la responsividad y usabilidad de la UI en distintos dispositivos y navegadores"
+          "Construí la funcionalidad de impresión de historias/documentos en la UI y el back-end de IA, permitiendo a los usuarios exportar el contenido que generan.",
+          "Corregí bugs en la UI y el back-end de IA, y refactoricé el código para mejorar el rendimiento y la mantenibilidad.",
+          "Mejoré la responsividad y la usabilidad de la plataforma en distintos dispositivos y navegadores."
         ]
       },
       "olive-tree": {
-        "title": "Ingeniero de Software",
-        "location": "Colombia (Remoto) · Tiempo completo",
-        "summary": "Desarrollé y mantuve un portal/consola de bienes raíces para brokers multi-cliente, enfocado en la autogeneración de documentos legales, financieros y de marketing como memorandos de oferta y paquetes de negociación.",
+        "title": "Ingeniero de Software Senior",
+        "location": "Remoto · Tiempo completo",
+        "product": "Mako (Project M), portal inmobiliario para brokers",
+        "summary": "Plataforma para brokers multicliente y de arrendamiento que genera automáticamente documentos legales, financieros y de marketing.",
         "highlights": [
-          "Construí un módulo para recolectar datos de propiedades e incrustarlos en archivos autogenerados",
-          "Desarrollé y mantuve una librería de componentes compartida para las necesidades de la empresa",
-          "Optimicé la infraestructura y los procesos de CI/CD de la empresa",
-          "Implementé nuevas funcionalidades para agilizar las transacciones de brokers y patrocinadores"
+          "Construí un módulo que recopila datos de propiedades y los incorpora en memorandos de oferta y paquetes de negocio generados automáticamente, reduciendo el trabajo manual de los brokers.",
+          "Ayudé a construir una librería de componentes compartida que mantiene consistente la UI de la plataforma.",
+          "Optimicé la infraestructura y el CI/CD en GCP con Pulumi para despliegues más confiables."
         ]
       },
       "epam": {
         "title": "Ingeniero de Software",
-        "location": "Colombia (Remoto) · Tiempo completo",
-        "summary": "Lideré dos migraciones exitosas de aplicaciones empresariales internas para modernizar el stack tecnológico y la infraestructura del cliente, trabajando entre backend Node.js y frontends en React/Angular.",
+        "location": "Remoto · Tiempo completo",
+        "summary": "Modernización de las aplicaciones empresariales internas y la infraestructura del cliente.",
         "highlights": [
-          "Migré dos aplicaciones internas desde tecnologías legadas",
-          "Migré bases de datos y endpoints de API con Snowflake y SAP HANA",
-          "Mejoré la infraestructura y el stack tecnológico del cliente",
-          "Resolví numerosos errores y entregué mejoras en las aplicaciones"
+          "Migré con éxito dos aplicaciones empresariales internas (Node.js/TypeScript y Angular) desde tecnología legacy.",
+          "Migré bases de datos y endpoints de API a Snowflake y SAP HANA, modernizando el stack de datos del cliente.",
+          "Agilicé flujos de trabajo frecuentes de los empleados y corregí bugs en los front-ends de React y Angular."
         ]
       },
       "perficient": {
-        "title": "Ingeniero de Software",
-        "location": "Colombia (Remoto) · Tiempo completo",
-        "summary": "Construí una consola de gestión de publicidad de sindicación para un cliente multinacional de IPG que permite gestionar audiencias, sindicar y generar reportes basados en datos.",
+        "title": "Ingeniero de Software Semi-Senior",
+        "location": "Remoto · Tiempo completo",
+        "product": "Consola de sindicación publicitaria de Kinesso (Interpublic Group)",
+        "summary": "Consola que ayuda a los clientes de Interpublic Group (IPG) a gestionar audiencias, sindicar contenido y reportar resultados.",
         "highlights": [
-          "Lideré el módulo de sindicación para nuevas implementaciones y soporte",
-          "Traduje las necesidades del cliente en funcionalidades y asesoré al PO sobre UX",
-          "Migré los estilos a un nuevo look & feel con profundo conocimiento de CSS/SASS",
-          "Impulsé la visión técnica en las ceremonias ágiles para optimizar las necesidades del negocio"
+          "Lideré el módulo de sindicación, a cargo de sus nuevas implementaciones y soporte.",
+          "Implementé un nuevo look and feel en toda la aplicación migrando sus estilos con CSS y Sass.",
+          "Convertí las necesidades del cliente en funcionalidades y asesoré al product owner en UX."
         ]
       },
-      "sistecredito": {
-        "title": "Desarrollador de Software",
-        "location": "Medellín (Híbrido) · Tiempo completo",
-        "summary": "Trabajé en una pasarela de pagos frontend para clientes personas naturales y un sistema backend de recomendación de productos para una aplicación web de e-commerce.",
+      "sc-computing": {
+        "title": "Desarrollador de Software Junior",
+        "location": "Híbrido · Tiempo completo",
+        "product": "Pasarela de pagos y sitio web de SisteCrédito",
+        "summary": "Compañía de desarrollo de software de SisteCrédito: pasarela de pagos para clientes individuales, el sitio web de la compañía y un sistema de recomendaciones para e-commerce.",
         "highlights": [
-          "Construí y di soporte a una aplicación cliente de pasarela de pagos",
-          "Reduje costos integrando métodos de pago directamente, retirando una pasarela de terceros",
-          "Ayudé a crear el equipo backend de Python y servicios de recomendación de productos",
-          "Definí estándares y buenas prácticas de programación en Python"
+          "Reduje costos de la compañía al retirar una pasarela de pagos de terceros e integrar los métodos de pago directamente.",
+          "Ayudé a fundar el equipo de back-end en Python y definí sus estándares de código y buenas prácticas.",
+          "Construí servicios de datos y un sistema de recomendación de productos para la app de e-commerce de la compañía."
         ]
       },
       "educatic": {
-        "title": "Desarrollador de Software",
-        "location": "Medellín (Híbrido) · Contratista",
-        "summary": "Construí PLEYADES, una plataforma web que usa machine learning para predecir, identificar y analizar la deserción estudiantil en programas académicos, con visualización de datos y estadísticas.",
+        "title": "Desarrollador de Software Junior",
+        "location": "Híbrido · Contratista",
+        "product": "PLEYADES, plataforma de analítica de deserción estudiantil",
+        "summary": "Plataforma de machine learning que predice y analiza la deserción estudiantil, desde el nivel país hasta cada estudiante.",
         "highlights": [
-          "Implementé software para predecir la deserción estudiantil con modelos de ML",
-          "Desarrollé servicios de datos multi-base para procesar información académica",
-          "Desplegué, mantuve y di soporte a apps web y APIs en la infraestructura del cliente",
-          "Mejoré los procesos de despliegue de aplicaciones web en Python en distintos entornos"
+          "Construí el software de predicción de deserción con scikit-learn, respaldado por servicios de datos sobre múltiples bases de datos.",
+          "Desplegué y mantuve aplicaciones web y APIs en la infraestructura del cliente, y optimicé los despliegues de Python entre entornos."
         ]
       },
       "freelance": {
-        "title": "Desarrollador de Software · Freelance",
-        "location": "Medellín (Híbrido) · Freelance",
-        "summary": "Entregué aplicaciones web y APIs para clientes del sector académico, construyendo módulos de gestión curricular e implementando arquitecturas MEVN/MERN.",
+        "title": "Desarrollador de Software Freelance",
+        "company": "Clientes independientes",
+        "location": "Híbrido · Freelance",
+        "summary": "Aplicaciones web y APIs para clientes del sector académico.",
         "highlights": [
-          "Desarrollé una app de gestión curricular: calendario académico, configuración y administración",
-          "Implementé arquitecturas MEVN y MERN para proyectos del departamento de informática",
-          "Mantuve modelos de bases de datos relacionales y lógicos en Oracle Data Modeler",
-          "Di soporte a múltiples aplicaciones para usuarios del ámbito académico"
+          "Desarrollé una app web de gestión curricular con módulos de calendario académico, configuración y administración.",
+          "Implementé arquitecturas MEVN y MERN para proyectos de clientes, y documenté modelos de bases de datos en Oracle Data Modeler."
         ]
       }
     }
   },
+  "education": {
+    "eyebrow": "Formación",
+    "heading": "Formación y certificaciones",
+    "degree": "Pregrado en Ingeniería de Software",
+    "school": "Universidad de Medellín",
+    "certificationsHeading": "Certificaciones",
+    "certifications": [
+      "Google Cloud Fundamentals: Core Infrastructure – Coursera",
+      "Certificado de inglés EF SET 65/100 (C1 Avanzado) – EF Education First",
+      "Big Data en acción – Universidad de Medellín",
+      "Introducción a Node.js desarrollando un proyecto ágil – Tecnológico de Antioquia",
+      "Inteligencia artificial para la resolución de problemas – Universidad EAFIT"
+    ]
+  },
   "projects": {
     "eyebrow": "Proyectos",
     "heading": "Trabajo destacado",
-    "intro": "Casos de estudio seleccionados de trabajo en producción en FinTech, IA, bienes raíces, publicidad y analítica.",
+    "intro": "Casos de estudio seleccionados de trabajo en producción en viajes, FinTech, IA, contabilidad, bienes raíces, publicidad y analítica.",
+    "via": "vía",
+    "visit": "Visitar",
     "items": {
+      "cielo-logistics": {
+        "title": "Plataforma de Automatización Logística",
+        "industries": ["Viajes", "Logística", "Herramientas internas"],
+        "blurb": "Una plataforma interna construida desde cero que reemplaza las operaciones de recogida y regreso al aeropuerto basadas en hojas de cálculo, para que las reservas, la programación y los pagos funcionen en un solo sistema.",
+        "highlights": [
+          "Arquitectura diseñada del MVP hacia la escala",
+          "Programación de recogidas y regresos",
+          "Pagos con Stripe"
+        ]
+      },
+      "evidenza-pptx": {
+        "title": "Generador de Encuestas a PowerPoint",
+        "industries": ["Marketing con IA", "Automatización"],
+        "blurb": "Un módulo independiente en TypeScript que convierte datos crudos de encuestas en presentaciones de PowerPoint fieles a la marca, entregado listo para integrarse en el código del cliente.",
+        "highlights": [
+          "Prueba de concepto para layouts complejos",
+          "Temas y plantillas de diapositivas reutilizables",
+          "Secciones de presentación componibles"
+        ]
+      },
+      "taxalign-onboarding": {
+        "title": "Onboarding y Checkout de Clientes",
+        "industries": ["Contabilidad", "FinTech", "Reino Unido"],
+        "blurb": "Un flujo de onboarding pagado y de autoservicio para una firma contable online del Reino Unido, con búsqueda automática de empresas, sincronización con el CRM, PDFs generados y pago en línea.",
+        "highlights": [
+          "Búsqueda en la API de Companies House del Reino Unido",
+          "Sincronización con HubSpot CRM y generación de PDFs",
+          "Checkout con Stripe"
+        ]
+      },
       "payment-analytics": {
         "title": "Dashboard de Analítica de Pagos",
         "industries": ["FinTech", "Procesamiento de Pagos", "Analítica"],
@@ -239,7 +338,7 @@
       "advertising-console": {
         "title": "Consola de Gestión Publicitaria",
         "industries": ["Publicidad", "Analítica"],
-        "blurb": "Una consola de publicidad de sindicación para un cliente multinacional que permite gestionar audiencias, sindicar y generar reportes basados en datos.",
+        "blurb": "Una consola de publicidad de sindicación que ayuda a los clientes de Interpublic Group (IPG) a gestionar audiencias, sindicar contenido y reportar resultados.",
         "highlights": [
           "Lideré el módulo de sindicación de punta a punta",
           "Visualizaciones de datos con D3.js",
@@ -271,7 +370,7 @@
   "contact": {
     "eyebrow": "Contacto",
     "heading": "Construyamos algo",
-    "intro": "Estoy abierto a roles senior full-stack y a colaboraciones interesantes. La forma más rápida de contactarme es por correo —o conéctate en cualquiera de las plataformas a continuación.",
+    "intro": "Estoy abierto a roles de Arquitecto de Soluciones de Software, Forward Deployed Engineer y Full-Stack Senior, y a colaboraciones interesantes. La forma más rápida de contactarme es por correo —o conéctate en cualquiera de las plataformas a continuación.",
     "emailCta": "Envíame un correo"
   },
   "footer": {

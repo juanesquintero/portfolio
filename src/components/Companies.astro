@@ -23,6 +23,9 @@ const source = import.meta.env.PUBLIC_COMPANY_LOGO_SOURCE === 'hosted' ? 'hosted
 
 /** Ordered list of logo URLs to try (first that loads wins). */
 function logoSrcs(company: CompanyItem): string[] {
+  // A real self-hosted logo always wins over the logo services.
+  if (company.logo) return [company.logo];
+
   const hosted = `/companies/${company.slug}.svg`;
   if (source !== 'runtime') return [hosted];
 

@@ -64,6 +64,16 @@ const hero = copy.hero;
         </a>
       </div>
 
+      <p class="reveal mt-3 text-sm text-ink-faint" style="--reveal-delay: 270ms">
+        <a href={site.cvVariants.full} download class="underline-offset-4 transition-colors hover:text-accent-fg hover:underline">
+          {hero.cvFull}
+        </a>
+        <span class="mx-1.5" aria-hidden="true">·</span>
+        <a href={site.cvVariants.onePage} download class="underline-offset-4 transition-colors hover:text-accent-fg hover:underline">
+          {hero.cvOnePage}
+        </a>
+      </p>
+
       <div class="reveal mt-8" style="--reveal-delay: 300ms">
         <SocialLinks links={site.socials} />
       </div>
@@ -73,10 +83,10 @@ const hero = copy.hero;
     </div>
 
     <!-- Stats -->
-    <dl class="reveal mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4" style="--reveal-delay: 360ms">
+    <dl class="reveal mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5" style="--reveal-delay: 360ms">
       {
         hero.stats.map((stat) => (
-          <div class="card p-5">
+          <div class="card p-5 last:col-span-2 sm:last:col-span-1">
             <dt class="text-3xl font-bold text-ink-strong">{stat.value}</dt>
             <dd class="mt-1 text-sm text-ink-muted">{stat.label}</dd>
           </div>

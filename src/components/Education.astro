@@ -1,0 +1,62 @@
+---
+import type { PortfolioContent } from '../data/types';
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+  content: PortfolioContent;
+}
+
+const { content } = Astro.props;
+const { education } = content.site;
+const copy = content.copy.education;
+---
+
+<section id="education" class="section">
+  <div class="container-content">
+    <SectionHeading eyebrow={copy.eyebrow} heading={copy.heading} />
+
+    <div class="grid gap-6 lg:grid-cols-5">
+      <div class="card card-hover reveal flex items-start gap-4 p-6 lg:col-span-2">
+        <img
+          src={education.logo}
+          alt={`${copy.school} logo`}
+          width="56"
+          height="56"
+          loading="lazy"
+          decoding="async"
+          class="h-14 w-14 flex-none rounded-lg bg-white object-contain ring-1 ring-surface-border"
+        />
+        <div class="min-w-0">
+          <h3 class="text-lg font-semibold text-ink-strong">{copy.degree}</h3>
+          <a
+            href={education.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-1 inline-block text-sm font-medium text-accent-fg hover:underline"
+          >
+            {copy.school} <span aria-hidden="true">↗</span>
+          </a>
+          <p class="mt-3"><span class="chip chip-accent">{education.period}</span></p>
+        </div>
+      </div>
+
+      <div class="card reveal p-6 lg:col-span-3" style="--reveal-delay: 120ms">
+        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-accent-fg">
+          {copy.certificationsHeading}
+        </h3>
+        <ul class="space-y-3">
+          {
+            copy.certifications.map((cert) => (
+              <li class="flex gap-3 text-sm text-ink-muted">
+                <svg class="mt-0.5 h-4 w-4 flex-none text-accent-fg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7" />
+                </svg>
+                <span>{cert}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
