@@ -173,6 +173,7 @@ export const site: SiteData = {
       name: 'Kinesso',
       slug: 'kinesso',
       domain: 'kinesso.com',
+      logo: '/companies/kinesso.png',
       links: [
         { label: 'Kinesso', url: 'https://jp.kinesso.com/' },
         { label: 'Matterkind', url: 'https://www.matterkind.com/' },
