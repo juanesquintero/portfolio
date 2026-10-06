@@ -1,0 +1,19 @@
+---
+// Logo fallback chain shared by every <img data-fallbacks="[...]">: when an
+// image fails, try the next candidate src until one loads. Include once.
+---
+
+<script>
+  function next(img: HTMLImageElement) {
+    const list = JSON.parse(img.dataset.fallbacks || '[]') as string[];
+    if (!list.length) return;
+    img.dataset.fallbacks = JSON.stringify(list.slice(1));
+    img.src = list[0];
+  }
+
+  document.querySelectorAll<HTMLImageElement>('img[data-fallbacks]').forEach((img) => {
+    img.addEventListener('error', () => next(img));
+    // The image may already have failed before this script ran.
+    if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) next(img);
+  });
+</script>

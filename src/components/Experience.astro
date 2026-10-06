@@ -1,6 +1,7 @@
 ---
 import type { PortfolioContent } from '../data/types';
 import SectionHeading from './SectionHeading.astro';
+import { companyLogoSrcs } from '../data/logos';
 
 interface Props {
   content: PortfolioContent;
@@ -9,6 +10,13 @@ interface Props {
 const { content } = Astro.props;
 const { experience } = content;
 const copy = content.copy.experience;
+
+/** Same logo candidates as the Companies wall, so both always match. */
+const companiesBySlug = new Map(content.site.companies.map((c) => [c.slug, c]));
+const logoSrcs = (slug?: string) => {
+  const company = slug ? companiesBySlug.get(slug) : undefined;
+  return company ? companyLogoSrcs(company) : [];
+};
 
 /** Dates are language-neutral except for the open-ended "Present". */
 const localizePeriod = (period: string) => period.replace('Present', copy.present);
@@ -30,9 +38,10 @@ const hostOf = (url: string) => new URL(url).host.replace(/^www\./, '');
 
             <div class="card card-hover p-6">
               <div class="flex items-start gap-4">
-                {role.logo && (
+                {role.companySlug && (
                   <img
-                    src={role.logo}
+                    src={logoSrcs(role.companySlug)[0]}
+                    data-fallbacks={JSON.stringify(logoSrcs(role.companySlug).slice(1))}
                     alt={`${role.company} logo`}
                     width="48"
                     height="48"
@@ -101,9 +110,10 @@ const hostOf = (url: string) => new URL(url).host.replace(/^www\./, '');
                     {role.clientProjects.map((project) => (
                       <li class="rounded-xl border border-surface-border bg-bg-soft/40 p-4 sm:p-5">
                         <div class="flex items-start gap-3">
-                          {project.logo && (
+                          {project.companySlug && (
                             <img
-                              src={project.logo}
+                              src={logoSrcs(project.companySlug)[0]}
+                              data-fallbacks={JSON.stringify(logoSrcs(project.companySlug).slice(1))}
                               alt={`${project.client} logo`}
                               width="40"
                               height="40"
