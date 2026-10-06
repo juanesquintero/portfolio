@@ -90,25 +90,52 @@ export const site: SiteData = {
   ],
 
   /**
-   * Day-to-day tooling (version control, cloud, CI/CD, testing, platforms).
-   * Rendered as a logo grid in the Tools section. `slug` maps to
-   * `/public/tools/<slug>.svg` (logos sourced from Devicon, MIT, and
-   * Simple Icons, CC0).
+   * Day-to-day tooling, grouped by what it is used for. Rendered as titled
+   * logo grids in the Tools section. `slug` maps to `/public/tools/<slug>.svg`
+   * (logos sourced from Devicon, MIT, and Simple Icons, CC0).
    */
   tools: [
-    { name: 'Git', slug: 'git' },
-    { name: 'GitLab', slug: 'gitlab' },
-    { name: 'Azure', slug: 'azure' },
-    { name: 'Jenkins', slug: 'jenkins' },
-    { name: 'Cloudflare', slug: 'cloudflare' },
-    { name: 'NGINX', slug: 'nginx' },
-    { name: 'Stripe', slug: 'stripe' },
-    { name: 'Jest', slug: 'jest' },
-    { name: 'Cypress', slug: 'cypress' },
-    { name: 'Pytest', slug: 'pytest' },
-    { name: 'Postman', slug: 'postman' },
-    { name: 'Jira', slug: 'jira' },
-    { name: 'Storybook', slug: 'storybook' },
+    {
+      id: 'vcs',
+      items: [
+        { name: 'Git', slug: 'git' },
+        { name: 'GitHub', slug: 'github', invert: true },
+        { name: 'GitLab', slug: 'gitlab' },
+        { name: 'Azure DevOps', slug: 'azuredevops' },
+        { name: 'Jenkins', slug: 'jenkins' },
+      ],
+    },
+    {
+      id: 'infra',
+      items: [
+        { name: 'Azure', slug: 'azure' },
+        { name: 'Cloudflare', slug: 'cloudflare' },
+        { name: 'Pulumi', slug: 'pulumi' },
+        { name: 'NGINX', slug: 'nginx' },
+        { name: 'Linux', slug: 'linux', invert: true },
+      ],
+    },
+    {
+      id: 'testing',
+      items: [
+        { name: 'Jest', slug: 'jest' },
+        { name: 'Pytest', slug: 'pytest' },
+        { name: 'Cypress', slug: 'cypress' },
+        { name: 'Jasmine', slug: 'jasmine' },
+        { name: 'Karma', slug: 'karma' },
+      ],
+    },
+    {
+      id: 'platforms',
+      items: [
+        { name: 'Postman', slug: 'postman' },
+        { name: 'Swagger UI', slug: 'swagger' },
+        { name: 'Jira', slug: 'jira' },
+        { name: 'Storybook', slug: 'storybook' },
+        { name: 'Stripe', slug: 'stripe' },
+        { name: 'HubSpot CRM', slug: 'hubspot' },
+      ],
+    },
   ],
 
   /**

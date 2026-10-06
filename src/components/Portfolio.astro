@@ -41,7 +41,7 @@ const { copy, site } = content;
     eyebrow={copy.tools.eyebrow}
     heading={copy.tools.heading}
     intro={copy.tools.intro}
-    items={site.tools}
+    groups={site.tools.map((group) => ({ title: copy.tools.groups[group.id], items: group.items }))}
     basePath="/tools"
     class="pt-8 sm:pt-10"
   />

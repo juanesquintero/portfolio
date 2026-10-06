@@ -83,6 +83,13 @@ export interface TechItem {
   invert?: boolean;
 }
 
+/** A titled group of logos (e.g. the Tools section's categories). */
+export interface TechGroup {
+  /** key into the section's localized `groups` titles */
+  id: string;
+  items: TechItem[];
+}
+
 /** A related link shown in the company dialog. */
 export interface CompanyLink {
   /** optional label; falls back to the localized "Visit website" */
@@ -124,7 +131,7 @@ export interface SiteData {
   socials: SocialLink[];
   skillGroups: SkillGroupMeta[];
   techStack: TechItem[];
-  tools: TechItem[];
+  tools: TechGroup[];
   companies: CompanyItem[];
   education: EducationMeta;
   experience: ExperienceMeta[];
@@ -191,6 +198,8 @@ export interface ToolsContent {
   heading: string;
   eyebrow: string;
   intro: string;
+  /** group title keyed by TechGroup.id */
+  groups: Record<string, string>;
 }
 
 export interface CompanyCopy {
