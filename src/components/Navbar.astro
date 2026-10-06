@@ -69,7 +69,11 @@ const homeHref = locale === 'es' ? esHref : enHref;
             'inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 transition-colors',
             locale === 'en' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-ink-strong',
           ]}
-          ><Flag country="us" class="h-2.5 w-[15px]" />{copy.langToggle.en}</a
+          hreflang="en"
+          lang="en"
+          aria-label="English"
+          title="English"
+          ><Flag country="us" class="h-3 w-[18px] lg:h-2.5 lg:w-[15px]" /><span class="hidden lg:inline">{copy.langToggle.en}</span></a
         >
         <a
           href={esHref}
@@ -78,7 +82,11 @@ const homeHref = locale === 'es' ? esHref : enHref;
             'inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 transition-colors',
             locale === 'es' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-ink-strong',
           ]}
-          ><Flag country="co" class="h-2.5 w-[15px]" />{copy.langToggle.es}</a
+          hreflang="es"
+          lang="es"
+          aria-label="Español"
+          title="Español"
+          ><Flag country="co" class="h-3 w-[18px] lg:h-2.5 lg:w-[15px]" /><span class="hidden lg:inline">{copy.langToggle.es}</span></a
         >
       </div>
 
