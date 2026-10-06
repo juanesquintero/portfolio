@@ -10,6 +10,8 @@ import LogoGrid from './LogoGrid.astro';
 import Companies from './Companies.astro';
 import Contact from './Contact.astro';
 import Footer from './Footer.astro';
+import LogoFallback from './LogoFallback.astro';
+import SectionNav from './SectionNav.astro';
 
 interface Props {
   content: PortfolioContent;
@@ -51,3 +53,5 @@ const { copy, site } = content;
   <Contact content={content} />
 </main>
 <Footer content={content} />
+<LogoFallback />
+<SectionNav content={content} />

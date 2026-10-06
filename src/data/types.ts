@@ -31,8 +31,8 @@ export interface ClientProjectMeta {
   url?: string;
   /** link to the delivered product, when public */
   productUrl?: string;
-  /** logo path under /public */
-  logo?: string;
+  /** CompanyItem.slug whose logo is shown (same source as the Companies wall) */
+  companySlug?: string;
 }
 
 /** Stable, language-neutral facts about one job. Joined to copy by `id`. */
@@ -46,8 +46,8 @@ export interface ExperienceMeta {
   tech: string[];
   /** optional company website */
   url?: string;
-  /** logo path under /public */
-  logo?: string;
+  /** CompanyItem.slug whose logo is shown (same source as the Companies wall) */
+  companySlug?: string;
   /** link to the product worked on, when public */
   productUrl?: string;
   /** client projects delivered under this job */
@@ -143,6 +143,10 @@ export interface NavContent {
   projects: string;
   contact: string;
   downloadCv: string;
+  /** floating button: "Next" (followed by the next section's name) */
+  nextSection: string;
+  /** floating button on the last section */
+  backToTop: string;
 }
 
 export interface HeroContent {

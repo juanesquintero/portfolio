@@ -15,7 +15,9 @@
     "companies": "Companies",
     "projects": "Projects",
     "contact": "Contact",
-    "downloadCv": "Download CV"
+    "downloadCv": "Download CV",
+    "nextSection": "Next",
+    "backToTop": "Back to top"
   },
   "hero": {
     "greeting": "Hi, I'm",

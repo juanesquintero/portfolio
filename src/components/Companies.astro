@@ -1,5 +1,6 @@
 ---
-import type { CompanyItem, PortfolioContent } from '../data/types';
+import type { PortfolioContent } from '../data/types';
+import { companyLogoSrcs } from '../data/logos';
 import SectionHeading from './SectionHeading.astro';
 
 interface Props {
@@ -12,32 +13,6 @@ const { content, class: className } = Astro.props;
 const copy = content.copy.companies;
 const { companies } = content.site;
 
-/**
- * Logo source flag:
- *   PUBLIC_COMPANY_LOGO_SOURCE=runtime -> fetch real logos at view time (default)
- *   PUBLIC_COMPANY_LOGO_SOURCE=hosted  -> always use self-hosted SVG monograms
- * In runtime mode each <img> walks a fallback chain on error:
- *   logo service -> the company's own site favicon -> self-hosted monogram.
- */
-const source = import.meta.env.PUBLIC_COMPANY_LOGO_SOURCE === 'hosted' ? 'hosted' : 'runtime';
-
-/** Ordered list of logo URLs to try (first that loads wins). */
-function logoSrcs(company: CompanyItem): string[] {
-  // A real self-hosted logo always wins over the logo services.
-  if (company.logo) return [company.logo];
-
-  const hosted = `/companies/${company.slug}.svg`;
-  if (source !== 'runtime') return [hosted];
-
-  const srcs: string[] = [];
-  if (company.logoUrls) srcs.push(...company.logoUrls);
-  if (company.domain) {
-    srcs.push(`https://logo.clearbit.com/${company.domain}?size=128`);
-    srcs.push(`https://www.google.com/s2/favicons?domain=${company.domain}&sz=128`);
-  }
-  srcs.push(hosted);
-  return srcs;
-}
 ---
 
 <section id="companies" class:list={['section', className]}>
@@ -47,7 +22,7 @@ function logoSrcs(company: CompanyItem): string[] {
     <ul class="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-7" role="list">
       {
         companies.map((company, i) => {
-          const srcs = logoSrcs(company);
+          const srcs = companyLogoSrcs(company);
           const description = copy.items[company.slug]?.description ?? '';
           return (
             <li class="reveal" style={`--reveal-delay: ${Math.min(i, 12) * 40}ms`}>
@@ -112,17 +87,6 @@ function logoSrcs(company: CompanyItem): string[] {
 </section>
 
 <script>
-  // Logo fallback chain: try each candidate src in order until one loads.
-  document.querySelectorAll<HTMLImageElement>('img[data-fallbacks]').forEach((img) => {
-    img.addEventListener('error', () => {
-      const list = JSON.parse(img.dataset.fallbacks || '[]') as string[];
-      if (!list.length) return;
-      const next = list.shift() as string;
-      img.dataset.fallbacks = JSON.stringify(list);
-      img.src = next;
-    });
-  });
-
   // Company detail dialog.
   const dialog = document.getElementById('company-modal') as HTMLDialogElement | null;
   const logoEl = document.getElementById('company-modal-logo') as HTMLImageElement | null;
