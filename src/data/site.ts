@@ -290,7 +290,7 @@ export const site: SiteData = {
       start: '2020-07',
       url: 'https://www.sistecredito.com/',
       logo: '/companies/sistecredito.svg',
-      productUrl: 'https://www.sistecredito.com/',
+      productUrl: 'https://pagorapido.sistecredito.com/people/security',
       tech: ['Angular', 'TypeScript', 'Sass', 'Python', 'Flask', 'SQLAlchemy', 'MySQL', 'MongoDB', 'Azure', 'Docker'],
     },
     {
@@ -300,6 +300,7 @@ export const site: SiteData = {
       start: '2020-02',
       url: 'https://educatic.com.co/',
       logo: '/companies/educatic.svg',
+      productUrl: 'https://pleyadestdea.educatic.com.co/inicio',
       tech: ['Python', 'Flask', 'scikit-learn', 'Pandas', 'NumPy', 'Plotly', 'React', 'Angular', 'MySQL', 'SQL Server', 'NGINX', 'Gunicorn'],
     },
     {
@@ -363,12 +364,13 @@ export const site: SiteData = {
     {
       id: 'payment-gateway',
       company: 'SC Computing (SisteCrédito)',
-      url: 'https://www.sistecredito.com/',
+      url: 'https://pagorapido.sistecredito.com/people/security',
       tech: ['Angular', 'Flask', 'SQLAlchemy', 'Python', 'MySQL'],
     },
     {
       id: 'dropout-prediction',
       company: 'Educatic',
+      url: 'https://pleyadestdea.educatic.com.co/inicio',
       tech: ['Python', 'Flask', 'Scikit-learn', 'Pandas', 'Plotly', 'React'],
     },
   ],
