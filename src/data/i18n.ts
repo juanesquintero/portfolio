@@ -2,6 +2,7 @@ import type {
   Content,
   Locale,
   PortfolioContent,
+  ResolvedClientProject,
   ResolvedExperience,
   ResolvedProject,
   ResolvedSkillGroup,
@@ -48,7 +49,11 @@ export function getContent(locale: Locale): PortfolioContent {
   const experience: ResolvedExperience[] = site.experience
     .map((meta) => {
       const text = copy.experience.roles[meta.id];
-      return { ...meta, ...text };
+      const clientProjects = (meta.clientProjects ?? []).map((project) => ({
+        ...project,
+        ...text.clientProjects?.[project.id],
+      })) as ResolvedClientProject[];
+      return { ...meta, ...text, clientProjects };
     })
     .sort((a, b) => b.start.localeCompare(a.start));
 

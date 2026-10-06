@@ -20,17 +20,38 @@ export interface SocialLink {
   icon: 'email' | 'linkedin' | 'github' | 'gitlab';
 }
 
+/** A client project nested inside a job (e.g. Toptal engagements). */
+export interface ClientProjectMeta {
+  id: string;
+  client: string;
+  /** human-readable date range, identical across languages */
+  period: string;
+  tech: string[];
+  /** client website */
+  url?: string;
+  /** link to the delivered product, when public */
+  productUrl?: string;
+  /** logo path under /public */
+  logo?: string;
+}
+
 /** Stable, language-neutral facts about one job. Joined to copy by `id`. */
 export interface ExperienceMeta {
   id: string;
   company: string;
-  /** human-readable date range, identical across languages */
+  /** human-readable date range, identical across languages ("Present" is localized) */
   period: string;
   /** sortable start date, ISO-ish, newest first */
   start: string;
   tech: string[];
   /** optional company website */
   url?: string;
+  /** logo path under /public */
+  logo?: string;
+  /** link to the product worked on, when public */
+  productUrl?: string;
+  /** client projects delivered under this job */
+  clientProjects?: ClientProjectMeta[];
 }
 
 /** Stable facts about one featured project. Joined to copy by `id`. */
@@ -70,6 +91,8 @@ export interface CompanyItem {
   slug: string;
   /** domain used by the runtime logo service, e.g. "epam.com" */
   domain?: string;
+  /** self-hosted logo path; when set it is used in both modes */
+  logo?: string;
   /** explicit logo image URLs, tried first (in order) in runtime mode */
   logoUrls?: string[];
   /** one or more related links shown in the company dialog */
@@ -165,17 +188,37 @@ export interface CompaniesContent {
   items: Record<string, CompanyCopy>;
 }
 
-export interface ExperienceCopy {
-  title: string;
-  location: string;
+export interface ClientProjectCopy {
+  role: string;
   summary: string;
   highlights: string[];
+}
+
+export interface ExperienceCopy {
+  title: string;
+  /** overrides the language-neutral company name (e.g. "Independent clients") */
+  company?: string;
+  location: string;
+  /** roles held within the position */
+  roles?: string[];
+  /** product worked on */
+  product?: string;
+  summary: string;
+  highlights: string[];
+  /** copy keyed by ClientProjectMeta.id */
+  clientProjects?: Record<string, ClientProjectCopy>;
 }
 
 export interface ExperienceContent {
   heading: string;
   eyebrow: string;
   present: string;
+  /** "Roles" label */
+  rolesLabel: string;
+  /** "Product" label */
+  productLabel: string;
+  /** heading above nested client projects */
+  clientProjectsLabel: string;
   /** copy keyed by ExperienceMeta.id */
   roles: Record<string, ExperienceCopy>;
 }
@@ -227,7 +270,12 @@ export interface Content {
 /* Merged view consumed by components                                 */
 /* ------------------------------------------------------------------ */
 
-export interface ResolvedExperience extends ExperienceMeta, ExperienceCopy {}
+export interface ResolvedClientProject extends ClientProjectMeta, ClientProjectCopy {}
+export interface ResolvedExperience
+  extends Omit<ExperienceMeta, 'clientProjects'>,
+    Omit<ExperienceCopy, 'clientProjects' | 'company'> {
+  clientProjects: ResolvedClientProject[];
+}
 export interface ResolvedProject extends ProjectMeta, ProjectCopy {}
 export interface ResolvedSkillGroup extends SkillGroupMeta {
   title: string;
