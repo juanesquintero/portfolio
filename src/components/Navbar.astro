@@ -83,7 +83,7 @@ const homeHref = locale === 'es' ? esHref : enHref;
       </div>
 
       <!-- Theme toggle -->
-      <ThemeToggle />
+      <ThemeToggle labels={{ theme: nav.theme, auto: nav.themeAuto, light: nav.themeLight, dark: nav.themeDark }} />
 
       <!-- Download CV: icon only until there is room for the label -->
       <a

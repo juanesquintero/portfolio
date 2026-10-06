@@ -154,6 +154,11 @@ export interface NavContent {
   nextSection: string;
   /** floating button on the last section */
   backToTop: string;
+  /** theme switcher: group label and the three modes */
+  theme: string;
+  themeAuto: string;
+  themeLight: string;
+  themeDark: string;
 }
 
 export interface HeroContent {
