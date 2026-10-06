@@ -15,7 +15,9 @@
     "companies": "Empresas",
     "projects": "Proyectos",
     "contact": "Contacto",
-    "downloadCv": "Descargar CV"
+    "downloadCv": "Descargar CV",
+    "nextSection": "Siguiente",
+    "backToTop": "Volver arriba"
   },
   "hero": {
     "greeting": "Hola, soy",

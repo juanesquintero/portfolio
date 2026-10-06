@@ -143,6 +143,10 @@ export interface NavContent {
   projects: string;
   contact: string;
   downloadCv: string;
+  /** floating button: "Next" (followed by the next section's name) */
+  nextSection: string;
+  /** floating button on the last section */
+  backToTop: string;
 }
 
 export interface HeroContent {
