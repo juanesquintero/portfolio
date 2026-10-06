@@ -17,7 +17,11 @@
     "contact": "Contact",
     "downloadCv": "Download CV",
     "nextSection": "Next",
-    "backToTop": "Back to top"
+    "backToTop": "Back to top",
+    "theme": "Theme",
+    "themeAuto": "Auto",
+    "themeLight": "Light",
+    "themeDark": "Dark"
   },
   "hero": {
     "greeting": "Hi, I'm",

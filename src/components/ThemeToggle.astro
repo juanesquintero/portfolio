@@ -1,39 +1,92 @@
 ---
-// Theme switcher: cycles Auto → Light → Dark and persists the choice.
+// Theme switcher, persisted in localStorage:
+//   - mobile (< lg): one button showing the active mode; tapping cycles Auto → Light → Dark
+//   - desktop (lg+): a segmented control with the three modes, active one highlighted
 // The no-flash initial application happens in Layout.astro's inline <head>
-// script; this component wires the click handler and live "auto" updates.
+// script; this component wires the controls and live "auto" updates.
+interface Props {
+  labels: { theme: string; auto: string; light: string; dark: string };
+}
+
+const { labels } = Astro.props as Props;
+const modes = [
+  { mode: 'auto', label: labels.auto },
+  { mode: 'light', label: labels.light },
+  { mode: 'dark', label: labels.dark },
+] as const;
 ---
 
+<!-- Mobile: single cycling button -->
 <button
   id="theme-toggle"
   type="button"
   data-theme-toggle
-  class="flex h-10 w-10 items-center justify-center rounded-lg border border-surface-border bg-surface/60 text-ink-muted transition-colors hover:text-ink-strong focus-visible:outline-none"
-  aria-label="Toggle theme"
-  title="Toggle light / dark / auto theme"
+  data-labels={JSON.stringify(labels)}
+  class="flex h-10 w-10 items-center justify-center rounded-lg border border-surface-border bg-surface/60 text-ink-muted transition-colors hover:text-ink-strong focus-visible:outline-none lg:hidden"
+  aria-label={labels.theme}
+  title={labels.theme}
 >
-  <!-- Auto (system) -->
   <svg class="theme-icon-auto h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <rect x="2" y="4" width="20" height="13" rx="2" />
     <path d="M8 21h8M12 17v4" />
   </svg>
-  <!-- Light (sun) -->
   <svg class="theme-icon-light h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <circle cx="12" cy="12" r="4" />
     <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
   </svg>
-  <!-- Dark (moon) -->
   <svg class="theme-icon-dark h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
   </svg>
 </button>
 
+<!-- Desktop: segmented control (same look as the language switch) -->
+<div
+  role="radiogroup"
+  aria-label={labels.theme}
+  class="hidden items-center rounded-lg border border-surface-border bg-surface/60 p-0.5 lg:flex"
+>
+  {
+    modes.map(({ mode, label }) => (
+      <button
+        type="button"
+        role="radio"
+        aria-checked="false"
+        data-theme-set={mode}
+        aria-label={label}
+        title={label}
+        class="flex h-7 w-8 items-center justify-center rounded-md text-ink-muted transition-colors hover:text-ink-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
+      >
+        {mode === 'auto' && (
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="13" rx="2" />
+            <path d="M8 21h8M12 17v4" />
+          </svg>
+        )}
+        {mode === 'light' && (
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+          </svg>
+        )}
+        {mode === 'dark' && (
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        )}
+      </button>
+    ))
+  }
+</div>
+
 <script>
   type Mode = 'auto' | 'light' | 'dark';
   const KEY = 'theme';
   const ORDER: Mode[] = ['auto', 'light', 'dark'];
-  const LABELS: Record<Mode, string> = { auto: 'Auto', light: 'Light', dark: 'Dark' };
+  const ACTIVE = ['bg-accent-500', '!text-white'];
   const mql = window.matchMedia('(prefers-color-scheme: dark)');
+  const toggles = document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]');
+  const segments = document.querySelectorAll<HTMLButtonElement>('[data-theme-set]');
+  const labels = JSON.parse(toggles[0]?.dataset.labels || '{}') as Record<string, string>;
 
   const getMode = (): Mode => {
     const stored = localStorage.getItem(KEY);
@@ -49,21 +102,33 @@
     document
       .querySelector('meta[name="theme-color"]')
       ?.setAttribute('content', dark ? '#0a0f1c' : '#f7f9fc');
-    document.querySelectorAll('[data-theme-toggle]').forEach((b) =>
-      b.setAttribute('aria-label', `Theme: ${LABELS[mode]} — click to change`)
-    );
+
+    // Mobile button announces the current mode.
+    const text = `${labels.theme ?? 'Theme'}: ${labels[mode] ?? mode}`;
+    toggles.forEach((b) => {
+      b.setAttribute('aria-label', text);
+      b.setAttribute('title', text);
+    });
+    // Desktop segments highlight the current mode.
+    segments.forEach((b) => {
+      const on = b.dataset.themeSet === mode;
+      b.setAttribute('aria-checked', String(on));
+      ACTIVE.forEach((c) => b.classList.toggle(c, on));
+    });
   }
+
+  const set = (mode: Mode) => {
+    localStorage.setItem(KEY, mode);
+    apply(mode);
+  };
 
   // Sync UI with the mode the inline head script already applied.
   apply(getMode());
 
-  document.querySelectorAll('[data-theme-toggle]').forEach((btn) =>
-    btn.addEventListener('click', () => {
-      const next = ORDER[(ORDER.indexOf(getMode()) + 1) % ORDER.length];
-      localStorage.setItem(KEY, next);
-      apply(next);
-    })
+  toggles.forEach((btn) =>
+    btn.addEventListener('click', () => set(ORDER[(ORDER.indexOf(getMode()) + 1) % ORDER.length]))
   );
+  segments.forEach((btn) => btn.addEventListener('click', () => set(btn.dataset.themeSet as Mode)));
 
   // Follow system changes while in "auto".
   mql.addEventListener('change', () => {

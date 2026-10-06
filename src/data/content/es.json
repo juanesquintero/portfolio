@@ -17,7 +17,11 @@
     "contact": "Contacto",
     "downloadCv": "Descargar CV",
     "nextSection": "Siguiente",
-    "backToTop": "Volver arriba"
+    "backToTop": "Volver arriba",
+    "theme": "Tema",
+    "themeAuto": "Automático",
+    "themeLight": "Claro",
+    "themeDark": "Oscuro"
   },
   "hero": {
     "greeting": "Hola, soy",
