@@ -3,28 +3,55 @@ import type { PortfolioContent } from '../data/types';
 import Navbar from './Navbar.astro';
 import Hero from './Hero.astro';
 import About from './About.astro';
-import Skills from './Skills.astro';
 import Experience from './Experience.astro';
+import Education from './Education.astro';
 import Projects from './Projects.astro';
-import TechStack from './TechStack.astro';
+import LogoGrid from './LogoGrid.astro';
+import Companies from './Companies.astro';
 import Contact from './Contact.astro';
 import Footer from './Footer.astro';
+import LogoFallback from './LogoFallback.astro';
+import SectionNav from './SectionNav.astro';
 
 interface Props {
   content: PortfolioContent;
 }
 
 const { content } = Astro.props;
+const { copy, site } = content;
 ---
 
 <Navbar content={content} />
 <main id="main">
   <Hero content={content} />
   <About content={content} />
-  <Skills content={content} />
+
+  <!-- Tech Stack and Tools flow continuously, one after the other. -->
+  <LogoGrid
+    id="tech-stack"
+    eyebrow={copy.techStack.eyebrow}
+    heading={copy.techStack.heading}
+    intro={copy.techStack.intro}
+    items={site.techStack}
+    basePath="/tech"
+    class="pb-8 sm:pb-10"
+  />
+  <LogoGrid
+    id="tools"
+    eyebrow={copy.tools.eyebrow}
+    heading={copy.tools.heading}
+    intro={copy.tools.intro}
+    groups={site.tools.map((group) => ({ title: copy.tools.groups[group.id], items: group.items }))}
+    basePath="/tools"
+    class="pt-8 sm:pt-10"
+  />
+
   <Experience content={content} />
+  <Education content={content} />
+  <Companies content={content} />
   <Projects content={content} />
-  <TechStack content={content} />
   <Contact content={content} />
 </main>
 <Footer content={content} />
+<LogoFallback />
+<SectionNav content={content} />

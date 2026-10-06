@@ -2,7 +2,7 @@
   "name": "portfolio",
   "type": "module",
   "version": "1.0.0",
-  "description": "Personal portfolio of Juan Quintero — Senior Full-Stack Software Engineer",
+  "description": "Personal portfolio of Juan Quintero — Software Solutions Architect & Senior Full-Stack Developer",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

@@ -1,0 +1,109 @@
+---
+import type { PortfolioContent } from '../data/types';
+
+interface Props {
+  content: PortfolioContent;
+}
+
+const { nav } = Astro.props.content.copy;
+---
+
+<!-- Floating "next section" button: jumps to the next section below the
+     navbar; on the last section it turns into "back to top". -->
+<button
+  id="section-nav"
+  type="button"
+  data-next-label={nav.nextSection}
+  data-top-label={nav.backToTop}
+  aria-label={nav.nextSection}
+  class="btn btn-primary fixed bottom-5 right-5 z-40 h-12 w-12 rounded-full p-0 shadow-card sm:h-auto sm:w-auto sm:px-4 sm:py-2.5"
+>
+  <span data-label class="hidden max-w-[12rem] truncate text-xs sm:inline">{nav.nextSection}</span>
+  <svg data-icon class="h-5 w-5 flex-none transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
+  </svg>
+</button>
+
+<script>
+  const btn = document.getElementById('section-nav') as HTMLButtonElement | null;
+  const sections = Array.from(document.querySelectorAll<HTMLElement>('main > section[id]'));
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /** Space left between the fixed navbar and a section's heading after a jump. */
+  const GAP = 24;
+
+  /** A section's visible title: its heading block, falling back to the section. */
+  const headingOf = (section: HTMLElement) =>
+    section.querySelector<HTMLElement>('header, .eyebrow, h2') ?? section;
+
+  /**
+   * Scroll so the section's heading sits just below the navbar (not the
+   * section's padded top edge), then move keyboard focus to that heading.
+   */
+  const goTo = (section: HTMLElement, smooth = !reduce) => {
+    const heading = headingOf(section);
+    const navH = document.getElementById('navbar')?.offsetHeight ?? 64;
+    const top = heading.getBoundingClientRect().top + window.scrollY - navH - GAP;
+    window.scrollTo({ top: Math.max(0, top), behavior: smooth ? 'smooth' : 'instant' });
+    if (!heading.hasAttribute('tabindex')) heading.setAttribute('tabindex', '-1');
+    heading.classList.add('outline-none');
+    heading.focus({ preventScroll: true });
+  };
+
+  // Every in-page link to a section (navbar, hero CTAs, …) uses the same offset.
+  document.addEventListener('click', (e) => {
+    const link = (e.target as Element | null)?.closest?.<HTMLAnchorElement>('a[href^="#"]');
+    const id = link?.getAttribute('href')?.slice(1);
+    const section = id ? sections.find((s) => s.id === id) : undefined;
+    if (!section) return;
+    e.preventDefault();
+    history.pushState(null, '', `#${id}`);
+    goTo(section);
+  });
+
+  // Opening the page with a #section hash lands on the heading too.
+  const initial = sections.find((s) => `#${s.id}` === location.hash);
+  if (initial) requestAnimationFrame(() => goTo(initial, false));
+
+  if (btn && sections.length) {
+    const label = btn.querySelector<HTMLElement>('[data-label]')!;
+    const icon = btn.querySelector<SVGElement>('[data-icon]')!;
+    let target: HTMLElement | null = null;
+
+    const update = () => {
+      // Same "current section" line as the navbar scroll spy: a third of the
+      // way down the viewport. The next section is the first one below it.
+      const line = Math.max(window.innerHeight / 3, 120);
+      target = sections.find((s) => s.getBoundingClientRect().top > line) ?? null;
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+      if (atBottom) target = null;
+
+      const name = target?.querySelector('.eyebrow')?.textContent?.trim();
+      const text = target ? (name ? `${btn.dataset.nextLabel}: ${name}` : btn.dataset.nextLabel!) : btn.dataset.topLabel!;
+      label.textContent = text;
+      btn.setAttribute('aria-label', text);
+      icon.style.transform = target ? '' : 'rotate(180deg)';
+    };
+
+    let ticking = false;
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          update();
+          ticking = false;
+        });
+      },
+      { passive: true }
+    );
+    window.addEventListener('resize', update);
+
+    btn.addEventListener('click', () => {
+      if (target) goTo(target);
+      else window.scrollTo({ top: 0, behavior: reduce ? 'instant' : 'smooth' });
+    });
+
+    update();
+  }
+</script>

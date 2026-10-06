@@ -15,8 +15,8 @@
   <g font-family="Inter, system-ui, sans-serif">
     <text x="90" y="250" font-size="42" font-weight="600" fill="#60a5fa">Hi, I'm</text>
     <text x="90" y="345" font-size="92" font-weight="800" fill="url(#accent)">Juan Quintero</text>
-    <text x="90" y="420" font-size="46" font-weight="600" fill="#e6edf7">Senior Full-Stack Software Engineer</text>
-    <text x="90" y="490" font-size="30" font-weight="400" fill="#9fb0c9">Scalable, high-performance web apps — frontend to backend.</text>
-    <text x="90" y="560" font-size="26" font-weight="500" fill="#6b7c99">React · Angular · Next.js · Node.js · Python · AWS · GCP · Azure</text>
+    <text x="90" y="420" font-size="46" font-weight="600" fill="#e6edf7">Software Solutions Architect</text>
+    <text x="90" y="490" font-size="30" font-weight="400" fill="#9fb0c9">Forward Deployed Engineer · Senior Web Full-Stack Developer</text>
+    <text x="90" y="560" font-size="26" font-weight="500" fill="#6b7c99">8+ years · Toptal Top 3% · Python · TypeScript · React · Next.js · AWS</text>
   </g>
 </svg>

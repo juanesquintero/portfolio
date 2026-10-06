@@ -5,18 +5,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dark surfaces
+        // Theme-aware surfaces — values flip between light (:root) and
+        // dark (.dark) via CSS variables defined in global.css.
         bg: {
-          DEFAULT: '#0a0f1c',
-          soft: '#0e1626',
-          elevated: '#121b2e',
+          DEFAULT: 'rgb(var(--c-bg) / <alpha-value>)',
+          soft: 'rgb(var(--c-bg-soft) / <alpha-value>)',
+          elevated: 'rgb(var(--c-bg-elevated) / <alpha-value>)',
         },
         surface: {
-          DEFAULT: '#111a2c',
-          border: '#1e2a44',
-          hover: '#172238',
+          DEFAULT: 'rgb(var(--c-surface) / <alpha-value>)',
+          border: 'rgb(var(--c-surface-border) / <alpha-value>)',
+          hover: 'rgb(var(--c-surface-hover) / <alpha-value>)',
         },
-        // Blue accent scale
+        // Blue accent scale — static across themes (used for fills/rings).
         accent: {
           50: '#eff6ff',
           100: '#dbeafe',
@@ -28,11 +29,14 @@ export default {
           700: '#1d4ed8',
           800: '#1e40af',
           900: '#1e3a8a',
+          // Readable accent text — adapts per theme for contrast.
+          fg: 'rgb(var(--c-accent-fg) / <alpha-value>)',
         },
         ink: {
-          DEFAULT: '#e6edf7',
-          muted: '#9fb0c9',
-          faint: '#6b7c99',
+          DEFAULT: 'rgb(var(--c-ink) / <alpha-value>)',
+          muted: 'rgb(var(--c-ink-muted) / <alpha-value>)',
+          faint: 'rgb(var(--c-ink-faint) / <alpha-value>)',
+          strong: 'rgb(var(--c-ink-strong) / <alpha-value>)',
         },
       },
       fontFamily: {

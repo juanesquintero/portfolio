@@ -1,0 +1,72 @@
+---
+// Theme switcher: cycles Auto → Light → Dark and persists the choice.
+// The no-flash initial application happens in Layout.astro's inline <head>
+// script; this component wires the click handler and live "auto" updates.
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  data-theme-toggle
+  class="flex h-10 w-10 items-center justify-center rounded-lg border border-surface-border bg-surface/60 text-ink-muted transition-colors hover:text-ink-strong focus-visible:outline-none"
+  aria-label="Toggle theme"
+  title="Toggle light / dark / auto theme"
+>
+  <!-- Auto (system) -->
+  <svg class="theme-icon-auto h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="2" y="4" width="20" height="13" rx="2" />
+    <path d="M8 21h8M12 17v4" />
+  </svg>
+  <!-- Light (sun) -->
+  <svg class="theme-icon-light h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+  </svg>
+  <!-- Dark (moon) -->
+  <svg class="theme-icon-dark h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+  </svg>
+</button>
+
+<script>
+  type Mode = 'auto' | 'light' | 'dark';
+  const KEY = 'theme';
+  const ORDER: Mode[] = ['auto', 'light', 'dark'];
+  const LABELS: Record<Mode, string> = { auto: 'Auto', light: 'Light', dark: 'Dark' };
+  const mql = window.matchMedia('(prefers-color-scheme: dark)');
+
+  const getMode = (): Mode => {
+    const stored = localStorage.getItem(KEY);
+    return stored === 'light' || stored === 'dark' || stored === 'auto' ? stored : 'auto';
+  };
+
+  function apply(mode: Mode) {
+    const dark = mode === 'dark' || (mode === 'auto' && mql.matches);
+    const root = document.documentElement;
+    root.classList.toggle('dark', dark);
+    root.style.colorScheme = dark ? 'dark' : 'light';
+    root.setAttribute('data-theme', mode);
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', dark ? '#0a0f1c' : '#f7f9fc');
+    document.querySelectorAll('[data-theme-toggle]').forEach((b) =>
+      b.setAttribute('aria-label', `Theme: ${LABELS[mode]} — click to change`)
+    );
+  }
+
+  // Sync UI with the mode the inline head script already applied.
+  apply(getMode());
+
+  document.querySelectorAll('[data-theme-toggle]').forEach((btn) =>
+    btn.addEventListener('click', () => {
+      const next = ORDER[(ORDER.indexOf(getMode()) + 1) % ORDER.length];
+      localStorage.setItem(KEY, next);
+      apply(next);
+    })
+  );
+
+  // Follow system changes while in "auto".
+  mql.addEventListener('change', () => {
+    if (getMode() === 'auto') apply('auto');
+  });
+</script>

@@ -1,5 +1,7 @@
 ---
 import type { PortfolioContent } from '../data/types';
+import ThemeToggle from './ThemeToggle.astro';
+import Flag from './Flag.astro';
 
 interface Props {
   content: PortfolioContent;
@@ -9,12 +11,14 @@ const { content } = Astro.props;
 const { copy, locale, site } = content;
 const nav = copy.nav;
 
+// `spy` lists the section ids that highlight each link while in view.
 const links = [
-  { href: '#about', label: nav.about },
-  { href: '#skills', label: nav.skills },
-  { href: '#experience', label: nav.experience },
-  { href: '#projects', label: nav.projects },
-  { href: '#contact', label: nav.contact },
+  { href: '#about', label: nav.about, spy: 'about' },
+  { href: '#tech-stack', label: nav.skills, spy: 'tech-stack tools' },
+  { href: '#experience', label: nav.experience, spy: 'experience education' },
+  { href: '#companies', label: nav.companies, spy: 'companies' },
+  { href: '#projects', label: nav.projects, spy: 'projects' },
+  { href: '#contact', label: nav.contact, spy: 'contact' },
 ];
 
 const enHref = '/';
@@ -27,21 +31,22 @@ const homeHref = locale === 'es' ? esHref : enHref;
   class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300"
 >
   <nav class="container-content flex h-16 items-center justify-between gap-4" aria-label="Primary">
-    <a href={homeHref} class="group flex items-center gap-2 font-bold text-white" aria-label={site.name}>
-      <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-500/15 text-accent-300 ring-1 ring-accent-500/30 transition-colors group-hover:bg-accent-500/25">
+    <a href={homeHref} class="group flex items-center gap-2 font-bold text-ink-strong" aria-label={site.name}>
+      <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-500/15 text-accent-fg ring-1 ring-accent-500/30 transition-colors group-hover:bg-accent-500/25">
         JQ
       </span>
-      <span class="hidden sm:inline">{site.name}</span>
+      <span class="hidden whitespace-nowrap xl:inline">{site.name}</span>
     </a>
 
     <!-- Desktop links -->
-    <ul class="hidden items-center gap-1 md:flex">
+    <ul class="hidden items-center gap-1 lg:flex">
       {
         links.map((link) => (
           <li>
             <a
               href={link.href}
-              class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:text-white"
+              data-spy={link.spy}
+              class="whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:text-ink-strong"
             >
               {link.label}
             </a>
@@ -50,7 +55,7 @@ const homeHref = locale === 'es' ? esHref : enHref;
       }
     </ul>
 
-    <div class="flex items-center gap-2">
+    <div class="flex flex-none items-center gap-2">
       <!-- Language toggle -->
       <div
         class="flex items-center rounded-lg border border-surface-border bg-surface/60 p-0.5 text-xs font-semibold"
@@ -61,29 +66,44 @@ const homeHref = locale === 'es' ? esHref : enHref;
           href={enHref}
           aria-current={locale === 'en' ? 'true' : undefined}
           class:list={[
-            'rounded-md px-2.5 py-1 transition-colors',
-            locale === 'en' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-white',
-          ]}>{copy.langToggle.en}</a
+            'inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 transition-colors',
+            locale === 'en' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-ink-strong',
+          ]}
+          ><Flag country="us" class="h-2.5 w-[15px]" />{copy.langToggle.en}</a
         >
         <a
           href={esHref}
           aria-current={locale === 'es' ? 'true' : undefined}
           class:list={[
-            'rounded-md px-2.5 py-1 transition-colors',
-            locale === 'es' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-white',
-          ]}>{copy.langToggle.es}</a
+            'inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 transition-colors',
+            locale === 'es' ? 'bg-accent-500 text-white' : 'text-ink-muted hover:text-ink-strong',
+          ]}
+          ><Flag country="co" class="h-2.5 w-[15px]" />{copy.langToggle.es}</a
         >
       </div>
 
-      <a href={site.cvPath} download class="btn btn-primary hidden px-4 py-2 text-xs sm:inline-flex">
-        {nav.downloadCv}
+      <!-- Theme toggle -->
+      <ThemeToggle />
+
+      <!-- Download CV: icon only until there is room for the label -->
+      <a
+        href={site.cvPath}
+        download
+        class="btn btn-primary h-10 w-10 whitespace-nowrap p-0 text-xs xl:h-auto xl:w-auto xl:px-4 xl:py-2"
+        aria-label={nav.downloadCv}
+        title={nav.downloadCv}
+      >
+        <svg class="h-4 w-4 flex-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+        </svg>
+        <span class="hidden xl:inline">{nav.downloadCv}</span>
       </a>
 
       <!-- Mobile menu button -->
       <button
         id="menu-toggle"
         type="button"
-        class="flex h-10 w-10 items-center justify-center rounded-lg border border-surface-border bg-surface/60 text-ink md:hidden"
+        class="flex h-10 w-10 items-center justify-center rounded-lg border border-surface-border bg-surface/60 text-ink lg:hidden"
         aria-label="Menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -98,7 +118,7 @@ const homeHref = locale === 'es' ? esHref : enHref;
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="hidden border-t border-surface-border bg-bg-soft/95 backdrop-blur md:hidden"
+    class="hidden border-t border-surface-border bg-bg-soft/95 backdrop-blur lg:hidden"
   >
     <ul class="container-content flex flex-col gap-1 py-4">
       {
@@ -106,7 +126,8 @@ const homeHref = locale === 'es' ? esHref : enHref;
           <li>
             <a
               href={link.href}
-              class="block rounded-lg px-3 py-2.5 text-base font-medium text-ink-muted hover:bg-surface hover:text-white"
+              class="block rounded-lg px-3 py-2.5 text-base font-medium text-ink-muted hover:bg-surface hover:text-ink-strong"
+              data-spy={link.spy}
               data-mobile-link
             >
               {link.label}
@@ -148,4 +169,46 @@ const homeHref = locale === 'es' ? esHref : enHref;
     toggle.setAttribute('aria-expanded', String(open));
   });
   document.querySelectorAll('[data-mobile-link]').forEach((l) => l.addEventListener('click', closeMenu));
+
+  // Scroll spy: highlight the nav link for the section currently in view.
+  const spyLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[data-spy]'));
+  const spySections = Array.from(document.querySelectorAll<HTMLElement>('main > section[id]'));
+  const ACTIVE = ['bg-accent-500/10', '!text-accent-fg'];
+
+  const updateSpy = () => {
+    // The section crossing a line a third of the way down the viewport is "current";
+    // at the very bottom the last section wins even if it is short.
+    // Never above where a section lands after a jump (heading just below the navbar).
+    const line = Math.max(window.innerHeight / 3, 120);
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    let current = '';
+    for (const section of spySections) {
+      if (section.getBoundingClientRect().top <= line) current = section.id;
+    }
+    if (atBottom && spySections.length) current = spySections[spySections.length - 1].id;
+
+    spyLinks.forEach((link) => {
+      const active = !!current && (link.dataset.spy ?? '').split(' ').includes(current);
+      link.classList.toggle(ACTIVE[0], active);
+      link.classList.toggle(ACTIVE[1], active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  let spyTicking = false;
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (spyTicking) return;
+      spyTicking = true;
+      requestAnimationFrame(() => {
+        updateSpy();
+        spyTicking = false;
+      });
+    },
+    { passive: true }
+  );
+  window.addEventListener('resize', updateSpy);
+  updateSpy();
 </script>

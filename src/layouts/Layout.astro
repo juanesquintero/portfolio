@@ -8,9 +8,10 @@ interface Props {
   lang: Locale;
   title: string;
   description: string;
+  jobTitle: string;
 }
 
-const { lang, title, description } = Astro.props;
+const { lang, title, description, jobTitle } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL('/og-image.svg', Astro.site).href;
@@ -27,21 +28,42 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: site.name,
-  jobTitle: 'Senior Full-Stack Software Engineer',
+  jobTitle,
+  description,
   email: `mailto:${site.email}`,
   address: { '@type': 'PostalAddress', addressLocality: 'Medellín', addressCountry: 'CO' },
   url: Astro.site?.href,
-  sameAs: site.socials.filter((s) => s.icon !== 'email').map((s) => s.url),
+  sameAs: [
+    ...site.socials.filter((s) => s.icon !== 'email').map((s) => s.url),
+    'https://www.toptal.com/developers/resume/juan-quintero',
+  ],
+  alumniOf: { '@type': 'CollegeOrUniversity', name: 'Universidad de Medellín', url: site.education.url },
   knowsLanguage: ['Spanish', 'English'],
 };
 ---
 
 <!doctype html>
-<html lang={lang} class="dark scroll-smooth">
+<html lang={lang} class="dark scroll-smooth" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Apply the stored/auto theme before paint to avoid a flash. -->
+    <script is:inline>
+      (function () {
+        try {
+          var mode = localStorage.getItem('theme') || 'auto';
+          var dark =
+            mode === 'dark' ||
+            (mode === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var root = document.documentElement;
+          root.classList.toggle('dark', dark);
+          root.style.colorScheme = dark ? 'dark' : 'light';
+          root.setAttribute('data-theme', mode);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#0a0f1c" />
 
