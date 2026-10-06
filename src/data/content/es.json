@@ -35,25 +35,26 @@
   },
   "about": {
     "eyebrow": "Perfil",
-    "heading": "Ingeniería full-stack, de punta a punta",
+    "heading": "Ingeniería de software, de punta a punta",
     "paragraphs": [
-      "Soy Ingeniero de Software Full-Stack Senior con más de {{years}} años de experiencia comprobada en la industria de la tecnología. Me enfoco en el desarrollo web full-stack con JavaScript/TypeScript (React, Angular, Next.js, Node.js) en el frontend y Python (FastAPI, Flask, Django) y Node.js en el backend para APIs y aplicaciones web escalables.",
-      "He desarrollado software para clientes en USA y Colombia —desde microempresas, emprendedores y start-ups hasta compañías globales— en sectores como FinTech, IA, SaaS, bienes raíces, publicidad, EdTech, analítica, procesamiento de pagos y software empresarial.",
-      "Siempre estoy dispuesto a aprender nuevas tecnologías y asumir lo que un proyecto necesite para alcanzar la meta. Aporto fuertes habilidades de comunicación, resolución de problemas y colaboración, además de una mentalidad ágil en cada equipo."
+      "Ingeniero de Software con más de {{years}} años de experiencia construyendo aplicaciones, soluciones y plataformas de software para clientes en USA, el Reino Unido y Colombia, desde start-ups hasta compañías globales como EPAM Systems, Perficient y Billtrust. Actualmente soy Arquitecto de Soluciones de Software y Forward Deployed Engineer: diseño la arquitectura de los sistemas, trabajo directamente con los clientes para entender cómo funcionan sus operaciones y convierto eso en software listo para producción, desde el primer MVP hasta el lanzamiento.",
+      "Especializado en desarrollo web full-stack con enfoque en el back-end en Python y JavaScript/TypeScript. Uso desarrollo asistido por IA con Claude Code (skills, hooks, agentes, subagentes y orquestación personalizados) y GitHub Copilot para entregar más rápido sin sacrificar calidad.",
+      "He entregado productos en viajes, fintech, IA, bienes raíces, publicidad, contabilidad, educación y e-commerce, y he colaborado en equipos distribuidos con ingenieros de China, Ucrania, Rusia, India, México, Argentina y Brasil."
     ],
     "focusHeading": "En qué me enfoco",
     "focus": [
-      "Interfaces web responsivas y accesibles con React, Angular y Next.js",
-      "APIs y servicios robustos con Python y Node.js",
-      "Nube, Docker y CI/CD en AWS, GCP y Azure",
-      "Dashboards con datos, analítica e integraciones",
-      "Rendimiento, refactorización y mantenibilidad a largo plazo"
+      "Arquitectura de soluciones y diseño de sistemas, del MVP a un producto escalable",
+      "Trabajo directo con clientes para convertir operaciones manuales en software",
+      "APIs y servicios robustos con Python (FastAPI) y Node.js",
+      "Aplicaciones web con React, Next.js y Angular en TypeScript",
+      "Desarrollo asistido por IA con Claude Code y GitHub Copilot",
+      "Nube, Docker y CI/CD en AWS, GCP, Azure y Vercel"
     ],
-    "softSkills": ["Comunicación", "Resolución de problemas", "Colaboración", "Mentalidad ágil", "Pensamiento analítico"],
+    "softSkills": ["Comunicación", "Resolución de problemas", "Colaboración", "Trabajo de cara al cliente", "Pensamiento analítico"],
     "languagesHeading": "Idiomas",
     "languages": [
       { "name": "Español", "level": "Nativo" },
-      { "name": "Inglés", "level": "C1 — Avanzado" }
+      { "name": "Inglés", "level": "C1 — Avanzado (EF SET 65/100)" }
     ]
   },
   "skills": {

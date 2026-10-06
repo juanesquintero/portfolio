@@ -35,25 +35,26 @@
   },
   "about": {
     "eyebrow": "About",
-    "heading": "Full-stack engineering, end to end",
+    "heading": "Software engineering, end to end",
     "paragraphs": [
-      "I'm a Senior Full-Stack Software Engineer with {{years}}+ years of time-served experience across the technology industry. I focus on web full-stack development with JavaScript/TypeScript (React, Angular, Next.js, Node.js) on the frontend and Python (FastAPI, Flask, Django) and Node.js on the backend for APIs and scalable web applications.",
-      "I've delivered software for clients in the USA and Colombia — from micro-businesses, entrepreneurs and start-ups to global companies — across FinTech, AI, SaaS, Real Estate, Advertising, EdTech, Analytics, Payment Processing and Enterprise Software.",
-      "I'm always eager to learn new technologies and take on whatever a project needs to reach the goal. I bring strong communication, problem-solving and collaboration skills, and an agile mindset to every team I join."
+      "Software Engineer with {{years}}+ years of experience building software applications, solutions and platforms for clients in the USA, the UK and Colombia, from start-ups to global companies such as EPAM Systems, Perficient and Billtrust. Currently a Software Solutions Architect and Forward Deployed Engineer: designing system architecture, working directly with clients to understand how their operations run, and turning that into production-ready software, from the first MVP to launch.",
+      "Specialized in web full-stack development with a back-end focus in Python and JavaScript/TypeScript. Uses AI-assisted development with Claude Code (custom skills, hooks, agents, subagents and orchestration) and GitHub Copilot to ship faster without lowering quality.",
+      "Delivered products in travel, fintech, AI, real estate, advertising, accounting, education and e-commerce. Collaborated in distributed teams with engineers from China, Ukraine, Russia, India, Mexico, Argentina and Brazil."
     ],
     "focusHeading": "What I focus on",
     "focus": [
-      "Responsive, accessible web UIs with React, Angular & Next.js",
-      "Robust APIs & services with Python and Node.js",
-      "Cloud, Docker & CI/CD across AWS, GCP and Azure",
-      "Data-heavy dashboards, analytics and integrations",
-      "Performance, refactoring and long-term maintainability"
+      "Solution architecture and system design, from MVP to scalable product",
+      "Working directly with clients to turn manual operations into software",
+      "Robust APIs and services with Python (FastAPI) and Node.js",
+      "Web apps with React, Next.js and Angular in TypeScript",
+      "AI-assisted development with Claude Code and GitHub Copilot",
+      "Cloud, Docker and CI/CD on AWS, GCP, Azure and Vercel"
     ],
-    "softSkills": ["Communication", "Problem-solving", "Collaboration", "Agile mindset", "Analytical thinking"],
+    "softSkills": ["Communication", "Problem-solving", "Collaboration", "Client-facing delivery", "Analytical thinking"],
     "languagesHeading": "Languages",
     "languages": [
       { "name": "Spanish", "level": "Native" },
-      { "name": "English", "level": "C1 — Advanced" }
+      { "name": "English", "level": "C1 — Advanced (EF SET 65/100)" }
     ]
   },
   "skills": {
