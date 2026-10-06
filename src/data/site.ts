@@ -12,6 +12,10 @@ export const site: SiteData = {
   phone: '+57 317 336 8759',
   location: 'Medellín, Colombia',
   cvPath: '/cv/Juan-Quintero-CV.pdf',
+  cvVariants: {
+    full: '/cv/Juan-Quintero-CV-Full.pdf',
+    onePage: '/cv/Juan-Quintero-CV-OnePage.pdf',
+  },
 
   socials: [
     { label: 'Email', url: 'mailto:juanestquintero@gmail.com', icon: 'email' },

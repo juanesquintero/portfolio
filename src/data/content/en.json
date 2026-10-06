@@ -18,16 +18,19 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "role": "Senior Full-Stack Software Engineer",
-    "tagline": "I build scalable, high-performance web applications from frontend to backend.",
+    "role": "Software Solutions Architect · Forward Deployed Engineer · Senior Web Full-Stack Developer",
+    "tagline": "I design and build production-ready software, from architecture and client discovery to launch.",
     "ctaProjects": "View Projects",
     "ctaContact": "Contact Me",
     "ctaCv": "Download CV",
+    "cvFull": "Full version",
+    "cvOnePage": "One page",
     "stats": [
       { "value": "{{years}}+", "label": "Years of experience" },
-      { "value": "8", "label": "Companies & clients" },
+      { "value": "10+", "label": "Companies & clients" },
       { "value": "10+", "label": "Industries shipped" },
-      { "value": "2", "label": "Countries (USA & CO)" }
+      { "value": "3", "label": "Client countries (USA, UK & CO)" },
+      { "value": "6", "label": "Years working in English with US clients" }
     ]
   },
   "about": {

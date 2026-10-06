@@ -82,6 +82,8 @@ export interface SiteData {
   phone: string;
   location: string;
   cvPath: string;
+  /** alternative CV downloads shown as secondary links */
+  cvVariants: { full: string; onePage: string };
   socials: SocialLink[];
   skillGroups: SkillGroupMeta[];
   techStack: TechItem[];
@@ -112,6 +114,9 @@ export interface HeroContent {
   ctaProjects: string;
   ctaContact: string;
   ctaCv: string;
+  /** labels for the secondary CV downloads */
+  cvFull: string;
+  cvOnePage: string;
   stats: { value: string; label: string }[];
 }
 
