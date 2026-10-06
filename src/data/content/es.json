@@ -81,7 +81,13 @@
   "tools": {
     "eyebrow": "Herramientas",
     "heading": "Herramientas y plataformas",
-    "intro": "El día a día — control de versiones, CI/CD, infraestructura, pruebas y pagos — detrás de construir y operar el trabajo."
+    "intro": "El día a día — control de versiones, CI/CD, infraestructura, pruebas y las plataformas con las que integro — detrás de construir y operar el trabajo.",
+    "groups": {
+      "vcs": "Control de versiones y CI/CD",
+      "infra": "Nube e infraestructura",
+      "testing": "Pruebas",
+      "platforms": "APIs, colaboración y plataformas"
+    }
   },
   "companies": {
     "eyebrow": "Empresas",
