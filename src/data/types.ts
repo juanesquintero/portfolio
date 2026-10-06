@@ -105,6 +105,14 @@ export interface CompanyItem {
   links?: CompanyLink[];
 }
 
+/** Language-neutral facts about the degree. */
+export interface EducationMeta {
+  url: string;
+  /** logo path under /public */
+  logo: string;
+  period: string;
+}
+
 export interface SiteData {
   name: string;
   email: string;
@@ -118,6 +126,7 @@ export interface SiteData {
   techStack: TechItem[];
   tools: TechItem[];
   companies: CompanyItem[];
+  education: EducationMeta;
   experience: ExperienceMeta[];
   projects: ProjectMeta[];
 }
@@ -255,6 +264,15 @@ export interface ContactContent {
   emailCta: string;
 }
 
+export interface EducationContent {
+  heading: string;
+  eyebrow: string;
+  degree: string;
+  school: string;
+  certificationsHeading: string;
+  certifications: string[];
+}
+
 export interface FooterContent {
   rights: string;
   builtWith: string;
@@ -270,6 +288,7 @@ export interface Content {
   tools: ToolsContent;
   companies: CompaniesContent;
   experience: ExperienceContent;
+  education: EducationContent;
   projects: ProjectsContent;
   contact: ContactContent;
   footer: FooterContent;

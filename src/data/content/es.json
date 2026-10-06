@@ -243,6 +243,20 @@
       }
     }
   },
+  "education": {
+    "eyebrow": "Formación",
+    "heading": "Formación y certificaciones",
+    "degree": "Pregrado en Ingeniería de Software",
+    "school": "Universidad de Medellín",
+    "certificationsHeading": "Certificaciones",
+    "certifications": [
+      "Google Cloud Fundamentals: Core Infrastructure – Coursera",
+      "Certificado de inglés EF SET 65/100 (C1 Avanzado) – EF Education First",
+      "Big Data en acción – Universidad de Medellín",
+      "Introducción a Node.js desarrollando un proyecto ágil – Tecnológico de Antioquia",
+      "Inteligencia artificial para la resolución de problemas – Universidad EAFIT"
+    ]
+  },
   "projects": {
     "eyebrow": "Proyectos",
     "heading": "Trabajo destacado",

@@ -243,6 +243,20 @@
       }
     }
   },
+  "education": {
+    "eyebrow": "Education",
+    "heading": "Education & certifications",
+    "degree": "Bachelor's Degree in Software Engineering",
+    "school": "University of Medellín",
+    "certificationsHeading": "Certifications",
+    "certifications": [
+      "Google Cloud Fundamentals: Core Infrastructure – Coursera",
+      "EF SET English Certificate 65/100 (C1 Advanced) – EF Education First",
+      "Big Data in Action – University of Medellín",
+      "Introduction to Node.js by Developing an Agile Project – Tecnológico de Antioquia",
+      "Artificial Intelligence for Problem Resolution – EAFIT University"
+    ]
+  },
   "projects": {
     "eyebrow": "Projects",
     "heading": "Featured work",

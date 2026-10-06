@@ -190,6 +190,12 @@ export const site: SiteData = {
     },
   ],
 
+  education: {
+    url: 'https://udemedellin.edu.co/',
+    logo: '/companies/university-of-medellin.png',
+    period: 'Aug 2016 — Mar 2021',
+  },
+
   experience: [
     {
       id: 'cielo-travel',
